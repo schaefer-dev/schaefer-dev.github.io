@@ -1,5 +1,5 @@
 title: Researcher
-url: "https://ankitsultana.com"
+url: "https://schaefer-dev.de"
 baseurl: "/researcher"
 
 markdown: kramdown
@@ -8,8 +8,8 @@ markdown: kramdown
 tracking_id: #
 
 footer: yes
-footer_url: "https://github.com/ankitsultana"
-footer_text: "Page design by Ankit Sultana"
+footer_url: "https://github.com/schaefer-dev"
+footer_text: "Page design by Daniel Schaefer"
 
 sass:
     style: compressed
