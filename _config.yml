@@ -8,7 +8,7 @@ tracking_id: #
 
 footer: yes
 footer_url: "https://github.com/schaefer-dev"
-footer_text: "Page design by Daniel Schaefer"
+footer_text: "Visit my GitHub"
 
 sass:
     style: compressed
@@ -19,7 +19,6 @@ nav:
    link: "index"
  - name: "Projects"
    link: "projects"
- - name: "Skills"
  - name: "Skills"
    link: "skills"
  - name: "CV"
