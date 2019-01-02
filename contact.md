@@ -3,7 +3,9 @@ layout: default
 is_contact: true
 ---
 
-* Email: [schaefer-dev@gmail.com](mailto:schaefer-dev@gmail.com)
+* University Email: [s9dlscae@stud.uni-saarland.de](mailto:s9dlscae@stud.uni-saarland.de)
+
+* Personal Email: [schaefer-dev@gmail.com](mailto:schaefer-dev@gmail.com)
 
 * GitHub: [schaefer-dev](https://github.com/schaefer-dev)
 
@@ -16,11 +18,3 @@ is_contact: true
 > Saarbruecken
 >
 > Germany
-
----
-
-## Social
-
-1. [Facebook](#)
-2. [Twitter](#)
-3. [Google+](#)
