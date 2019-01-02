@@ -9,7 +9,7 @@ This Website is currently still very much **work in progress**. If you are inter
 
 <img class="profile-picture" src="me.jpg">
 
-Hi! My name is Daniel and I am german M.Sc. Computer Science student at University of Saarland, Saarbruecken and currently working for the [Reactive Systems Group](https://www.react.uni-saarland.de).
+Hi! My name is Daniel and I am german M.Sc. Computer Science student at University of Saarland, Saarbruecken and currently working as research assistant for the [Reactive Systems Group](https://www.react.uni-saarland.de).
 
 
 ## Short Bio
