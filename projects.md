@@ -18,7 +18,7 @@ Detailed description will follow at a later date.
 - Python
 - Rust
 - Home Network Setup implementing QoS with Traffic Analysis and DPI
-- Managing my dotfiles and improving workflows
+- Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
 - Project Euler
 - This website :)
 
