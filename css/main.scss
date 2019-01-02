@@ -1,3 +1,27 @@
 ---
 ---
 @import "style";
+
+.skill-paragraph {
+    text-align: center;
+    margin: 20px auto 30px auto;
+    width: 100%;
+    clear: both;
+    padding: 10px 0 0 0;
+}
+
+ul.skill-list {
+    list-style: none;
+    position: relative;
+    float: left;
+    display: block;
+    left: 50%;
+    padding: 0 0 20px 0;
+}
+
+  ul.skill-list li {
+    position: relative;
+    float: left;
+    display: block;
+    right: 50%;
+}

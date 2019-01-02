@@ -9,14 +9,14 @@ This Website is currently still very much **work in progress**. If you are inter
 
 <img class="profile-picture" src="me.jpg">
 
-Hi! My name is Daniel and I am a student of M.S. Computer Science at University of Saarland, Saarbruecken and currently working for the [Reactive Systems Group](https://www.react.uni-saarland.de).
+Hi! My name is Daniel and I am a student of M.Sc. Computer Science at University of Saarland, Saarbruecken and currently working for the [Reactive Systems Group](https://www.react.uni-saarland.de).
 
 
 ## Short Bio
 
 TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus ipsum ac erat aliquam dapibus. Vestibulum vehicula placerat ex, a consectetur odio pharetra quis. Mauris id urna ante. Fusce pharetra diam ac nisi aliquet, vel egestas ex iaculis. Pellentesque laoreet cursus tellus sed pellentesque. Praesent a rhoncus elit. Nunc ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
 
-## Notable Projects
+## Notable Projects I worked on
 
 1. Sopra
 2. Plagiarism Tool
@@ -32,5 +32,3 @@ Year | Term | Course Description
 -----|-------|--------
 2018 | Winter  | Automata, Games, Verification
 2018 | Winter | Selected Topics in Formal Methods for Security
-
----

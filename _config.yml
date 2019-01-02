@@ -17,7 +17,12 @@ sass:
 nav:
  - name: "Home"
    link: "index"
- - name: "Curriculum Vitae"
+ - name: "Projects"
+   link: "projects"
+ - name: "Skills"
+ - name: "Skills"
+   link: "skills"
+ - name: "CV"
    link: "cv"
  - name: "Contact"
    link: "contact"
