@@ -3,19 +3,19 @@ layout: default
 is_contact: true
 ---
 
-* Email: [foo@xyz.com](mailto:foo@xyz.com)
+* Email: [schaefer-dev@gmail.com](mailto:schaefer-dev@gmail.com)
 
-* Phone: [+91-123123](tel:+91-123123)
+* GitHub: [schaefer-dev](https://github.com/schaefer-dev)
 
 ---
 
 ## Mailing Address
 
-> 221B, Baker Street
+> Am Kieselhumes 92
 >
-> London
+> Saarbruecken
 >
-> United Kingdom
+> Germany
 
 ---
 

@@ -1,6 +1,5 @@
-title: Researcher
+title: schaefer-dev
 url: "https://schaefer-dev.de"
-baseurl: "/researcher"
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
@@ -16,9 +15,9 @@ sass:
     sass_dir: _sass
 
 nav:
- - name: "About"
-   link: "/researcher/"
- - name: "Resume"
-   link: "resume.pdf"
+ - name: "Home"
+   link: "index"
+ - name: "Curriculum Vitae"
+   link: "cv"
  - name: "Contact"
    link: "contact"
