@@ -26,7 +26,7 @@ TODO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus ip
 
 ## University Courses
 
-Here is a table which provides an overview of courses I visited during my time at Saarland University so far.
+Here is a table which provides an overview of courses I took during my time at Saarland University so far.
 
 Year | Term | Course Description
 -----|-------|--------
