@@ -7,7 +7,7 @@ layout: default
         <h3 style="padding-top: 0px;">Languages</h3>
         <div class="skill-list">
             ●  fluent English
-            ●  fluent German
+            ●  native German
             ●  advanced french
             ●
         </div>
@@ -42,6 +42,7 @@ layout: default
             ●  Git
             ●  VIM
             ●  LaTeX
+            ●  Unity3D
             ●  HTML
             ●  CSS
             ●  JavaScript
