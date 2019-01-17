@@ -14,7 +14,7 @@ Hi! My name is Daniel and I am german M.Sc. Computer Science student at Universi
 
 ## Short Bio
 
-I am currently in the process of starting the research phase of my masters thesis at the University of Saarland in the field of reactive systems.
+I am currently in the process of starting the research phase of my masters thesis at the Saarland University in the field of reactive systems.
 
 My main interests at university are the fields of embedded systems and operating systems and verification of such systems.
 
