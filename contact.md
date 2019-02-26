@@ -5,16 +5,6 @@ is_contact: true
 
 * University Email: [s9dlscae@stud.uni-saarland.de](mailto:s9dlscae@stud.uni-saarland.de)
 
-* Personal Email: [schaefer-dev@gmail.com](mailto:schaefer-dev@gmail.com)
+* Personal Email: [schaefer.dev@gmail.com](mailto:schaefer.dev@gmail.com)
 
 * GitHub: [schaefer-dev](https://github.com/schaefer-dev)
-
----
-
-## Mailing Address
-
-> Am Kieselhumes 92
->
-> Saarbruecken
->
-> Germany
