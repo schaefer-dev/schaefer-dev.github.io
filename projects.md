@@ -76,6 +76,7 @@ Year | Term | Course Description
 2018 | Summer | Web Security
 2018 | Winter  | Automata, Games, Verification
 2018 | Winter | Selected Topics in Formal Methods for Security
+2019 | Summer | Hands on Networking
  | |
 2013 | Winter | Introduction to Computational linguistics
 2014 | Winter | Introduction to Semantics
@@ -86,9 +87,10 @@ Year | Term | Course Description
 
 # Freetime Projects
 
-- Python
-- Rust
+- Learning Python
+- Learning Rust
 - Home Network Setup implementing QoS with Traffic Analysis and DPI
+- Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)
 - Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
 - Project Euler
 - This website :)
