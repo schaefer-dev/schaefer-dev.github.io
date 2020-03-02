@@ -8,3 +8,5 @@ is_contact: true
 * Personal Email: [schaefer.dev@gmail.com](mailto:schaefer.dev@gmail.com)
 
 * GitHub: [schaefer-dev](https://github.com/schaefer-dev)
+
+* LinkedIn: [schaefer-dev](https://www.linkedin.com/in/schaefer-dev/)
