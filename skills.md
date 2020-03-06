@@ -6,7 +6,7 @@ layout: default
     <div class="skill">
         <h3 style="padding-top: 0px;">Languages</h3>
         <div class="skill-list">
-            ●  fluent English [(C2 EF SET)](EF_SET_Certificate.pdf)
+            ●  fluent English (C2 EF SET)
             ●  native German
             ●  advanced french
             ●
