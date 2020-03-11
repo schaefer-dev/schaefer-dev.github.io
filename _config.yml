@@ -19,6 +19,8 @@ nav:
    link: "index"
  - name: "Projects"
    link: "projects"
+ - name: "Courses"
+   link: "courses"
  - name: "Skills"
    link: "skills"
  - name: "CV"
