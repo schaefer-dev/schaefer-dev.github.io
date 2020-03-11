@@ -35,7 +35,20 @@ While it was quite challenging to implement these Embedded Systems from scratch,
 
 Our team ended up winning the competition between all student-teams at the end of the semester.
 
+
+### Hands on Networking Project LLDPA Agent (Python)
+
+In this small project I implemented a LLDPA agent which is able to announce itself by sending LLDP messages to the network on the Link Layer. Additionally the agent parses all LLDP messages that are sent to one of the LLDP multicast addresses of the network. I also implemented a set of tests to verify the agents behaviour and robustness against e.g. invalid TLVs. Wireshark can be used to listen to network traffic and observe the correct behaviour of the agent.
+
+
+### Hands on Networking Project Multimedia Codec (Python)
+
+In this small project I implemented encoding and decoding functions suited to send multimedia files over a noisy channel in an efficient way. The goal of this codec is to be able to correct errors that are introduced by the communication channel in a sufficiently fast way which also does not require too much redudancy overhead. The channel introduced randomized bit flips, which could also occur in bursts. To solve this problem I essentially implemented a Hamming Code with interleaving to be able to handle the error correction for burst of errors better. My implementation was able to correct 100% of all errors (including bursts) on all provided grading-networks, with a redundancy of only 100% (passing criterion was 300%).
+
+
+
 ### Research Assistant Project
+
 Implementation of a Rust Library that communicates over a USB interface with a Arduino board which is mounted on a fairly large 4-wheeled robot. The implemented Rust library is running on a Intel NUC that is built on top of the robot chassis. Additionally the NUC is connected to a Lidar which is used to scan and reconstruct the room surrounding the robot, which allows for safe navigation and avoiding of obstacles.
 
 
@@ -87,8 +100,8 @@ Year | Term | Course Description
 
 # Freetime Projects
 
-- Learning Python
-- Learning Rust
+- Teaching myself Python
+- Teaching myself Rust
 - Home Network Setup implementing QoS with Traffic Analysis and DPI
 - Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)
 - Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
