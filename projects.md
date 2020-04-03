@@ -61,8 +61,10 @@ Implementation of a Rust Library that communicates over a USB interface with a A
 
 - Teaching myself Python
 - Teaching myself Rust
+- Teaching myself Swift
 - Home Network Setup implementing QoS with Traffic Analysis and DPI
 - Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)
 - Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
 - Project Euler
+- Geeksforgeeks.org challenges
 - This website :)
