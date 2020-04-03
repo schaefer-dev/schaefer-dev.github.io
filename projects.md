@@ -23,6 +23,8 @@ In recent years Virtual Reality has grown very quickly and found more and more u
 
 Developed per request for professor at Saarland University. The tool is now successfully used to detect plagiarism cases among students and supports up to 4000 submissions with up to 1000 lines each and checks every submission pair for possible plagiarism cases. Obvious plagiarism cases are highlighted and the professor is automatically notified with a human readable overview of why the set of submissions are obvious plagiarism cases including a colored mapping of copied parts of the code. The tool is completely robust against many options to easily bypass most ordinary plagiarism detection tools for both python and C code (variable renaming, moving of code blocks etc.).
 
+[Project Video](https://youtu.be/Lcn0QEfDHL4)
+
 
 ### PINTOS Operating System (C)
 
