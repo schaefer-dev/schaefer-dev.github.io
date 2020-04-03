@@ -21,11 +21,12 @@ layout: default
         <h3 style="padding-top: 0px;">Programming Languages of choice</h3>
         <div class="skill-list">
             ●  C
-            ●  C++
             ●  Rust
             ●  Python
             ●  ZSH/Bash
+            ●  Swift
             ●  Java
+            ●  C++
             ●  SML
             ●
         </div>
@@ -41,6 +42,7 @@ layout: default
             ●  UNIX
             ●  Git
             ●  VIM
+            ●  VSCode
             ●  LaTeX
             ●  Unity3D
             ●  HTML
