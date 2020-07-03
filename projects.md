@@ -4,7 +4,7 @@ layout: default
 
 # University Projects
 
-Lists of projects in chronological order from oldest to most-recent project.
+Lists of projects in chronological order from my earliest to my most-recent projects.
 
 
 ### Software Praktikum (Java)
@@ -53,9 +53,15 @@ In this small project I implemented encoding and decoding functions suited to se
 
 
 
-### Research Assistant Project
+### Research Assistant Project (Rust)
 
 Implementation of a Rust Library that communicates over a USB interface with a Arduino board which is mounted on a fairly large 4-wheeled robot. The implemented Rust library is running on a Intel NUC that is built on top of the robot chassis. Additionally the NUC is connected to a Lidar which is used to scan and reconstruct the room surrounding the robot, which allows for safe navigation and avoiding of obstacles.
+
+
+
+### Master Thesis Project (Swift)
+
+My master thesis is written in the field of program synthesis which is a concept used to construct a program that solves a given formal specification automatically. My thesis aims to enhance existing approaches by allowing the use of higher-level semantics to be used as part of these specifications. This will hopefully not only decrease the risk of human-error in providing the intended formal specification but also simplify the process overall. My proposed algorithm is implemented entirely in object orriented Swift code. I may discuss details of my concept or implementation in a private conversation, however I would like to keep this website "spoiler-free" regarding the concent of my thesis until it is finished :)
 
 
 
@@ -66,6 +72,7 @@ Implementation of a Rust Library that communicates over a USB interface with a A
 - Teaching myself Swift
 - Home Network Setup implementing QoS with Traffic Analysis and DPI
 - Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)
+- Home-server running backup and file servers to manage family documents and keep family photo library up to date
 - Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
 - Project Euler
 - Geeksforgeeks.org challenges
