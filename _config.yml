@@ -5,6 +5,8 @@ newbaseurl: "https://schaefer-dev.de"
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
+plugins:
+   - jekyll-seo-tag
 
 tracking_id: UA-131584544-1
 
