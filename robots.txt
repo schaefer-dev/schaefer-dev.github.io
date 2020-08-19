@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /cv.md
+Disallow: /cv.pdf
+Disallow: /tor.pdf
+Disallow: /EF_SET_Certificate.pdf
