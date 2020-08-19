@@ -1,5 +1,6 @@
 title: schaefer-dev
 url: "https://schaefer-dev.de"
+baseurl: "https://schaefer-dev.de"
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
