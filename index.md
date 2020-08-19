@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Daniel Schäfer | Student, Developer & passionate Learner"
-description: "A portfolio website targeted at people who want to find out what I've been up to in recent years. Includes a detailed description of projects and my university career."
+description: "A portfolio targeted at people who want to find out what I've been up to in recent years. Includes a detailed description of projects and my university career."
 ---
 
 # About Myself
