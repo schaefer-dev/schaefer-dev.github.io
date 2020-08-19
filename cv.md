@@ -1,7 +1,10 @@
 ---
 layout: default
+title: "Daniel Schäfer | Downloads"
+description: "Download links for my CV, university transscript of Records and my EF SET English Certificate."
 ---
 
+# Downloads
 
 [Download CV](https://schaefer-dev.de/cv.pdf)
 
