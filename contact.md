@@ -5,6 +5,8 @@ description: "Contact information to reach out. Includes my LinkedIn and GitHub 
 is_contact: true
 ---
 
+# Contact Me
+
 * University Email: [s9dlscae@stud.uni-saarland.de](mailto:s9dlscae@stud.uni-saarland.de)
 
 * Personal Email: [schaefer.dev@gmail.com](mailto:schaefer.dev@gmail.com)
