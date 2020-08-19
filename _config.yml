@@ -16,7 +16,7 @@ sass:
 
 nav:
  - name: "Home"
-   link: ""
+   link: "/"
  - name: "Projects"
    link: "projects"
  - name: "Courses"
