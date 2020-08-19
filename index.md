@@ -1,8 +1,10 @@
 ---
 layout: default
+title: "About Daniel Schäfer"
+description: "A portfolio website targeted at people who want to find out what I've been up to in recent years. Includes a detailed description of my university career."
 ---
 
-## About Me
+# About Myself
 
 <img class="profile-picture" src="me.jpg">
 

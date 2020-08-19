@@ -2,6 +2,8 @@
 layout: default
 ---
 
+# Skills
+
 <div class="skill-paragraph">
     <div class="skill">
         <h3 style="padding-top: 0px;">Languages</h3>
