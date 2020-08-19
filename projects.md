@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "Daniel Schäfer | Projects"
+description: "Descriptions for various projects I have worked at in my freetime and during university."
 ---
 
 # University Projects

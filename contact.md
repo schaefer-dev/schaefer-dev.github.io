@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "Daniel Schäfer | Contact"
+description: "Contact information to reach out. Includes my LinkedIn and GitHub which may be of interrest to dig deeper."
 is_contact: true
 ---
 

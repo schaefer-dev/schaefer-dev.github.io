@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "Daniel Schäfer | University Courses"
+description: "A list of lectures and projects I worked at during my time at Saarland University. Includes B.Sc. and M.Sc. lectures."
 ---
 
 # University Courses

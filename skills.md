@@ -1,5 +1,7 @@
 ---
 layout: default
+title: "Daniel Schäfer | Skills"
+description: "Overview of my programming languages of choice, tools that keep me productive and language expertise."
 ---
 
 # Skills
