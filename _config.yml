@@ -12,6 +12,12 @@ footer: yes
 footer_url: "https://github.com/schaefer-dev"
 footer_text: "Visit my GitHub"
 
+plugins:
+   - jekyll-redirect-from
+
+whitelist:
+   - jekyll-redirect-from
+
 sass:
     style: compressed
     sass_dir: _sass
