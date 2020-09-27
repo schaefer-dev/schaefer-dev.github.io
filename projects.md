@@ -63,7 +63,7 @@ Implementation of a Rust Library that communicates over a USB interface with a A
 
 ### Master Thesis Project (Swift)
 
-My master thesis is written in the field of program synthesis which is a concept used to construct a program that solves a given formal specification automatically. My thesis aims to enhance existing approaches by allowing the use of higher-level semantics to be used as part of these specifications. This will hopefully not only decrease the risk of human-error in providing the intended formal specification but also simplify the process overall. My proposed algorithm is implemented entirely in object orriented Swift code. I may discuss details of my concept or implementation in a private conversation, however I would like to keep this website "spoiler-free" regarding the concent of my thesis until it is finished :)
+My master thesis was written in the field of program synthesis which is a concept used to construct a program that solves a given formal specification automatically. My thesis aims to enhance existing approaches by allowing the use of higher-level semantics to be used as part of these specifications. This decreases not only the risk of human-error in providing the intended formal specification but also simplifies the process overall. My proposed algorithm is implemented entirely in object orriented Swift code. I may discuss details of my concept or implementation in a private conversation, however I would like to keep this website "spoiler-free" regarding the concent of my thesis until it is graded :)
 
 
 
