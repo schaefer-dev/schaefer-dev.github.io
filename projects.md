@@ -72,10 +72,12 @@ My master thesis was written in the field of program synthesis which is a concep
 - Teaching myself Python
 - Teaching myself Rust
 - Teaching myself Swift
+- Custom ATMega32U4 Controller installed in Keyboard to support [QMK Firmware](https://github.com/schaefer-dev/qmk_firmware) setup to implement fancy features like mouse-control, tap-modifiers and more :)
 - Home Network Setup implementing QoS with Traffic Analysis and DPI
 - Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)
 - Home-server running backup and file servers to manage family documents and keep family photo library up to date
+- Running my own Hackintosh for 4+ years
 - Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
+- Geeksforgeeks.org and leetcode challenges
 - Project Euler
-- Geeksforgeeks.org challenges
 - This website :)
