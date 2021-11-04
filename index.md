@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Daniel Schäfer | Student, Developer & passionate Learner"
+title: "Daniel Schäfer | Developer & passionate Learner"
 description: "A portfolio targeted at people who want to find out what I've been up to in recent years. Includes a detailed description of projects and my university career."
 ---
 
@@ -8,7 +8,9 @@ description: "A portfolio targeted at people who want to find out what I've been
 
 <img class="profile-picture" src="me.jpg">
 
-Hi! My name is Daniel and I am a German M.Sc. Computer Science fresh graduate at University of Saarland, Saarbruecken. I submitted my thesis on the seventh of september with an average grade of 1.4 at that point in time. Thesis grading is still pending and might result in slight changes of my final grade. I wrote my masters thesis in the field of synthesis at the [Reactive Systems Group](https://www.react.uni-saarland.de).
+Hi! My name is Daniel and I am a product Engineer at Paragon Semvox. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.4. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
+
+In the future I might update this website with content related to my work. However, currently this page will remain focused on stuff I have worked on during my studies.
 
 
 ## Short Bio
@@ -25,4 +27,4 @@ The only hobby that still survived from my early childhood is gaming. I have nev
 
 Somewhat recently I have found a new passion: cycling and striving for improvements in that sport.
 
-During Semester breaks I love traveling to new countries and discovering new places I haven't been at before.
+During holidays I love traveling to new countries and discovering new places I haven't been at before.
