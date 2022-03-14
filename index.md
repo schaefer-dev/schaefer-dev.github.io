@@ -10,11 +10,14 @@ description: "A portfolio targeted at people who want to find out what I've been
 
 Hi! My name is Daniel and I am a product Engineer at paragon semvox. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.4. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
 
-After graduation I started working as product Engineer at paragon semvox. We develop a personalized smart assistant that is used in top of the line automotive vehicles. My responsibilities include the development and maintaince of our internal prototype project that is used to test and demonstrate new featuresets before they are being brought into production. Additionally I'm the developer and maintainer of an internal test framework that is used to automate end to end tests in a customer project. This testframework mainly automates a variety of processes on hardware prototypes that are used internally to simulate a real-world car. The goal of this framework is to improve reliability of test results compared to manual testing and reduce the know-how that is required to work on the sensitive prototype hardware.
-At work I write almost exclusively Java code.
-
 
 ## My Work Experience
+
+After graduation I started working as product Engineer at paragon semvox. We develop a personalized smart assistant that is used in top of the line automotive vehicles. 
+
+My responsibilities include the development and maintaince of our internal prototype project that is used to test and demonstrate new featuresets before they are being brought into production. Additionally I'm the developer and maintainer of an internal test framework that is used to automate end to end tests in a customer project. This testframework mainly automates a variety of processes on hardware prototypes that are used internally to simulate a real-world car. The goal of this framework is to improve reliability of test results compared to manual testing and reduce the know-how that is required to work on the sensitive prototype hardware.
+
+At work I write almost exclusively Java code.
 
 In the future I might update this website with content related to my work. However, right now this page will remain mainly focused on stuff I have worked on during my studies.
 
