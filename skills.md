@@ -24,12 +24,12 @@ description: "Overview of my programming languages of choice, tools that keep me
     <div class="skill">
         <h3 style="padding-top: 0px;">Programming Languages of choice</h3>
         <div class="skill-list">
+            ●  Java
             ●  C
             ●  Rust
             ●  Python
             ●  ZSH/Bash
             ●  Swift
-            ●  Java
             ●  C++
             ●  SML
             ●
@@ -43,17 +43,14 @@ description: "Overview of my programming languages of choice, tools that keep me
     <div class="skill">
         <h3 style="padding-top: 0px;">Tools and Frameworks of choice</h3>
         <div class="skill-list">
+            ●  Maven
             ●  UNIX
             ●  Git
+            ●  Eclipse
             ●  VIM
             ●  VSCode
             ●  LaTeX
             ●  Unity3D
-            ●  HTML
-            ●  CSS
-            ●  JavaScript
-            ●  SQL
-            ●  Matlab
             ●
         </div>
     </div>
