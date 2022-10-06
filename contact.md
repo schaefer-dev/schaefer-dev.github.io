@@ -7,10 +7,10 @@ is_contact: true
 
 # Contact Me
 
-* University Email: [s9dlscae@stud.uni-saarland.de](mailto:s9dlscae@stud.uni-saarland.de)
-
-* Personal Email: [schaefer.dev@gmail.com](mailto:schaefer.dev@gmail.com)
+* Personal Email: schaefer.dev at gmail.com
 
 * GitHub: [schaefer-dev](https://github.com/schaefer-dev)
 
 * LinkedIn: [schaefer-dev](https://www.linkedin.com/in/schaefer-dev/)
+
+* Xing: [Daniel Schaefer](https://www.xing.com/profile/Daniel_Schaefer229)
