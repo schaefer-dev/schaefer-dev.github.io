@@ -1,7 +1,22 @@
 ---
 layout: default
-title: "Daniel Schäfer | Skills"
-description: "Overview of my programming languages of choice, tools that keep me productive and language expertise."
+title: "Daniel Schäfer | Certifications & Skills"
+description: "Overview of my certifications, programming languages of choice, tools that keep me productive and language expertise."
+---
+
+
+# Certifications
+
+<div class="skill-paragraph">
+    <div class="skill">
+        <h3 style="padding-top: 0px;">Architecture</h3>
+        <div class="skill-list">
+            ●  [iSAQB Certified Professional for Software Architecture - Foundation](https://www.certible.com/badge/af8eef7f-af23-42b6-9dbb-fe9661f872f0/)
+            ●
+        </div>
+    </div>
+</div>
+
 ---
 
 # Skills
@@ -55,3 +70,5 @@ description: "Overview of my programming languages of choice, tools that keep me
         </div>
     </div>
 </div>
+
+---
