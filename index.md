@@ -8,7 +8,7 @@ description: "A portfolio targeted at people who want to find out what I've been
 
 <img class="profile-picture" src="me.jpg">
 
-Hi! My name is Daniel and I am a senior product Engineer at semvox, recently aquired by CARIAD. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.4. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
+Hi! My name is Daniel and I am a senior product Engineer at [semvox](https://www.semvox.de/), recently aquired by CARIAD. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.4. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
 
 
 ## My Work Experiences
