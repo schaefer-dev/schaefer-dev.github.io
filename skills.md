@@ -11,7 +11,7 @@ description: "Overview of my certifications, programming languages of choice, to
     <div class="skill">
         <h3 style="padding-top: 0px;">Architecture</h3>
         <div class="skill-list">
-            ●  [iSAQB Certified Professional for Software Architecture - Foundation](https://www.certible.com/badge/af8eef7f-af23-42b6-9dbb-fe9661f872f0/)
+            ●  <a href="https://www.certible.com/badge/af8eef7f-af23-42b6-9dbb-fe9661f872f0/">iSAQB Certified Professional for Software Architecture - Foundation</a>
             ●
         </div>
     </div>
