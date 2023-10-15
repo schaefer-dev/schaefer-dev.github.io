@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Daniel Schäfer | Projects"
-description: "Descriptions for various projects I have worked at in my freetime and during university."
+title: "Daniel Schäfer | Projects and Courses"
+description: "Descriptions for various projects I have worked at in my freetime and during university. Inclusing course work."
 ---
 
 # University Projects
@@ -64,6 +64,52 @@ Implementation of a Rust Library that communicates over a USB interface with a A
 ### Master Thesis Project (Swift)
 
 My master thesis was written in the field of program synthesis which is a concept used to construct a program that solves a given formal specification automatically. My thesis aims to enhance existing approaches by allowing the use of higher-level semantics to be used as part of these specifications. This decreases not only the risk of human-error in providing the intended formal specification but also simplifies the process overall. My proposed algorithm is implemented entirely in object orriented Swift code. I may discuss details of my concept or implementation in a private conversation, however I would like to keep this website "spoiler-free" regarding the concent of my thesis until it is graded :)
+
+
+# University Courses
+
+A list of lectures I visited at during my time at Saarland University. Includes B.Sc. and M.Sc. lectures.
+
+Year | Term | Course Description
+-----|-------|--------
+2013 | Winter | Maths for Computer Science I
+2014 | Summer | Maths for Computer Science II
+2014 | Winter | Maths for Computer Science III
+2013 | Winter | Programming I (functional Programming in ML)
+2014 | Summer | Programming II (MIPS, C, Java)
+2014 | Summer | System Architecture
+2014 | Winter | Theoretical Computer Science
+2014 | Winter | Algorithms and Data Structures
+2014 | Winter | Software Project (Design Practicum)
+2015 | Summer | Concurrent Programming
+2015 | Summer | Information Systems (Databases)
+2013 | Winter | Perspectives of Computer Science
+2015 | Summer | Hacking Seminar
+2015 | Summer | Artificial Intelligence
+2015 | Winter | Introduction to media computer science
+2016 | Summer | Security
+2016 | Summer | Software Development in HCI
+2016 | Summer | High-Level Computer Vision (Convolutional Neural Networks)
+2016 | Winter | Speech Technology - Pattern and Speech Recognition
+2016 | Winter | Law of Cybersecurity
+2017 | Summer | Programming for engineers
+2017 | Summer | Human Computer Interactions
+2017 | Summer | Software Engineering
+2017 | Summer | Ethics for Nerds
+2017 | Winter | Operating Systems
+2017 | Winter | Automatic Planning
+2018 | Summer | Cryptography
+2018 | Summer | Embedded Systems
+2018 | Summer | Web Security
+2018 | Winter  | Automata, Games, Verification
+2018 | Winter | Selected Topics in Formal Methods for Security
+2019 | Summer | Hands on Networking
+ | |
+2013 | Winter | Introduction to Computational linguistics
+2014 | Winter | Introduction to Semantics
+2015 | Winter | Investing
+2015 | Winter | Game Theory
+2016 | Winter | Business Finance
 
 
 
