@@ -8,26 +8,44 @@ description: "A portfolio targeted at people who want to find out what I've been
 
 <img class="profile-picture" src="me.jpg">
 
-Hi! My name is Daniel and I am a senior product Engineer at [semvox](https://www.semvox.de/), recently aquired by CARIAD. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.5. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
+Hi! My name is Daniel and I am a senior product Engineer at [semvox](https://www.semvox.de/), 100% subsidiary of CARIAD SE (since May 2023). I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.5. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
+
+Currently I work as a Software Architect at semvox.
 
 
-## My Work Experiences
+## My Work Experience 2020-2023
 
 After graduation I started working as product Engineer at semvox. We develop a personalized smart assistant that is used by Volkswagen, Audi, Porsche and Skoda. My responsibilities early on included the development and maintaince of our internal prototype project that is used to analyze and demonstrate new featuresets before they are being brought into production. At the same time this project is used as our demonstrator, which is used to present the strength of our Software-Framework to new potential customers.
 
 Additionally, I was the sole developer and maintainer of an internal test framework that is used to automate end to end tests in the Volkswagen-group project for semvox. This testframework mainly automates a variety of processes on automotive hardware prototypes, which are used internally to simulate a real-world car. The goal of this framework is to improve reliability of test results compared to manual testing and reduce the know-how that is required to work on the sensitive prototype hardware. Currently, around 40% of all in-car testing has been replaced with automated tests, performed by the testframework I developed, relieving a lot of pressure from the QA department.
 
-I have since handed over this project to a new team inside the QA department that is able to focus all its effort into improving the framework further while I tackle new challenges. I am still involved in design-decisions and roadmap planning.
+I have since handed over this project to a new team inside the QA department that is able to focus all its effort into improving the framework further while I tackle new challenges. For another year I was still involved in design-decisions and roadmap planning.
 
 After my time developing the test framework, a significant portion of my time has been spent working towards a cyber security management system certification in form of ISO 21434 for semvox. I was mainly involved in establishing new processes to cover cyber security related subjects from the design phase, through the development cycle, until product releases and deployments.
 Analysing the impact of CVE findings in our product and determining the best mitigation path for those vulnerabilities is still part of my day to day work.
 I am responsible for the technical risk assessment and threat analysis for our software framework.
 
-Another focus of mine has been the analysis of performence bottlenecks in in our automotive project with the Volkswagen-group. I was able to discover and implement crucial improvements to performance, memory management and overall system stability in the process.
+Another focus of mine has been the analysis of performance bottlenecks in in our automotive project with the Volkswagen-group. I was able to discover and implement crucial improvements to performance, memory management and overall system stability in the process.
 
-At work I write almost exclusively Java code.
+During this timeframe at work I write almost exclusively Java code.
 
-In the future I might update this website with content related to my work. However, right now the remaining sections on this page will remain mainly focused on stuff I have worked on during my studies.
+In the future I might update this website with more content related to my work. However, right now the remaining sections on this page will remain mainly focused on stuff I have worked on during my studies.
+
+
+# My Work Experience 2024-today
+
+In early 2024, I took on the role of Workstream Lead for Embedded LLM Development at semvox, focusing on exploring efficient large language model solutions tailored to the hardware constraints within the Volkswagen Group. Following an internal reprioritization, driven by specific customer requirements, my responsibilities shifted to leading the PNP Workstream. I was responsible for the technical development and evaluation of 14 specialized LLM agents, covering diverse domains such as current and historical weather data, financial market information, and news integration, specifically tailored for integration in Volkswagen projects.
+
+One of my most notable achievements in 2024 was the development of the \"GDA Embedded Demo\". This demonstrator significantly exceeded initial expectations of internal and  external stakeholders, positioning semvox as a leading-edge integrator of LLM technologies within the VW assistance systems. Additionally, I developed numerous demonstrable features and delivered key insights on agentic concepts and novel automated testing strategies.
+
+Since January 2025, I have been serving as Lead Software Architect for the upcoming generation of semvox flagship product, geni:OS genAI. I have full technical responsibility for the architectural direction of the genAI solution, including overseeing integration within Volkswagen customer projects. I act as the primary technical contact for solution concepts throughout the genAI ecosystem, ensuring clear communication and effective coordination with external stakeholders and interdisciplinary teams, such as the Solutions department, CARIAD, and other stakeholders.
+
+My responsibilities further include establishing and documenting the technical vision and making critical architecture decisions. I have created and maintained architecture documentation on Confluence to support development processes and maintain high-quality standards. Additionally, I actively contribute to software development for LLM agents and features within the genAI framework.
+
+Throughout this period I have significantly contributed to the growth and establishment of the semvox genAI solution. From initial in-vehicle demonstrations to its current prominence as a vital project for semvox.
+
+In this timeframe, most development happened in python. However, integration into the existing embedded + cloud stack happened mostly in Java. 
+
 
 ## My Computer Science Degree
 
