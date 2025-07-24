@@ -13,7 +13,10 @@ Hi! My name is Daniel and I am a senior product Engineer at [semvox](https://www
 Currently I work as a Software Architect at semvox.
 
 
-## My Work Experience 2020-2023
+
+# My Work Experience at semvox
+
+### 2020-2023
 
 After graduation I started working as product Engineer at semvox. We develop a personalized smart assistant that is used by Volkswagen, Audi, Porsche and Skoda. My responsibilities early on included the development and maintenance of our internal prototype project that is used to analyze and demonstrate new feature-sets before they are being brought into production. At the same time this project is used as our demonstrator, which is used to present the strength of our Software-Framework to new potential customers.
 
@@ -30,7 +33,7 @@ Another focus of mine has been the analysis of performance bottlenecks in in our
 During this timeframe at work I write almost exclusively Java code.
 
 
-# My Work Experience 2024-today
+## 2024-today
 
 In early 2024, I took on the role of workstream lead for Embedded LLM Development at semvox, focusing on exploring efficient large language model solutions tailored to the hardware constraints within the Volkswagen Group. Following an internal reprioritization, driven by specific customer requirements and timelines, my responsibilities shifted to leading the PNP workstream. I was responsible for the technical development and evaluation of 14 specialized LLM agents, covering diverse domains such as current and historical weather data, financial market information, and news integration, specifically tailored for integration in Volkswagen projects.
 
@@ -47,7 +50,7 @@ From early 2024 onwards, most development happened in python. However, integrati
 In the future I might update this website with more content related to my work. However, right now the remaining sections on this page will remain mainly focused on stuff I have worked on during my studies.
 
 
-## My Computer Science Degree
+# My Computer Science Degree
 
 My main interests at university were the fields of embedded systems and operating systems and verification of such systems. However, I intentionally visted a broad selection of courses at university to develop skills in a variety of fields.
 
