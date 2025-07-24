@@ -16,7 +16,7 @@ Currently I work as a Software Architect at semvox.
 
 # My Work Experience at semvox
 
-### 2020-2023
+## 2020-2023
 
 After graduation I started working as product Engineer at semvox. We develop a personalized smart assistant that is used by Volkswagen, Audi, Porsche and Skoda. My responsibilities early on included the development and maintenance of our internal prototype project that is used to analyze and demonstrate new feature-sets before they are being brought into production. At the same time this project is used as our demonstrator, which is used to present the strength of our Software-Framework to new potential customers.
 
