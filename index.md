@@ -15,14 +15,14 @@ Currently I work as a Software Architect at semvox.
 
 ## My Work Experience 2020-2023
 
-After graduation I started working as product Engineer at semvox. We develop a personalized smart assistant that is used by Volkswagen, Audi, Porsche and Skoda. My responsibilities early on included the development and maintaince of our internal prototype project that is used to analyze and demonstrate new featuresets before they are being brought into production. At the same time this project is used as our demonstrator, which is used to present the strength of our Software-Framework to new potential customers.
+After graduation I started working as product Engineer at semvox. We develop a personalized smart assistant that is used by Volkswagen, Audi, Porsche and Skoda. My responsibilities early on included the development and maintenance of our internal prototype project that is used to analyze and demonstrate new feature-sets before they are being brought into production. At the same time this project is used as our demonstrator, which is used to present the strength of our Software-Framework to new potential customers.
 
 Additionally, I was the sole developer and maintainer of an internal test framework that is used to automate end to end tests in the Volkswagen-group project for semvox. This testframework mainly automates a variety of processes on automotive hardware prototypes, which are used internally to simulate a real-world car. The goal of this framework is to improve reliability of test results compared to manual testing and reduce the know-how that is required to work on the sensitive prototype hardware. Currently, around 40% of all in-car testing has been replaced with automated tests, performed by the testframework I developed, relieving a lot of pressure from the QA department.
 
 I have since handed over this project to a new team inside the QA department that is able to focus all its effort into improving the framework further while I tackle new challenges. For another year I was still involved in design-decisions and roadmap planning.
 
 After my time developing the test framework, a significant portion of my time has been spent working towards a cyber security management system certification in form of ISO 21434 for semvox. I was mainly involved in establishing new processes to cover cyber security related subjects from the design phase, through the development cycle, until product releases and deployments.
-Analysing the impact of CVE findings in our product and determining the best mitigation path for those vulnerabilities is still part of my day to day work.
+Analyzing the impact of CVE findings in our product and determining the best mitigation path for those vulnerabilities is still part of my day to day work.
 I am responsible for the technical risk assessment and threat analysis for our software framework.
 
 Another focus of mine has been the analysis of performance bottlenecks in in our automotive project with the Volkswagen-group. I was able to discover and implement crucial improvements to performance, memory management and overall system stability in the process.
@@ -32,7 +32,7 @@ During this timeframe at work I write almost exclusively Java code.
 
 # My Work Experience 2024-today
 
-In early 2024, I took on the role of Workstream Lead for Embedded LLM Development at semvox, focusing on exploring efficient large language model solutions tailored to the hardware constraints within the Volkswagen Group. Following an internal reprioritization, driven by specific customer requirements, my responsibilities shifted to leading the PNP Workstream. I was responsible for the technical development and evaluation of 14 specialized LLM agents, covering diverse domains such as current and historical weather data, financial market information, and news integration, specifically tailored for integration in Volkswagen projects.
+In early 2024, I took on the role of workstream lead for Embedded LLM Development at semvox, focusing on exploring efficient large language model solutions tailored to the hardware constraints within the Volkswagen Group. Following an internal reprioritization, driven by specific customer requirements and timelines, my responsibilities shifted to leading the PNP workstream. I was responsible for the technical development and evaluation of 14 specialized LLM agents, covering diverse domains such as current and historical weather data, financial market information, and news integration, specifically tailored for integration in Volkswagen projects.
 
 One of my most notable achievements in 2024 was the development of the \"GDA Embedded Demo\". This demonstrator significantly exceeded initial expectations of internal and  external stakeholders, positioning semvox as a leading-edge integrator of LLM technologies within the VW assistance systems. Additionally, I developed numerous demonstrable features and delivered key insights on agentic concepts and novel automated testing strategies. Over time, this demonstrator has developed into semvox new product generation: geni:OS genAI.
 
