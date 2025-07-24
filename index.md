@@ -29,8 +29,6 @@ Another focus of mine has been the analysis of performance bottlenecks in in our
 
 During this timeframe at work I write almost exclusively Java code.
 
-In the future I might update this website with more content related to my work. However, right now the remaining sections on this page will remain mainly focused on stuff I have worked on during my studies.
-
 
 # My Work Experience 2024-today
 
@@ -44,7 +42,9 @@ My responsibilities further include establishing and documenting the technical v
 
 Throughout this period I have significantly contributed to the growth and establishment of the semvox genAI solution. From initial in-vehicle demonstrations to its current prominence as a vital project for semvox.
 
-In this timeframe, most development happened in python. However, integration into the existing embedded + cloud stack happened mostly in Java. 
+From early 2024 onwards, most development happened in python. However, integration into the existing embedded + cloud stack of our largest projects happened mostly in Java. 
+
+In the future I might update this website with more content related to my work. However, right now the remaining sections on this page will remain mainly focused on stuff I have worked on during my studies.
 
 
 ## My Computer Science Degree
