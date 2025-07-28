@@ -6,7 +6,9 @@ description: "Download links for my CV, aquired certificates and my university t
 
 # Downloads
 
-[Download CV](https://schaefer-dev.de/cv.pdf)
+[Download 2023 CV](https://schaefer-dev.de/cv_11_2023.pdf)
+
+[Download 2025 CV](https://schaefer-dev.de/cv_07_2025.pdf)
 
 [Download iSAQB Certificate: Professional for Software Architecture](https://schaefer-dev.de/iSAQB_Architecture_Certificate.pdf)
 
