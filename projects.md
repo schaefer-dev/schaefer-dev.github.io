@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Daniel Schäfer | Projects and Courses"
-description: "Descriptions for various projects I have worked at in my freetime and during university. Inclusing course work."
+description: "Descriptions for various projects I have worked at in my freetime, at work and during university."
 ---
 
 # Work projects
