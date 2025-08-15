@@ -6,7 +6,7 @@ description: "Descriptions for various projects I have worked at in my freetime 
 
 # Work projects
 
-List of projects for my time at semvox in reverse chronological order, starting with my most-recent projects.
+List of standout achievements and projects for my time at semvox in reverse chronological order, starting with my most-recent projects.
 
 
 ### geni:OS genAI (Python)
@@ -30,7 +30,7 @@ I contributed to and helped establish the topic of cybersecurity throughout our 
 
 # University Projects
 
-Lists of projects in chronological order from my earliest to my most-recent projects.
+Lists of my projects at university in reverse chronological order, starting with my most-recent projects.
 
 
 ### Master Thesis Project (Swift)
