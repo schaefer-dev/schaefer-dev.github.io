@@ -217,15 +217,42 @@ body:has(.photo-gallery) .container {
     height: 32px;
 }
 
-/* Hide navigation arrows on mobile to avoid cluttering the UI */
+/* Mobile: Move navigation to bottom for unobstructed image viewing */
 @media (max-width: 650px) {
     .lightbox-nav {
-        padding: 15px 10px;
+        top: auto;
+        bottom: 80px;
+        transform: none;
+        padding: 12px 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50px;
+    }
+
+    .lightbox-nav:hover {
+        transform: scale(1.05);
+    }
+
+    .lightbox-nav:active {
+        transform: scale(0.95);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-prev {
+        left: 20px;
+    }
+
+    .lightbox-next {
+        right: 20px;
     }
 
     .lightbox-nav svg {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Position caption higher to avoid overlap with nav buttons */
+    .lightbox-caption {
+        bottom: 140px;
     }
 }
 
