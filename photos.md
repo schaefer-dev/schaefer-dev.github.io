@@ -2,6 +2,7 @@
 layout: default
 title: "Daniel Schäfer | Photography"
 description: "Landscape and wildlife photography portfolio by Daniel Schäfer"
+show_copyright: true
 ---
 
 # Photography
@@ -23,8 +24,8 @@ var wildlifePhotos = [
   { id: '20250930-A1_04174_f6pcbd', caption: 'Kingfisher in Dillingen, Germany 2025' },
   { id: '20250930-A1_00439_qhqxur', caption: 'Kingfisher in Dillingen, Germany 2025' },
   { id: '20250920-A1_05933_xsixu5', caption: 'Kingfisher in Haff Réimech, Luxembourg 2025' },
-  { id: '20250727-A1_07949_rvnamh', caption: 'Rotkehlchen in Saarbrücken, Germany 2025' },
-  { id: '20251101-A1_07621_w4tp0l', caption: 'Meise in Saarbrücken, Germany 2025' },
+  { id: '20250727-A1_07949_rvnamh', caption: 'Robin in Saarbrücken, Germany 2025' },
+  { id: '20251101-A1_07621_w4tp0l', caption: 'Marsh Tit in Saarbrücken, Germany 2025' },
   { id: '20251021-A1_09393_popwqq', caption: 'Beared Vulture in Krumltal, Austria 2025', sizeParam: 'h' }
 ];
 
