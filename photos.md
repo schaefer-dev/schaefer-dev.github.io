@@ -9,6 +9,8 @@ show_copyright: true
 
 A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
 
+Images load in 4k resolution on-click. Loading of the high quality version may take a second or two depending on your connection.
+
 <script>
 // ===== CONFIGURATION =====
 var ENABLE_ZOOM = true;  // Set to true to enable click-to-zoom functionality
