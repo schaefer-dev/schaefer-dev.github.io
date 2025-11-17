@@ -1,7 +1,8 @@
 User-agent: *
-Disallow: /cv.md
+Disallow: /cv
 Disallow: /cv.pdf
 Disallow: /cv_07_2025.pdf
 Disallow: /cv_11_2023.pdf
 Disallow: /tor.pdf
 Disallow: /EF_SET_Certificate.pdf
+Disallow: /photos

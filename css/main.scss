@@ -141,10 +141,37 @@ body:has(.photo-gallery) .container {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 1001;
 }
 
 .lightbox-close:hover {
     color: #fff;
+}
+
+.lightbox-download {
+    position: absolute;
+    top: 28px;
+    right: 90px;
+    color: #DAD7D2;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+.lightbox-download:hover {
+    color: #fff;
+    transform: translateY(2px);
+}
+
+.lightbox-download svg {
+    width: 28px;
+    height: 28px;
 }
 
 /* Responsive Design */
