@@ -133,6 +133,8 @@ var translateX = 0, translateY = 0;
 var progressInterval = null;
 var currentProgress = 0;
 var preloadedImages = {}; // Cache for preloaded images
+var currentXHR = null; // Track the current image loading request
+var currentLoadingUrl = null; // Track which URL is currently being loaded
 
 function preloadImage(url) {
   // Only preload if not already cached
@@ -224,6 +226,18 @@ function updateNavigationButtons() {
 function openLightbox(fullUrl, thumbUrl, caption) {
   if (event) event.stopPropagation();
 
+  // Cancel any pending image load request
+  if (currentXHR) {
+    currentXHR.abort();
+    currentXHR = null;
+  }
+
+  // Clear any existing progress interval
+  if (progressInterval) {
+    clearInterval(progressInterval);
+    progressInterval = null;
+  }
+
   var lightboxImg = document.getElementById('lightbox-img');
   var lightbox = document.getElementById('lightbox');
   var downloadBtn = document.getElementById('lightbox-download');
@@ -246,6 +260,8 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   // Check if image is already preloaded
   if (preloadedImages[fullUrl]) {
     // Use preloaded image immediately - no loading needed!
+    // Remove any transition for instant display
+    lightboxImg.style.transition = '';
     lightboxImg.src = preloadedImages[fullUrl];
     lightboxImg.style.opacity = '1';
     lightboxImg.style.filter = 'blur(0)';
@@ -254,25 +270,25 @@ function openLightbox(fullUrl, thumbUrl, caption) {
     // No loading bar needed for preloaded images
     loadingBar.style.opacity = '0';
     loadingText.style.opacity = '0';
+    currentLoadingUrl = null;
     return;
   }
 
-  // Set cached 800px thumbnail with blur effect
+  // Set cached 800px thumbnail with scale animation while loading
+  lightboxImg.style.transition = '';
   lightboxImg.src = thumbUrl;
   lightboxImg.style.opacity = '1';
   // lightboxImg.style.filter = 'blur(5px)';
   lightboxImg.style.transform = 'scale(0.90)'; // Scale up slightly to hide blur edges
+
+  // Track which URL we're loading
+  currentLoadingUrl = fullUrl;
 
   // Show and reset loading bar
   loadingBar.style.opacity = '1';
   loadingProgress.style.width = '0%';
   loadingText.style.opacity = '1';
   currentProgress = 0;
-
-  // Clear any existing progress interval
-  if (progressInterval) {
-    clearInterval(progressInterval);
-  }
 
   // Simulated smooth progress animation (0-90% over ~5 seconds)
   // This provides immediate visual feedback while the real download happens
@@ -291,10 +307,14 @@ function openLightbox(fullUrl, thumbUrl, caption) {
 
   // Load the high-quality image with progress tracking
   var xhr = new XMLHttpRequest();
+  currentXHR = xhr; // Track this request
   xhr.open('GET', fullUrl, true);
   xhr.responseType = 'blob';
 
   xhr.onprogress = function(e) {
+    // Only update progress if this is still the current request
+    if (currentLoadingUrl !== fullUrl) return;
+
     if (e.lengthComputable) {
       var percentComplete = (e.loaded / e.total) * 100;
       realProgressReceived = true;
@@ -305,6 +325,9 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   };
 
   xhr.onload = function() {
+    // Only process if this is still the current request
+    if (currentLoadingUrl !== fullUrl) return;
+
     if (progressInterval) {
       clearInterval(progressInterval);
       progressInterval = null;
@@ -337,9 +360,15 @@ function openLightbox(fullUrl, thumbUrl, caption) {
         lightboxImg.style.transition = '';
       }, 500);
     }
+
+    currentXHR = null;
+    currentLoadingUrl = null;
   };
 
   xhr.onerror = function() {
+    // Only process if this is still the current request
+    if (currentLoadingUrl !== fullUrl) return;
+
     if (progressInterval) {
       clearInterval(progressInterval);
       progressInterval = null;
@@ -348,6 +377,9 @@ function openLightbox(fullUrl, thumbUrl, caption) {
     // Fallback to simple image loading on error
     var highResImg = new Image();
     highResImg.onload = function() {
+      // Double-check we're still on the same image
+      if (currentLoadingUrl !== fullUrl) return;
+
       lightboxImg.style.transition = 'filter 0.5s ease, transform 0.5s ease';
       lightboxImg.src = fullUrl;
       lightboxImg.style.filter = 'blur(0)';
@@ -361,6 +393,9 @@ function openLightbox(fullUrl, thumbUrl, caption) {
       }, 500);
     };
     highResImg.src = fullUrl;
+
+    currentXHR = null;
+    currentLoadingUrl = null;
   };
 
   xhr.send();
