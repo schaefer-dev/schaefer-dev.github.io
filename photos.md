@@ -7,7 +7,7 @@ show_copyright: true
 
 # Photography
 
-A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
+A sneek peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
 
 Images load in 4k resolution on-click. Loading of the high quality version may take a second or two depending on your connection.
 
@@ -52,15 +52,27 @@ var landscapePhotos = [
 
 ];
 
-function generateGallery(photos, containerId) {
+// Combined gallery for navigation
+var allPhotos = [];
+var currentPhotoIndex = 0;
+
+function generateGallery(photos, containerId, startIndex) {
   var html = '';
-  photos.forEach(function(photo) {
+  photos.forEach(function(photo, index) {
+    var globalIndex = startIndex + index;
     var thumbSize = photo.sizeParam === 'h' ? 'h_800' : 'w_800';
     var fullSize = photo.sizeParam === 'h' ? 'h_3840' : 'w_3840';
     var thumbUrl = 'https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto,fl_progressive/' + photo.id;
     var fullUrl = 'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto,fl_progressive/' + photo.id;
 
-    html += '<div class="photo-item" onclick="openLightbox(\'' + fullUrl + '\', \'' + thumbUrl + '\', \'' + photo.caption + '\')">';
+    // Store in global array for navigation
+    allPhotos[globalIndex] = {
+      fullUrl: fullUrl,
+      thumbUrl: thumbUrl,
+      caption: photo.caption
+    };
+
+    html += '<div class="photo-item" onclick="openLightboxByIndex(' + globalIndex + ')">';
     html += '  <img src="' + thumbUrl + '"';
     html += '       alt="' + photo.caption + '"';
     html += '       loading="lazy">';
@@ -72,8 +84,8 @@ function generateGallery(photos, containerId) {
 
 // Generate galleries when page loads
 document.addEventListener('DOMContentLoaded', function() {
-  generateGallery(wildlifePhotos, 'wildlife-gallery');
-  generateGallery(landscapePhotos, 'landscape-gallery');
+  generateGallery(wildlifePhotos, 'wildlife-gallery', 0);
+  generateGallery(landscapePhotos, 'landscape-gallery', wildlifePhotos.length);
 });
 </script>
 
@@ -95,6 +107,16 @@ document.addEventListener('DOMContentLoaded', function() {
       <line x1="12" y1="15" x2="12" y2="3"></line>
     </svg>
   </a>
+  <button id="lightbox-prev" class="lightbox-nav lightbox-prev" onclick="navigatePrev(event)" aria-label="Previous image">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button id="lightbox-next" class="lightbox-nav lightbox-next" onclick="navigateNext(event)" aria-label="Next image">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
   <img id="lightbox-img" class="lightbox-content" src="" alt="">
   <div id="lightbox-caption" class="lightbox-caption"></div>
   <div id="loading-bar" class="loading-bar">
@@ -111,8 +133,57 @@ var translateX = 0, translateY = 0;
 var progressInterval = null;
 var currentProgress = 0;
 
+function openLightboxByIndex(index) {
+  currentPhotoIndex = index;
+  var photo = allPhotos[index];
+  openLightbox(photo.fullUrl, photo.thumbUrl, photo.caption);
+  updateNavigationButtons();
+}
+
+function navigatePrev(e) {
+  if (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+  if (currentPhotoIndex > 0) {
+    openLightboxByIndex(currentPhotoIndex - 1);
+  }
+}
+
+function navigateNext(e) {
+  if (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+  if (currentPhotoIndex < allPhotos.length - 1) {
+    openLightboxByIndex(currentPhotoIndex + 1);
+  }
+}
+
+function updateNavigationButtons() {
+  var prevBtn = document.getElementById('lightbox-prev');
+  var nextBtn = document.getElementById('lightbox-next');
+
+  // Hide/show buttons based on position
+  if (currentPhotoIndex === 0) {
+    prevBtn.style.opacity = '0';
+    prevBtn.style.pointerEvents = 'none';
+  } else {
+    prevBtn.style.opacity = '';
+    prevBtn.style.pointerEvents = '';
+  }
+
+  if (currentPhotoIndex === allPhotos.length - 1) {
+    nextBtn.style.opacity = '0';
+    nextBtn.style.pointerEvents = 'none';
+  } else {
+    nextBtn.style.opacity = '';
+    nextBtn.style.pointerEvents = '';
+  }
+}
+
 function openLightbox(fullUrl, thumbUrl, caption) {
-  event.stopPropagation();
+  if (event) event.stopPropagation();
 
   var lightboxImg = document.getElementById('lightbox-img');
   var lightbox = document.getElementById('lightbox');
@@ -376,10 +447,23 @@ if (ENABLE_ZOOM) {
   });
 }
 
-// Close lightbox on Escape key
+// Keyboard shortcuts
 document.addEventListener('keydown', function(event) {
+  var lightbox = document.getElementById('lightbox');
+
+  // Only handle keyboard shortcuts when lightbox is open
+  if (!lightbox.classList.contains('active')) {
+    return;
+  }
+
   if (event.key === 'Escape') {
     closeLightbox();
+  } else if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    navigatePrev();
+  } else if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    navigateNext();
   }
 });
 </script>
