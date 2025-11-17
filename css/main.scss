@@ -113,6 +113,10 @@ body:has(.photo-gallery) .container {
     max-height: 90%;
     object-fit: contain;
     transition: opacity 0.3s ease;
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .lightbox-caption {
