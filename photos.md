@@ -102,19 +102,20 @@ function openLightbox(imageUrl, caption) {
   // Reset zoom and position
   resetZoom();
 
-  // If switching images, clear the old one first
-  if (lightbox.classList.contains('active') && lightboxImg.src !== imageUrl) {
-    lightboxImg.src = '';
-  }
+  // Always clear the old image first to prevent showing wrong image
+  lightboxImg.src = '';
 
-  // Show lightbox
-  lightbox.classList.add('active');
-  document.getElementById('lightbox-caption').textContent = caption;
-  document.body.style.overflow = 'hidden';
+  // Small delay to ensure browser clears the old image
+  setTimeout(function() {
+    // Show lightbox
+    lightbox.classList.add('active');
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.body.style.overflow = 'hidden';
 
-  // Set image directly to allow progressive rendering
-  lightboxImg.src = imageUrl;
-  lightboxImg.style.opacity = '1';
+    // Set new image to allow progressive rendering
+    lightboxImg.src = imageUrl;
+    lightboxImg.style.opacity = '1';
+  }, 10);
 }
 
 function closeLightbox() {
