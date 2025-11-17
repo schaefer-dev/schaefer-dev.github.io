@@ -8,125 +8,71 @@ description: "Landscape and wildlife photography portfolio by Daniel Schäfer"
 
 A small peak into my photography.
 
+<script>
+// Photo data - just add ID and caption once!
+var wildlifePhotos = [
+  { id: '20250613-A1_08790-Enhanced-NR-2_xc1srs', caption: 'Puffin on Runde Island, Norway 2025' },
+  { id: '20250613-A1_02369-2_ig7tmg', caption: 'Puffin on Runde Island, Norway 2025' },
+  { id: '20250902-A1_04583-2_z4m8sa', caption: 'Little Owl in Saarbruecken, Germany 2025' },
+  { id: '20250930-A1_04174_f6pcbd', caption: 'Kingfisher in Dillingen, Germany 2025' },
+  { id: '20250613-A1_01332_yfolsv', caption: 'Puffin on Runde Island, Norway 2025' },
+  { id: '20250613-A1_08464_iz4otn', caption: 'Puffin on Runde Island, Norway 2025' },
+  { id: '20250930-A1_00439_qhqxur', caption: 'Kingfisher in Dillingen, Germany 2025' }
+  { id: '20250920-A1_05933_xsixu5', caption: 'Kingfisher in Haff Réimech, Luxembourg 2025' }
+  { id: '20250727-A1_07949_rvnamh', caption: 'Rotkehlchen in Saarbrücken, Germany 2025' }
+  { id: '20251101-A1_07621_w4tp0l', caption: 'Meise in Saarbrücken, Germany 2025' }
+  { id: '20251021-A1_09393_popwqq', caption: 'Beared Vulture in Krumltal, Austria 2025', sizeParam: 'h' }
+];
+
+var landscapePhotos = [
+  { id: '20251022-A1_01072-HDR-Pano_drini7', caption: 'Heiligenblut, Austria 2025' },
+  { id: '20251024-A1_01286-Pano_lg7tox', caption: 'Lake Jasna, Slovenia 2025' },
+  { id: '20251024-A1_01541-HDR_l2bggd', caption: 'Kranjska Gora, Slovenia 2025' },
+  { id: '20251025-A1_02001-HDR-Pano_gq8gsm', caption: 'Lake Bled, Slovenia 2025' },
+  { id: '20240923-DSC09864_c2spbt', caption: 'Landmannalaugar, Iceland 2024' },
+  { id: '20240923-DSC00034_iakmbe', caption: 'Landmannalaugar, Iceland 2024' },
+  { id: '20251026-A1_02326_wm95wa', caption: 'Bohinjsko Jezero, Slovenia 2025' },
+  { id: '20251028-A1_03784_vodphl', caption: 'Soca Valley, Slovenia 2025', sizeParam: 'h' },
+  { id: '20251024-A1_01793-Pano_swwlcp', caption: 'Vršič Pass, Slovenia 2025' },
+  { id: '20251029-A1_05138_etnopq', caption: 'Postojna Cave, Slovenia 2025' }
+  { id: '20240925-DSC00638-Enhanced-NR_ywap2n', caption: 'Northern Lights, Iceland 2024' }
+  { id: '20240925-DSC00606_kfijjl', caption: 'Northern Lights, Iceland 2024' }
+  { id: '20240806-DSC02785-Enhanced-NR_hhwowj', caption: 'Milky Way at Peterberg, Germany 2024', sizeParam: 'h' }
+  { id: '20240816-DSC03915_yh5ece', caption: 'Pilatus, Switzerland 2024' }
+  { id: '20240921-DSC09138_cafeli', caption: 'Mulagljufur Canyon, Iceland 2024' }
+  { id: '20250612-A1_07027-HDR-Pano-Edit-2_ssghqf', caption: 'Eidsvatnet, Norway 2025' }
+];
+
+function generateGallery(photos, containerId) {
+  var html = '';
+  photos.forEach(function(photo) {
+    var thumbSize = photo.sizeParam === 'h' ? 'h_800' : 'w_800';
+    var fullSize = photo.sizeParam === 'h' ? 'h_2400' : 'w_2400';
+
+    html += '<div class="photo-item" onclick="openLightbox(\'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto/' + photo.id + '\', \'' + photo.caption + '\')">';
+    html += '  <img src="https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto/' + photo.id + '"';
+    html += '       alt="' + photo.caption + '"';
+    html += '       loading="lazy">';
+    html += '  <div class="photo-caption">' + photo.caption + '</div>';
+    html += '</div>';
+  });
+  document.getElementById(containerId).innerHTML = html;
+}
+
+// Generate galleries when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  generateGallery(wildlifePhotos, 'wildlife-gallery');
+  generateGallery(landscapePhotos, 'landscape-gallery');
+});
+</script>
+
 ## Wildlife Photography
 
-<div class="photo-gallery">
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250613-A1_08790-Enhanced-NR-2_xc1srs', 'Puffin on Runde Island, Norway 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250613-A1_08790-Enhanced-NR-2_xc1srs"
-         alt="Puffin on Runde Island, Norway 2025"
-         loading="lazy">
-    <div class="photo-caption">Puffin on Runde Island, Norway 2025</div>
-  </div>
+<div id="wildlife-gallery" class="photo-gallery"></div>
 
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250613-A1_02369-2_ig7tmg', 'Puffin on Runde Island, Norway 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250613-A1_02369-2_ig7tmg"
-         alt="Puffin on Runde Island, Norway 2025"
-         loading="lazy">
-    <div class="photo-caption">Puffin on Runde Island, Norway 2025</div>
-  </div>
+## Landscape Photography
 
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250902-A1_04583-2_z4m8sa', 'Little Owl in Saarbruecken, Germany 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250902-A1_04583-2_z4m8sa"
-         alt="Little Owl in Saarbruecken, Germany 2025"
-         loading="lazy">
-    <div class="photo-caption">Little Owl in Saarbruecken, Germany 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250930-A1_04174_f6pcbd', 'Kingfisher in Dillingen, Germany 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250930-A1_04174_f6pcbd"
-         alt="Kingfisher in Dillingen, Germany 2025"
-         loading="lazy">
-    <div class="photo-caption">Kingfisher in Dillingen, Germany 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250613-A1_01332_yfolsv', 'Puffin on Runde Island, Norway 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250613-A1_01332_yfolsv"
-         alt="Puffin on Runde Island, Norway 2025"
-         loading="lazy">
-    <div class="photo-caption">Puffin on Runde Island, Norway 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250613-A1_08464_iz4otn', 'Puffin on Runde Island, Norway 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250613-A1_08464_iz4otn"
-         alt="Puffin on Runde Island, Norway 2025"
-         loading="lazy">
-    <div class="photo-caption">Puffin on Runde Island, Norway 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250930-A1_00439_qhqxur', 'Kingfisher in Dillingen, Germany 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250930-A1_00439_qhqxur"
-         alt="Kingfisher in Dillingen, Germany 2025"
-         loading="lazy">
-    <div class="photo-caption">Kingfisher in Dillingen, Germany 2025</div>
-  </div>
-</div>
-
-  ## Landscape Photography
-
-<div class="photo-gallery">
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251022-A1_01072-HDR-Pano_drini7', 'Heiligenblut, Austria 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251022-A1_01072-HDR-Pano_drini7"
-         alt="Heiligenblut, Austria 2025"
-         loading="lazy">
-    <div class="photo-caption">Heiligenblut, Austria 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251024-A1_01286-Pano_lg7tox', 'Lake Jasna, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251024-A1_01286-Pano_lg7tox"
-         alt="Lake Jasna, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Lake Jasna, Slovenia 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251024-A1_01541-HDR_l2bggd', 'Kranjska Gora, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251024-A1_01541-HDR_l2bggd"
-         alt="Kranjska Gora, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Kranjska Gora, Slovenia 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251025-A1_02001-HDR-Pano_gq8gsm', 'Lake Bled, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251025-A1_02001-HDR-Pano_gq8gsm"
-         alt="Lake Bled, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Lake Bled, Slovenia 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20240923-DSC09864_c2spbt', 'Landmannalaugar, Iceland')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20240923-DSC09864_c2spbt"
-         alt="Landmannalaugar, Iceland"
-         loading="lazy">
-    <div class="photo-caption">Landmannalaugar, Iceland</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251026-A1_02326_wm95wa', 'Bohinjsko Jezero, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251026-A1_02326_wm95wa"
-         alt="Bohinjsko Jezero, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Bohinjsko Jezero, Slovenia 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251028-A1_03784_vodphl', 'Soca Valley, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251028-A1_03784_vodphl"
-         alt="Soca Valley, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Soca Valley, Slovenia 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251024-A1_01793-Pano_swwlcp', 'Vršič Pass, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251024-A1_01793-Pano_swwlcp"
-         alt="Vršič Pass, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Vršič Pass, Slovenia 2025</div>
-  </div>
-
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251029-A1_05138_etnopq', 'Postojna Cave, Slovenia 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251029-A1_05138_etnopq"
-         alt="Postojna Cave, Slovenia 2025"
-         loading="lazy">
-    <div class="photo-caption">Postojna Cave, Slovenia 2025</div>
-  </div>
-</div>
+<div id="landscape-gallery" class="photo-gallery"></div>
 
 <!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
