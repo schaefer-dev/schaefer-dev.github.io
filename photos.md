@@ -54,9 +54,11 @@ function generateGallery(photos, containerId) {
   photos.forEach(function(photo) {
     var thumbSize = photo.sizeParam === 'h' ? 'h_800' : 'w_800';
     var fullSize = photo.sizeParam === 'h' ? 'h_3840' : 'w_3840';
+    var thumbUrl = 'https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto,fl_progressive/' + photo.id;
+    var fullUrl = 'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto,fl_progressive/' + photo.id;
 
-    html += '<div class="photo-item" onclick="openLightbox(\'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto,fl_progressive/' + photo.id + '\', \'' + photo.caption + '\')">';
-    html += '  <img src="https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto,fl_progressive/' + photo.id + '"';
+    html += '<div class="photo-item" onclick="openLightbox(\'' + fullUrl + '\', \'' + thumbUrl + '\', \'' + photo.caption + '\')">';
+    html += '  <img src="' + thumbUrl + '"';
     html += '       alt="' + photo.caption + '"';
     html += '       loading="lazy">';
     html += '  <div class="photo-caption">' + photo.caption + '</div>';
@@ -93,7 +95,7 @@ var isPanning = false;
 var startX, startY;
 var translateX = 0, translateY = 0;
 
-function openLightbox(imageUrl, caption) {
+function openLightbox(fullUrl, thumbUrl, caption) {
   event.stopPropagation();
 
   var lightboxImg = document.getElementById('lightbox-img');
@@ -102,20 +104,27 @@ function openLightbox(imageUrl, caption) {
   // Reset zoom and position
   resetZoom();
 
-  // Always clear the old image first to prevent showing wrong image
-  lightboxImg.src = '';
+  // Show lightbox immediately with cached thumbnail (blurred)
+  lightbox.classList.add('active');
+  document.getElementById('lightbox-caption').textContent = caption;
+  document.body.style.overflow = 'hidden';
 
-  // Small delay to ensure browser clears the old image
-  setTimeout(function() {
-    // Show lightbox
-    lightbox.classList.add('active');
-    document.getElementById('lightbox-caption').textContent = caption;
-    document.body.style.overflow = 'hidden';
+  // Set cached 800px thumbnail with blur effect
+  lightboxImg.src = thumbUrl;
+  lightboxImg.style.opacity = '1';
+  lightboxImg.style.filter = 'blur(10px)';
+  lightboxImg.style.transform = 'scale(1.05)'; // Scale up slightly to hide blur edges
 
-    // Set new image to allow progressive rendering
-    lightboxImg.src = imageUrl;
-    lightboxImg.style.opacity = '1';
-  }, 10);
+  // Preload the high-quality image
+  var highResImg = new Image();
+  highResImg.onload = function() {
+    // Smoothly transition to high-quality image
+    lightboxImg.style.transition = 'filter 0.5s ease, transform 0.5s ease';
+    lightboxImg.src = fullUrl;
+    lightboxImg.style.filter = 'blur(0)';
+    lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
+  };
+  highResImg.src = fullUrl;
 }
 
 function closeLightbox() {
