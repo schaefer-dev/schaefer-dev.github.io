@@ -9,6 +9,10 @@ description: "Landscape and wildlife photography portfolio by Daniel Schäfer"
 A small peak into my photography.
 
 <script>
+// ===== CONFIGURATION =====
+var ENABLE_ZOOM = false;  // Set to true to enable click-to-zoom functionality
+// =========================
+
 // Photo data - just add ID and caption once!
 var wildlifePhotos = [
   { id: '20250613-A1_08790-Enhanced-NR-2_xc1srs', caption: 'Puffin on Runde Island, Norway 2025' },
@@ -135,73 +139,78 @@ function updateTransform() {
 
 function updateCursor() {
   var lightboxImg = document.getElementById('lightbox-img');
-  if (zoomLevel > 1) {
+  if (!ENABLE_ZOOM) {
+    lightboxImg.style.cursor = 'default';
+  } else if (zoomLevel > 1) {
     lightboxImg.style.cursor = 'zoom-out';
   } else {
     lightboxImg.style.cursor = 'zoom-in';
   }
 }
 
-// Mouse wheel zoom
-document.getElementById('lightbox-img').addEventListener('wheel', function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-
-  var delta = e.deltaY > 0 ? -0.2 : 0.2;
-  zoomLevel = Math.min(Math.max(1, zoomLevel + delta), 2); // Limit zoom between 1x and 2x
-
-  if (zoomLevel === 1) {
-    translateX = 0;
-    translateY = 0;
-  }
-
-  updateTransform();
-  updateCursor();
-});
-
-// Click to toggle zoom (simple toggle between 1x and 2x)
-document.getElementById('lightbox-img').addEventListener('click', function(e) {
-  e.stopPropagation();
-
-  if (zoomLevel > 1) {
-    resetZoom();
-  } else {
-    zoomLevel = 2;
-    updateTransform();
-    updateCursor();
-  }
-});
-
-// Right-click to reset zoom
-document.getElementById('lightbox-img').addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  resetZoom();
-});
-
-// Pan when zoomed
-document.getElementById('lightbox-img').addEventListener('mousedown', function(e) {
-  if (zoomLevel > 1) {
+// Zoom and pan functionality (only if enabled)
+if (ENABLE_ZOOM) {
+  // Mouse wheel zoom
+  document.getElementById('lightbox-img').addEventListener('wheel', function(e) {
     e.preventDefault();
     e.stopPropagation();
-    isPanning = true;
-    startX = e.clientX - translateX;
-    startY = e.clientY - translateY;
-  }
-});
 
-document.addEventListener('mousemove', function(e) {
-  if (isPanning) {
-    e.preventDefault();
-    translateX = e.clientX - startX;
-    translateY = e.clientY - startY;
+    var delta = e.deltaY > 0 ? -0.2 : 0.2;
+    zoomLevel = Math.min(Math.max(1, zoomLevel + delta), 2); // Limit zoom between 1x and 2x
+
+    if (zoomLevel === 1) {
+      translateX = 0;
+      translateY = 0;
+    }
+
     updateTransform();
-  }
-});
+    updateCursor();
+  });
 
-document.addEventListener('mouseup', function() {
-  isPanning = false;
-});
+  // Click to toggle zoom (simple toggle between 1x and 2x)
+  document.getElementById('lightbox-img').addEventListener('click', function(e) {
+    e.stopPropagation();
+
+    if (zoomLevel > 1) {
+      resetZoom();
+    } else {
+      zoomLevel = 2;
+      updateTransform();
+      updateCursor();
+    }
+  });
+
+  // Right-click to reset zoom
+  document.getElementById('lightbox-img').addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    resetZoom();
+  });
+
+  // Pan when zoomed
+  document.getElementById('lightbox-img').addEventListener('mousedown', function(e) {
+    if (zoomLevel > 1) {
+      e.preventDefault();
+      e.stopPropagation();
+      isPanning = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+    }
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (isPanning) {
+      e.preventDefault();
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      updateTransform();
+    }
+  });
+
+  document.addEventListener('mouseup', function() {
+    isPanning = false;
+  });
+}
 
 // Close lightbox on Escape key
 document.addEventListener('keydown', function(event) {
