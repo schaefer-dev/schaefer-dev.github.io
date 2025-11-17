@@ -100,22 +100,14 @@ function openLightbox(imageUrl, caption) {
   // Reset zoom and position
   resetZoom();
 
-  // Clear the old image immediately to avoid showing it
-  lightboxImg.style.opacity = '0';
-  lightboxImg.src = '';
-
   // Show lightbox
   lightbox.classList.add('active');
   document.getElementById('lightbox-caption').textContent = caption;
   document.body.style.overflow = 'hidden';
 
-  // Load new image
-  var newImage = new Image();
-  newImage.onload = function() {
-    lightboxImg.src = imageUrl;
-    lightboxImg.style.opacity = '1';
-  };
-  newImage.src = imageUrl;
+  // Set image directly to allow progressive rendering
+  lightboxImg.src = imageUrl;
+  lightboxImg.style.opacity = '1';
 }
 
 function closeLightbox() {
