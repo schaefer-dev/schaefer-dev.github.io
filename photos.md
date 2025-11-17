@@ -10,7 +10,7 @@ A sneak peek into my photography. All images shot on Sony. All photographs show 
 
 <script>
 // ===== CONFIGURATION =====
-var ENABLE_ZOOM = false;  // Set to true to enable click-to-zoom functionality
+var ENABLE_ZOOM = true;  // Set to true to enable click-to-zoom functionality
 // =========================
 
 // Photo data - just add ID and caption once!
@@ -104,7 +104,7 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   // Reset zoom and position
   resetZoom();
 
-  // Show lightbox immediately with cached thumbnail (blurred)
+  // Show lightbox immediately with cached thumbnail (optionally blurred)
   lightbox.classList.add('active');
   document.getElementById('lightbox-caption').textContent = caption;
   document.body.style.overflow = 'hidden';
@@ -112,7 +112,7 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   // Set cached 800px thumbnail with blur effect
   lightboxImg.src = thumbUrl;
   lightboxImg.style.opacity = '1';
-  lightboxImg.style.filter = 'blur(5px)';
+  // lightboxImg.style.filter = 'blur(5px)';
   lightboxImg.style.transform = 'scale(1.05)'; // Scale up slightly to hide blur edges
 
   // Preload the high-quality image
