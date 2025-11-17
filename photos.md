@@ -51,10 +51,10 @@ function generateGallery(photos, containerId) {
   var html = '';
   photos.forEach(function(photo) {
     var thumbSize = photo.sizeParam === 'h' ? 'h_800' : 'w_800';
-    var fullSize = photo.sizeParam === 'h' ? 'h_2400' : 'w_2400';
+    var fullSize = photo.sizeParam === 'h' ? 'h_3840' : 'w_3840';
 
-    html += '<div class="photo-item" onclick="openLightbox(\'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto/' + photo.id + '\', \'' + photo.caption + '\')">';
-    html += '  <img src="https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto/' + photo.id + '"';
+    html += '<div class="photo-item" onclick="openLightbox(\'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto,fl_progressive/' + photo.id + '\', \'' + photo.caption + '\')">';
+    html += '  <img src="https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto,fl_progressive/' + photo.id + '"';
     html += '       alt="' + photo.caption + '"';
     html += '       loading="lazy">';
     html += '  <div class="photo-caption">' + photo.caption + '</div>';
