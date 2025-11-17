@@ -17,10 +17,10 @@ var ENABLE_ZOOM = false;  // Set to true to enable click-to-zoom functionality
 var wildlifePhotos = [
   { id: '20250613-A1_08790-Enhanced-NR-2_xc1srs', caption: 'Puffin on Runde Island, Norway 2025' },
   { id: '20250613-A1_02369-2_ig7tmg', caption: 'Puffin on Runde Island, Norway 2025' },
-  { id: '20250902-A1_04583-2_z4m8sa', caption: 'Little Owl in Saarbruecken, Germany 2025' },
-  { id: '20250930-A1_04174_f6pcbd', caption: 'Kingfisher in Dillingen, Germany 2025' },
   { id: '20250613-A1_01332_yfolsv', caption: 'Puffin on Runde Island, Norway 2025' },
   { id: '20250613-A1_08464_iz4otn', caption: 'Puffin on Runde Island, Norway 2025' },
+  { id: '20250902-A1_04583-2_z4m8sa', caption: 'Little Owl in Saarbruecken, Germany 2025' },
+  { id: '20250930-A1_04174_f6pcbd', caption: 'Kingfisher in Dillingen, Germany 2025' },
   { id: '20250930-A1_00439_qhqxur', caption: 'Kingfisher in Dillingen, Germany 2025' },
   { id: '20250920-A1_05933_xsixu5', caption: 'Kingfisher in Haff Réimech, Luxembourg 2025' },
   { id: '20250727-A1_07949_rvnamh', caption: 'Rotkehlchen in Saarbrücken, Germany 2025' },
@@ -29,22 +29,24 @@ var wildlifePhotos = [
 ];
 
 var landscapePhotos = [
-  { id: '20251022-A1_01072-HDR-Pano_drini7', caption: 'Heiligenblut, Austria 2025' },
-  { id: '20251024-A1_01286-Pano_lg7tox', caption: 'Lake Jasna, Slovenia 2025' },
-  { id: '20251024-A1_01541-HDR_l2bggd', caption: 'Kranjska Gora, Slovenia 2025' },
-  { id: '20251025-A1_02001-HDR-Pano_gq8gsm', caption: 'Lake Bled, Slovenia 2025' },
+  { id: '20240921-DSC09138_cafeli', caption: 'Mulagljufur Canyon, Iceland 2024' },
   { id: '20240923-DSC09864_c2spbt', caption: 'Landmannalaugar, Iceland 2024' },
   { id: '20240923-DSC00034_iakmbe', caption: 'Landmannalaugar, Iceland 2024' },
-  { id: '20251026-A1_02326_wm95wa', caption: 'Bohinjsko Jezero, Slovenia 2025' },
-  { id: '20251028-A1_03784_vodphl', caption: 'Soca Valley, Slovenia 2025', sizeParam: 'h' },
-  { id: '20251024-A1_01793-Pano_swwlcp', caption: 'Vršič Pass, Slovenia 2025' },
-  { id: '20251029-A1_05138_etnopq', caption: 'Postojna Cave, Slovenia 2025' },
   { id: '20240925-DSC00638-Enhanced-NR_ywap2n', caption: 'Northern Lights, Iceland 2024' },
   { id: '20240925-DSC00606_kfijjl', caption: 'Northern Lights, Iceland 2024' },
   { id: '20240806-DSC02785-Enhanced-NR_hhwowj', caption: 'Milky Way at Peterberg, Germany 2024', sizeParam: 'h' },
   { id: '20240816-DSC03915_yh5ece', caption: 'Pilatus, Switzerland 2024' },
-  { id: '20240921-DSC09138_cafeli', caption: 'Mulagljufur Canyon, Iceland 2024' },
-  { id: '20250612-A1_07027-HDR-Pano-Edit-2_ssghqf', caption: 'Eidsvatnet, Norway 2025' }
+  { id: '20250612-A1_07027-HDR-Pano-Edit-2_ssghqf', caption: 'Eidsvatnet, Norway 2025' },
+  { id: '20251022-A1_01072-HDR-Pano_drini7', caption: 'Heiligenblut, Austria 2025' },
+  { id: '20251024-A1_01286-Pano_lg7tox', caption: 'Lake Jasna, Slovenia 2025' },
+  { id: '20251024-A1_01326-HDR-Pano_tsp4hj', caption: 'Lake Jasna, Slovenia 2025' },
+  { id: '20251024-A1_01541-HDR_l2bggd', caption: 'Kranjska Gora, Slovenia 2025' },
+  { id: '20251025-A1_02001-HDR-Pano_gq8gsm', caption: 'Lake Bled, Slovenia 2025' },
+  { id: '20251026-A1_02326_wm95wa', caption: 'Bohinjsko Jezero, Slovenia 2025' },
+  { id: '20251028-A1_03784_vodphl', caption: 'Soca Valley, Slovenia 2025', sizeParam: 'h' },
+  { id: '20251024-A1_01793-Pano_swwlcp', caption: 'Vršič Pass, Slovenia 2025' },
+  { id: '20251029-A1_05138_etnopq', caption: 'Postojna Cave, Slovenia 2025' }
+
 ];
 
 function generateGallery(photos, containerId) {
