@@ -113,7 +113,7 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   lightboxImg.src = thumbUrl;
   lightboxImg.style.opacity = '1';
   // lightboxImg.style.filter = 'blur(5px)';
-  lightboxImg.style.transform = 'scale(1.05)'; // Scale up slightly to hide blur edges
+  lightboxImg.style.transform = 'scale(0.90)'; // Scale up slightly to hide blur edges
 
   // Preload the high-quality image
   var highResImg = new Image();
@@ -123,6 +123,11 @@ function openLightbox(fullUrl, thumbUrl, caption) {
     lightboxImg.src = fullUrl;
     lightboxImg.style.filter = 'blur(0)';
     lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
+
+    // Remove transition after animation completes to prevent floaty panning
+    setTimeout(function() {
+      lightboxImg.style.transition = '';
+    }, 500);
   };
   highResImg.src = fullUrl;
 }
