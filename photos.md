@@ -53,16 +53,17 @@ A small peak into my photography.
     <div class="photo-caption">Puffin on Runde Island, Norway 2025</div>
   </div>
 
-  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250613-A1_01332_yfolsv', 'Kingfisher in Dillingen, Germany 2025')">
-    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250613-A1_01332_yfolsv"
+  <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20250930-A1_00439_qhqxur', 'Kingfisher in Dillingen, Germany 2025')">
+    <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20250930-A1_00439_qhqxur"
          alt="Kingfisher in Dillingen, Germany 2025"
          loading="lazy">
     <div class="photo-caption">Kingfisher in Dillingen, Germany 2025</div>
   </div>
-
+</div>
 
   ## Landscape Photography
 
+<div class="photo-gallery">
   <div class="photo-item" onclick="openLightbox('https://res.cloudinary.com/dhateve93/image/upload/w_2400,q_90,f_auto/20251022-A1_01072-HDR-Pano_drini7', 'Heiligenblut, Austria 2025')">
     <img src="https://res.cloudinary.com/dhateve93/image/upload/w_800,q_85,f_auto/20251022-A1_01072-HDR-Pano_drini7"
          alt="Heiligenblut, Austria 2025"
@@ -189,7 +190,7 @@ function updateTransform() {
 function updateCursor() {
   var lightboxImg = document.getElementById('lightbox-img');
   if (zoomLevel > 1) {
-    lightboxImg.style.cursor = 'move';
+    lightboxImg.style.cursor = 'zoom-out';
   } else {
     lightboxImg.style.cursor = 'zoom-in';
   }
@@ -201,7 +202,7 @@ document.getElementById('lightbox-img').addEventListener('wheel', function(e) {
   e.stopPropagation();
 
   var delta = e.deltaY > 0 ? -0.2 : 0.2;
-  zoomLevel = Math.min(Math.max(1, zoomLevel + delta), 4); // Limit zoom between 1x and 4x
+  zoomLevel = Math.min(Math.max(1, zoomLevel + delta), 2); // Limit zoom between 1x and 2x
 
   if (zoomLevel === 1) {
     translateX = 0;
@@ -212,28 +213,24 @@ document.getElementById('lightbox-img').addEventListener('wheel', function(e) {
   updateCursor();
 });
 
-// Double-click to toggle zoom
-document.getElementById('lightbox-img').addEventListener('dblclick', function(e) {
+// Click to toggle zoom (simple toggle between 1x and 2x)
+document.getElementById('lightbox-img').addEventListener('click', function(e) {
   e.stopPropagation();
 
   if (zoomLevel > 1) {
     resetZoom();
   } else {
-    zoomLevel = 2.5;
+    zoomLevel = 2;
     updateTransform();
     updateCursor();
   }
 });
 
-// Click to zoom in
-document.getElementById('lightbox-img').addEventListener('click', function(e) {
+// Right-click to reset zoom
+document.getElementById('lightbox-img').addEventListener('contextmenu', function(e) {
+  e.preventDefault();
   e.stopPropagation();
-
-  if (zoomLevel === 1) {
-    zoomLevel = 2.5;
-    updateTransform();
-    updateCursor();
-  }
+  resetZoom();
 });
 
 // Pan when zoomed
