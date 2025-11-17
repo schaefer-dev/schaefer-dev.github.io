@@ -25,6 +25,8 @@ sass:
 nav:
  - name: "Projects"
    link: "projects"
+ - name: "Photos"
+   link: "photos"
  - name: "Certifications & Skills"
    link: "skills"
  - name: "CV"
