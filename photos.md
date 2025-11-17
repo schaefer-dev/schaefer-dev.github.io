@@ -150,7 +150,7 @@ function openLightbox(fullUrl, thumbUrl, caption) {
     clearInterval(progressInterval);
   }
 
-  // Simulated smooth progress animation (0-90% over ~3 seconds)
+  // Simulated smooth progress animation (0-90% over ~5 seconds)
   // This provides immediate visual feedback while the real download happens
   var simulatedProgress = 0;
   var realProgressReceived = false;
@@ -158,8 +158,8 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   progressInterval = setInterval(function() {
     if (!realProgressReceived && simulatedProgress < 90) {
       // Slow down as we approach 90% to make it feel more natural
-      var increment = (90 - simulatedProgress) * 0.08;
-      simulatedProgress += Math.max(increment, 0.5);
+      var increment = (90 - simulatedProgress) * 0.05;
+      simulatedProgress += Math.max(increment, 0.3);
       currentProgress = Math.min(simulatedProgress, 90);
       loadingProgress.style.width = currentProgress + '%';
     }
