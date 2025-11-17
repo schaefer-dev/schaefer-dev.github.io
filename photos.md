@@ -323,7 +323,7 @@ if (ENABLE_ZOOM) {
     resetZoom();
   });
 
-  // Pan when zoomed
+  // Pan when zoomed (mouse events)
   document.getElementById('lightbox-img').addEventListener('mousedown', function(e) {
     if (zoomLevel > 1) {
       e.preventDefault();
@@ -344,6 +344,34 @@ if (ENABLE_ZOOM) {
   });
 
   document.addEventListener('mouseup', function() {
+    isPanning = false;
+  });
+
+  // Pan when zoomed (touch events for mobile)
+  document.getElementById('lightbox-img').addEventListener('touchstart', function(e) {
+    if (zoomLevel > 1 && e.touches.length === 1) {
+      e.preventDefault();
+      e.stopPropagation();
+      isPanning = true;
+      startX = e.touches[0].clientX - translateX;
+      startY = e.touches[0].clientY - translateY;
+    }
+  });
+
+  document.getElementById('lightbox-img').addEventListener('touchmove', function(e) {
+    if (isPanning && e.touches.length === 1) {
+      e.preventDefault();
+      translateX = e.touches[0].clientX - startX;
+      translateY = e.touches[0].clientY - startY;
+      updateTransform();
+    }
+  });
+
+  document.getElementById('lightbox-img').addEventListener('touchend', function() {
+    isPanning = false;
+  });
+
+  document.getElementById('lightbox-img').addEventListener('touchcancel', function() {
     isPanning = false;
   });
 }
