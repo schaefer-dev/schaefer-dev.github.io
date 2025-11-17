@@ -221,9 +221,9 @@ body:has(.photo-gallery) .container {
 @media (max-width: 650px) {
     .lightbox-nav {
         top: auto;
-        bottom: 80px;
+        bottom: 20px;
         transform: none;
-        padding: 12px 20px;
+        padding: 12px 16px;
         background-color: rgba(0, 0, 0, 0.7);
         border-radius: 50px;
     }
@@ -238,11 +238,11 @@ body:has(.photo-gallery) .container {
     }
 
     .lightbox-prev {
-        left: 20px;
+        left: 15px;
     }
 
     .lightbox-next {
-        right: 20px;
+        right: 15px;
     }
 
     .lightbox-nav svg {
@@ -250,9 +250,14 @@ body:has(.photo-gallery) .container {
         height: 28px;
     }
 
-    /* Position caption higher to avoid overlap with nav buttons */
+    /* Position caption at same height as nav buttons */
     .lightbox-caption {
-        bottom: 140px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: calc(100% - 140px); /* Leave space for nav buttons on both sides */
+        padding: 10px 16px;
+        font-size: 14px;
     }
 }
 
