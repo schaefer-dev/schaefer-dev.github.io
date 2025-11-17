@@ -41,7 +41,12 @@ ul.skill-list {
     right: 50%;
 }
 
-/* Photo Gallery */
+/* Photo Gallery - Full Width Layout Override */
+
+body:has(.photo-gallery) .container {
+    max-width: 95%;
+    width: 100%;
+}
 
 .photo-gallery {
     display: grid;
@@ -107,6 +112,7 @@ ul.skill-list {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain;
+    transition: opacity 0.3s ease;
 }
 
 .lightbox-caption {
