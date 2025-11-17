@@ -102,6 +102,11 @@ function openLightbox(imageUrl, caption) {
   // Reset zoom and position
   resetZoom();
 
+  // If switching images, clear the old one first
+  if (lightbox.classList.contains('active') && lightboxImg.src !== imageUrl) {
+    lightboxImg.src = '';
+  }
+
   // Show lightbox
   lightbox.classList.add('active');
   document.getElementById('lightbox-caption').textContent = caption;
