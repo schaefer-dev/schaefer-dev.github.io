@@ -97,6 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
   <img id="lightbox-img" class="lightbox-content" src="" alt="">
   <div id="lightbox-caption" class="lightbox-caption"></div>
+  <div id="loading-bar" class="loading-bar">
+    <div id="loading-progress" class="loading-progress"></div>
+  </div>
 </div>
 
 <script>
@@ -111,6 +114,8 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   var lightboxImg = document.getElementById('lightbox-img');
   var lightbox = document.getElementById('lightbox');
   var downloadBtn = document.getElementById('lightbox-download');
+  var loadingBar = document.getElementById('loading-bar');
+  var loadingProgress = document.getElementById('loading-progress');
 
   // Reset zoom and position
   resetZoom();
@@ -130,21 +135,73 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   // lightboxImg.style.filter = 'blur(5px)';
   lightboxImg.style.transform = 'scale(0.90)'; // Scale up slightly to hide blur edges
 
-  // Preload the high-quality image
-  var highResImg = new Image();
-  highResImg.onload = function() {
-    // Smoothly transition to high-quality image
-    lightboxImg.style.transition = 'filter 0.5s ease, transform 0.5s ease';
-    lightboxImg.src = fullUrl;
-    lightboxImg.style.filter = 'blur(0)';
-    lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
+  // Show and reset loading bar
+  loadingBar.style.opacity = '1';
+  loadingProgress.style.width = '0%';
 
-    // Remove transition after animation completes to prevent floaty panning
-    setTimeout(function() {
-      lightboxImg.style.transition = '';
-    }, 500);
+  // Load the high-quality image with progress tracking
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', fullUrl, true);
+  xhr.responseType = 'blob';
+
+  xhr.onprogress = function(e) {
+    if (e.lengthComputable) {
+      var percentComplete = (e.loaded / e.total) * 100;
+      loadingProgress.style.width = percentComplete + '%';
+    }
   };
-  highResImg.src = fullUrl;
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      var blob = xhr.response;
+      var objectUrl = URL.createObjectURL(blob);
+
+      // Smoothly transition to high-quality image
+      lightboxImg.style.transition = 'filter 0.5s ease, transform 0.5s ease';
+      lightboxImg.src = objectUrl;
+      lightboxImg.style.filter = 'blur(0)';
+      lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
+
+      // Hide loading bar with fade out
+      setTimeout(function() {
+        loadingBar.style.opacity = '0';
+      }, 300);
+
+      // Remove transition after animation completes to prevent floaty panning
+      setTimeout(function() {
+        lightboxImg.style.transition = '';
+      }, 500);
+
+      // Clean up object URL when lightbox is closed
+      lightboxImg.addEventListener('load', function() {
+        setTimeout(function() {
+          if (lightboxImg.src === objectUrl) {
+            URL.revokeObjectURL(objectUrl);
+          }
+        }, 1000);
+      }, { once: true });
+    }
+  };
+
+  xhr.onerror = function() {
+    // Fallback to simple image loading on error
+    var highResImg = new Image();
+    highResImg.onload = function() {
+      lightboxImg.style.transition = 'filter 0.5s ease, transform 0.5s ease';
+      lightboxImg.src = fullUrl;
+      lightboxImg.style.filter = 'blur(0)';
+      lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
+
+      loadingBar.style.opacity = '0';
+
+      setTimeout(function() {
+        lightboxImg.style.transition = '';
+      }, 500);
+    };
+    highResImg.src = fullUrl;
+  };
+
+  xhr.send();
 }
 
 function closeLightbox() {
