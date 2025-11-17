@@ -6,7 +6,7 @@ description: "Landscape and wildlife photography portfolio by Daniel Schäfer"
 
 # Photography
 
-A small peak into my photography.
+A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
 
 <script>
 // ===== CONFIGURATION =====
