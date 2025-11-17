@@ -28,6 +28,12 @@ I designed and implemented an end to end test framework for automotive hardware 
 
 I contributed to and helped establish the topic of cybersecurity throughout our internal product development lifecycle with the explicit goal of achieving an eventual ISO 21434 certification. My technical responsibilities included Threat Analysis and Risk Assessment for our software framework, triage and mitigation planning for CVE findings, and the definition of development and release practices that make security considerations routine rather than an exception. The work resulted in a successful ISO 21434 certification of our product and it established a path for continuous security maintenance. The pragmatic trade-off was to design processes that the teams would actually follow under real-world project pressure and to keep documentation precise and concise so it supports engineering teams instead of slowing it down.
 
+### KITT Prototype (Java)
+
+When I started at semvox, I quickly became one of the main contributers to our company internal prototype project in which we explored features of our gen:OS framework early on. It was mostly used as a means to discover gaps and usability improvements in our tooling and software stack. We also use it at various fares to showcase advanced features that our geni:OS framework enables.
+I developed the first Android Version of the KITT prototype, also supporting the Android Automotive VoiceInteractionSession feature to use KITT as a fully functional voice assistant in android automotive systems.
+The KITT Prototype was also used as a project showcasing the best practices when working with geni:OS. This KITT project still is a pillar of our internal documentation and onboarding processes to work with geni:OS as a framework to build your own assistant.
+
 # University Projects
 
 Lists of my projects at university in reverse chronological order, starting with my most-recent projects.
