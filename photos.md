@@ -97,10 +97,26 @@ A collection of my landscape and wildlife photography.
 <script>
 function openLightbox(imageUrl, caption) {
   event.stopPropagation();
-  document.getElementById('lightbox').classList.add('active');
-  document.getElementById('lightbox-img').src = imageUrl;
+
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightbox = document.getElementById('lightbox');
+
+  // Clear the old image immediately to avoid showing it
+  lightboxImg.style.opacity = '0';
+  lightboxImg.src = '';
+
+  // Show lightbox
+  lightbox.classList.add('active');
   document.getElementById('lightbox-caption').textContent = caption;
   document.body.style.overflow = 'hidden';
+
+  // Load new image
+  var newImage = new Image();
+  newImage.onload = function() {
+    lightboxImg.src = imageUrl;
+    lightboxImg.style.opacity = '1';
+  };
+  newImage.src = imageUrl;
 }
 
 function closeLightbox() {
