@@ -132,12 +132,51 @@ var startX, startY;
 var translateX = 0, translateY = 0;
 var progressInterval = null;
 var currentProgress = 0;
+var preloadedImages = {}; // Cache for preloaded images
+
+function preloadImage(url) {
+  // Only preload if not already cached
+  if (preloadedImages[url]) {
+    return;
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'blob';
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      var blob = xhr.response;
+      var objectUrl = URL.createObjectURL(blob);
+      preloadedImages[url] = objectUrl;
+    }
+  };
+
+  xhr.send();
+}
+
+function preloadAdjacentImages() {
+  // Preload previous image
+  if (currentPhotoIndex > 0) {
+    var prevPhoto = allPhotos[currentPhotoIndex - 1];
+    preloadImage(prevPhoto.fullUrl);
+  }
+
+  // Preload next image
+  if (currentPhotoIndex < allPhotos.length - 1) {
+    var nextPhoto = allPhotos[currentPhotoIndex + 1];
+    preloadImage(nextPhoto.fullUrl);
+  }
+}
 
 function openLightboxByIndex(index) {
   currentPhotoIndex = index;
   var photo = allPhotos[index];
   openLightbox(photo.fullUrl, photo.thumbUrl, photo.caption);
   updateNavigationButtons();
+
+  // Preload adjacent images for smoother navigation
+  preloadAdjacentImages();
 }
 
 function navigatePrev(e) {
@@ -204,6 +243,20 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   downloadBtn.href = fullUrl;
   downloadBtn.download = caption.replace(/[^a-z0-9]/gi, '_') + '.jpg';
 
+  // Check if image is already preloaded
+  if (preloadedImages[fullUrl]) {
+    // Use preloaded image immediately - no loading needed!
+    lightboxImg.src = preloadedImages[fullUrl];
+    lightboxImg.style.opacity = '1';
+    lightboxImg.style.filter = 'blur(0)';
+    lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
+
+    // No loading bar needed for preloaded images
+    loadingBar.style.opacity = '0';
+    loadingText.style.opacity = '0';
+    return;
+  }
+
   // Set cached 800px thumbnail with blur effect
   lightboxImg.src = thumbUrl;
   lightboxImg.style.opacity = '1';
@@ -264,8 +317,11 @@ function openLightbox(fullUrl, thumbUrl, caption) {
       var blob = xhr.response;
       var objectUrl = URL.createObjectURL(blob);
 
+      // Cache this image for future use
+      preloadedImages[fullUrl] = objectUrl;
+
       // Smoothly transition to high-quality image
-      lightboxImg.style.transition = 'filter 0.5s ease, transform 0.5s ease';
+      lightboxImg.style.transition = 'filter 0.3s ease, transform 0.3s ease';
       lightboxImg.src = objectUrl;
       lightboxImg.style.filter = 'blur(0)';
       lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
@@ -280,15 +336,6 @@ function openLightbox(fullUrl, thumbUrl, caption) {
       setTimeout(function() {
         lightboxImg.style.transition = '';
       }, 500);
-
-      // Clean up object URL when lightbox is closed
-      lightboxImg.addEventListener('load', function() {
-        setTimeout(function() {
-          if (lightboxImg.src === objectUrl) {
-            URL.revokeObjectURL(objectUrl);
-          }
-        }, 1000);
-      }, { once: true });
     }
   };
 
