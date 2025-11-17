@@ -11,10 +11,57 @@ A sneek peek into my photography. All images shot on Sony. All photographs show 
 
 Images load in 4k resolution on-click. Loading of the high quality version may take a second or two depending on your connection.
 
+<div class="data-saver-container">
+  <label class="data-saver-toggle">
+    <input type="checkbox" id="data-saver-checkbox">
+    <span class="toggle-slider"></span>
+    <span class="toggle-label">Data Saver Mode (2.4K instead of 4K)</span>
+  </label>
+</div>
+
 <script>
 // ===== CONFIGURATION =====
 var ENABLE_ZOOM = true;  // Set to true to enable click-to-zoom functionality
+var dataSaverEnabled = false; // Will be loaded from localStorage
 // =========================
+
+// Load data saver preference from localStorage
+function loadDataSaverPreference() {
+  var saved = localStorage.getItem('dataSaverMode');
+  dataSaverEnabled = saved === 'true';
+  var checkbox = document.getElementById('data-saver-checkbox');
+  if (checkbox) {
+    checkbox.checked = dataSaverEnabled;
+  }
+}
+
+// Save data saver preference to localStorage
+function saveDataSaverPreference() {
+  localStorage.setItem('dataSaverMode', dataSaverEnabled.toString());
+}
+
+// Initialize data saver toggle
+function initDataSaverToggle() {
+  var checkbox = document.getElementById('data-saver-checkbox');
+  if (checkbox) {
+    checkbox.addEventListener('change', function() {
+      dataSaverEnabled = this.checked;
+      saveDataSaverPreference();
+
+      // Clear preloaded images cache when mode changes
+      // so new images will be loaded with the correct resolution
+      Object.keys(preloadedImages).forEach(function(url) {
+        URL.revokeObjectURL(preloadedImages[url]);
+      });
+      preloadedImages = {};
+    });
+  }
+}
+
+// Get the appropriate full-size resolution based on data saver mode
+function getFullSizeResolution() {
+  return dataSaverEnabled ? 2400 : 3840;
+}
 
 // Photo data - just add ID and caption once!
 var wildlifePhotos = [
@@ -61,13 +108,13 @@ function generateGallery(photos, containerId, startIndex) {
   photos.forEach(function(photo, index) {
     var globalIndex = startIndex + index;
     var thumbSize = photo.sizeParam === 'h' ? 'h_800' : 'w_800';
-    var fullSize = photo.sizeParam === 'h' ? 'h_3840' : 'w_3840';
     var thumbUrl = 'https://res.cloudinary.com/dhateve93/image/upload/' + thumbSize + ',q_85,f_auto,fl_progressive/' + photo.id;
-    var fullUrl = 'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto,fl_progressive/' + photo.id;
 
-    // Store in global array for navigation
+    // Store photo data (not URL) in global array for navigation
+    // Full URL will be generated dynamically based on data saver mode
     allPhotos[globalIndex] = {
-      fullUrl: fullUrl,
+      id: photo.id,
+      sizeParam: photo.sizeParam,
       thumbUrl: thumbUrl,
       caption: photo.caption
     };
@@ -84,6 +131,8 @@ function generateGallery(photos, containerId, startIndex) {
 
 // Generate galleries when page loads
 document.addEventListener('DOMContentLoaded', function() {
+  loadDataSaverPreference();
+  initDataSaverToggle();
   generateGallery(wildlifePhotos, 'wildlife-gallery', 0);
   generateGallery(landscapePhotos, 'landscape-gallery', wildlifePhotos.length);
 });
@@ -161,20 +210,30 @@ function preloadAdjacentImages() {
   // Preload previous image
   if (currentPhotoIndex > 0) {
     var prevPhoto = allPhotos[currentPhotoIndex - 1];
-    preloadImage(prevPhoto.fullUrl);
+    var prevUrl = getFullSizeUrl(prevPhoto);
+    preloadImage(prevUrl);
   }
 
   // Preload next image
   if (currentPhotoIndex < allPhotos.length - 1) {
     var nextPhoto = allPhotos[currentPhotoIndex + 1];
-    preloadImage(nextPhoto.fullUrl);
+    var nextUrl = getFullSizeUrl(nextPhoto);
+    preloadImage(nextUrl);
   }
+}
+
+// Generate full-size URL dynamically based on current data saver mode
+function getFullSizeUrl(photo) {
+  var resolution = getFullSizeResolution();
+  var fullSize = photo.sizeParam === 'h' ? 'h_' + resolution : 'w_' + resolution;
+  return 'https://res.cloudinary.com/dhateve93/image/upload/' + fullSize + ',q_90,f_auto,fl_progressive/' + photo.id;
 }
 
 function openLightboxByIndex(index) {
   currentPhotoIndex = index;
   var photo = allPhotos[index];
-  openLightbox(photo.fullUrl, photo.thumbUrl, photo.caption);
+  var fullUrl = getFullSizeUrl(photo);
+  openLightbox(fullUrl, photo.thumbUrl, photo.caption);
   updateNavigationButtons();
 
   // Preload adjacent images for smoother navigation

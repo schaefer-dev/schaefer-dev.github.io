@@ -48,6 +48,72 @@ body:has(.photo-gallery) .container {
     width: 100%;
 }
 
+/* Data Saver Toggle */
+
+.data-saver-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+    padding: 15px;
+    background-color: #2A2D2F;
+    border-radius: 8px;
+}
+
+.data-saver-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.data-saver-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background-color: #4A4D4F;
+    border-radius: 26px;
+    transition: background-color 0.3s ease;
+    margin-right: 12px;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #DAD7D2;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+.data-saver-toggle input[type="checkbox"]:checked + .toggle-slider {
+    background-color: #4CAF50;
+}
+
+.data-saver-toggle input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(24px);
+}
+
+.toggle-label {
+    color: #DAD7D2;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.data-saver-toggle:hover .toggle-slider {
+    background-color: #5A5D5F;
+}
+
+.data-saver-toggle:hover input[type="checkbox"]:checked + .toggle-slider {
+    background-color: #66BB6A;
+}
+
 .photo-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -356,5 +422,14 @@ body:has(.photo-gallery) .container {
     .photo-caption {
         font-size: 12px;
         padding: 12px 8px 8px 8px;
+    }
+
+    .data-saver-container {
+        padding: 12px;
+        margin: 15px 0 20px 0;
+    }
+
+    .toggle-label {
+        font-size: 14px;
     }
 }
