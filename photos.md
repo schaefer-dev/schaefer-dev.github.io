@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div id="lightbox-caption" class="lightbox-caption"></div>
   <div id="loading-bar" class="loading-bar">
     <div id="loading-progress" class="loading-progress"></div>
+    <div id="loading-text" class="loading-text">Loading high resolution...</div>
   </div>
 </div>
 
@@ -107,6 +108,8 @@ var zoomLevel = 1;
 var isPanning = false;
 var startX, startY;
 var translateX = 0, translateY = 0;
+var progressInterval = null;
+var currentProgress = 0;
 
 function openLightbox(fullUrl, thumbUrl, caption) {
   event.stopPropagation();
@@ -116,6 +119,7 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   var downloadBtn = document.getElementById('lightbox-download');
   var loadingBar = document.getElementById('loading-bar');
   var loadingProgress = document.getElementById('loading-progress');
+  var loadingText = document.getElementById('loading-text');
 
   // Reset zoom and position
   resetZoom();
@@ -138,6 +142,28 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   // Show and reset loading bar
   loadingBar.style.opacity = '1';
   loadingProgress.style.width = '0%';
+  loadingText.style.opacity = '1';
+  currentProgress = 0;
+
+  // Clear any existing progress interval
+  if (progressInterval) {
+    clearInterval(progressInterval);
+  }
+
+  // Simulated smooth progress animation (0-90% over ~3 seconds)
+  // This provides immediate visual feedback while the real download happens
+  var simulatedProgress = 0;
+  var realProgressReceived = false;
+
+  progressInterval = setInterval(function() {
+    if (!realProgressReceived && simulatedProgress < 90) {
+      // Slow down as we approach 90% to make it feel more natural
+      var increment = (90 - simulatedProgress) * 0.08;
+      simulatedProgress += Math.max(increment, 0.5);
+      currentProgress = Math.min(simulatedProgress, 90);
+      loadingProgress.style.width = currentProgress + '%';
+    }
+  }, 50);
 
   // Load the high-quality image with progress tracking
   var xhr = new XMLHttpRequest();
@@ -147,12 +173,23 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   xhr.onprogress = function(e) {
     if (e.lengthComputable) {
       var percentComplete = (e.loaded / e.total) * 100;
-      loadingProgress.style.width = percentComplete + '%';
+      realProgressReceived = true;
+      // Use the real progress, but ensure it's at least as much as simulated
+      currentProgress = Math.max(currentProgress, percentComplete);
+      loadingProgress.style.width = currentProgress + '%';
     }
   };
 
   xhr.onload = function() {
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
+
     if (xhr.status === 200) {
+      // Jump to 100% immediately
+      loadingProgress.style.width = '100%';
+
       var blob = xhr.response;
       var objectUrl = URL.createObjectURL(blob);
 
@@ -162,10 +199,11 @@ function openLightbox(fullUrl, thumbUrl, caption) {
       lightboxImg.style.filter = 'blur(0)';
       lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
 
-      // Hide loading bar with fade out
+      // Hide loading bar and text with fade out
       setTimeout(function() {
         loadingBar.style.opacity = '0';
-      }, 300);
+        loadingText.style.opacity = '0';
+      }, 400);
 
       // Remove transition after animation completes to prevent floaty panning
       setTimeout(function() {
@@ -184,6 +222,11 @@ function openLightbox(fullUrl, thumbUrl, caption) {
   };
 
   xhr.onerror = function() {
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
+
     // Fallback to simple image loading on error
     var highResImg = new Image();
     highResImg.onload = function() {
@@ -193,6 +236,7 @@ function openLightbox(fullUrl, thumbUrl, caption) {
       lightboxImg.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px) scale(' + zoomLevel + ')';
 
       loadingBar.style.opacity = '0';
+      loadingText.style.opacity = '0';
 
       setTimeout(function() {
         lightboxImg.style.transition = '';
@@ -205,6 +249,12 @@ function openLightbox(fullUrl, thumbUrl, caption) {
 }
 
 function closeLightbox() {
+  // Clean up progress interval
+  if (progressInterval) {
+    clearInterval(progressInterval);
+    progressInterval = null;
+  }
+
   document.getElementById('lightbox').classList.remove('active');
   document.body.style.overflow = 'auto';
   resetZoom();
