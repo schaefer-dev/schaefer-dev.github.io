@@ -7,7 +7,7 @@ show_copyright: true
 
 # Photography
 
-A sneek peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
+A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
 
 Images load in 4k resolution once you click on them for fullscreen viewing, unless you enable *Data Saver Mode* below. Loading of the high quality version may take a second or two depending on your connection speed. You can expect 1-3mb per 4k image depending on your browsers image format support. For 2.4k images you can expect around 0.4-1.5mb.
 
@@ -64,7 +64,33 @@ function getFullSizeResolution() {
 }
 
 // Photo data - just add ID and caption once!
-var wildlifePhotos = [
+var wildlife2026Photos = [
+  { id: '20260722-A1_01770_aqpgvf', caption: 'Kingfisher in Dillingen, Germany 2026' },
+  { id: '20260722-A1_01254_ivlga7', caption: 'Kingfisher in Dillingen, Germany 2026' },
+  { id: '20260804-A1_03963_nrot9d', caption: 'Kingfisher in Dillingen, Germany 2026', sizeParam: 'h' },
+  { id: '20260727-A1_05821_wjjasu', caption: 'Kingfisher in Saarbrücken, Germany 2026' },
+  { id: '20260603-A1_01836_htak8h', caption: 'Bluethroat in Oberhausen, Germany 2026' },
+  { id: '20260603-A1_05568_y8mxbs', caption: 'Bee-eaters, Germany 2026' },
+  { id: '20260603-A1_05540_lw3w5c', caption: 'Bee-eaters, Germany 2026' },
+  { id: '20260616-A1_05781_naieix', caption: 'Little Owl Family, Germany 2026', sizeParam: 'h' },
+  { id: '20260712-A1_01581_azjbvb', caption: 'Long-eared Owl, Germany 2026' },
+  { id: '20260703-A1_07062_eag3ua', caption: 'Long-eared Owl, Germany 2026' },
+  { id: '20260116-A1_08048_h3w9gg', caption: 'Tawny Owl Couple, Germany 2026' },
+  { id: '20260829-A1_05504_qmnc1p', caption: 'Lesser Spotted Eagle in Mecklenburg-Vorpommern, Germany 2026' },
+  { id: '20260829-A1_03878_xlrmdv', caption: 'Lesser Spotted Eagle in Mecklenburg-Vorpommern, Germany 2026' },
+  { id: '20260829-A1_05507_lbypd9', caption: 'Lesser Spotted Eagle in Mecklenburg-Vorpommern, Germany 2026' },
+  { id: '20260829-A1_00757_q7sxol', caption: 'Red Kite, Germany 2026' },
+  { id: '20260829-A1_00781_u29cg9', caption: 'Red Kite, Germany 2026' },
+  { id: '20260829-A1_06316_vxtqr4', caption: 'Red-backed Shrike, Germany 2026', sizeParam: 'h' },
+  { id: '20260912-A1_06619_jyixym', caption: 'Avocet on Texel, Netherlands 2026' },
+  { id: '20260915-A1_06555_wujbav', caption: 'Spoonbill on Texel, Netherlands 2026' },
+  { id: '20260912-A1_08004_by3ezg', caption: 'Sanderling on Texel, Netherlands 2026' },
+  { id: '20260915-A1_02599_m1nojv', caption: 'Sanderling on Texel, Netherlands 2026' },
+  { id: '20260912-A1_07788_jrclov', caption: 'Sanderling on Texel, Netherlands 2026' },
+  { id: '20260713-A1_00585_a6kk3m', caption: 'Fox Cub, Germany 2026', sizeParam: 'h' }
+];
+
+var wildlife2025Photos = [
   { id: '20250613-A1_08790-Enhanced-NR-2_xc1srs', caption: 'Puffin on Runde Island, Norway 2025' },
   { id: '20250613-A1_02369-2_ig7tmg', caption: 'Puffin on Runde Island, Norway 2025' },
   { id: '20250613-A1_01332_yfolsv', caption: 'Puffin on Runde Island, Norway 2025' },
@@ -75,7 +101,7 @@ var wildlifePhotos = [
   { id: '20250920-A1_05933_xsixu5', caption: 'Kingfisher in Haff Réimech, Luxembourg 2025' },
   { id: '20250727-A1_07949_rvnamh', caption: 'Robin in Saarbrücken, Germany 2025' },
   { id: '20251101-A1_07621_w4tp0l', caption: 'Marsh Tit in Saarbrücken, Germany 2025' },
-  { id: '20251021-A1_09393_popwqq', caption: 'Beared Vulture in Krumltal, Austria 2025', sizeParam: 'h' }
+  { id: '20251021-A1_09393_popwqq', caption: 'Bearded Vulture in Krumltal, Austria 2025', sizeParam: 'h' }
 ];
 
 var landscapePhotos = [
@@ -133,14 +159,28 @@ function generateGallery(photos, containerId, startIndex) {
 document.addEventListener('DOMContentLoaded', function() {
   loadDataSaverPreference();
   initDataSaverToggle();
-  generateGallery(wildlifePhotos, 'wildlife-gallery', 0);
-  generateGallery(landscapePhotos, 'landscape-gallery', wildlifePhotos.length);
+  var galleries = [
+    [wildlife2026Photos, 'wildlife-2026-gallery'],
+    [wildlife2025Photos, 'wildlife-2025-gallery'],
+    [landscapePhotos, 'landscape-gallery']
+  ];
+  var offset = 0;
+  galleries.forEach(function(g) {
+    generateGallery(g[0], g[1], offset);
+    offset += g[0].length;
+  });
 });
 </script>
 
 ## Wildlife Photography
 
-<div id="wildlife-gallery" class="photo-gallery"></div>
+### 2026
+
+<div id="wildlife-2026-gallery" class="photo-gallery"></div>
+
+### 2025
+
+<div id="wildlife-2025-gallery" class="photo-gallery"></div>
 
 ## Landscape Photography
 
