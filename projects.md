@@ -44,6 +44,65 @@ When I started at semvox, I quickly became one of the main contributers to our c
 I developed the first Android Version of the KITT prototype, also supporting the Android Automotive VoiceInteractionSession feature to use KITT as a fully functional voice assistant in android automotive systems.
 The KITT Prototype was also used as a project showcasing the best practices when working with geni:OS. This KITT project still is a pillar of our internal documentation and onboarding processes to work with geni:OS as a framework to build your own assistant.
 
+# Personal Projects
+
+Projects I build in my free time, mostly to solve problems from my own hobbies (birding, cycling, photography, note-taking). Most of them are open source on GitHub.
+
+
+### Bird Radar - Multi-Source Sighting Tracker (Python)
+
+Interesting bird sightings are scattered across many platforms, each with its own coverage, data format and rate limits. Bird Radar aggregates bird and mammal observations from ornitho.de, eBird, iNaturalist, observation.org, faune-grandest.org and several sources delivered through GBIF into a local-first database. Aggressive caching and per-platform throttling keep the load on these community services minimal. Sightings are matched against my personal life list and wishlist to surface species I have not yet observed, combined with a reviewed rarity catalog. Getting rarity detection right required careful reverse engineering, for example reading ornitho's per-observation rarity colour instead of the misleading atlas category icons. A mobile-friendly FastAPI web UI with a daily field plan, map views with marker clustering and a coverage view for planning historical backfills runs on a Raspberry Pi reachable via Tailscale. An MCP server additionally gives Claude read-only access to the data, so I can plan birding trips in natural language. The project is backed by SQLAlchemy and an extensive pytest suite.
+
+
+### WearWise - Outdoor Clothing Log (Swift)
+
+Weather forecasts tell you the temperature, but not that you personally run cold below 8 °C in the wind. WearWise is a native iPhone and Mac app built with SwiftUI and SwiftData that logs what I wore on a hike, run or ride together with the weather conditions and how comfortable I was, rated separately per body zone on a thermal scale. Before heading out, "What to Wear" ranks past outings by how similar the conditions were and how comfortable I felt, and suggests the outfit that worked. Outings can be started from Apple Health workouts, wardrobe and history sync across devices via CloudKit, and everything can be exported to a portable JSON file. The app is planned to be published soon.
+
+
+### Supernote Viewer (Swift)
+
+My Supernote e-ink tablet syncs `.note` notebooks and `.pdf.mark` annotations to my Mac, but macOS cannot open them. Supernote Viewer consists of two small macOS apps plus a Quick Look extension that make these files feel native: notebooks open with a double-click, preview with Space and can be searched like any other PDF. Under the hood a Swift package parses the proprietary file format, decodes the layer bitmaps and renders handwriting as crisp vector strokes from the notebook's own pen data. Apple's on-device Vision text recognition adds an invisible text layer, so handwriting becomes searchable and copyable. The viewer additionally supports live reload while writing on the device and a calibrated measuring tool for floor plans. Releases are shipped as signed and notarized DMGs, and everything runs fully offline.
+
+[GitHub Repository](https://github.com/schaefer-dev/supernote-viewer)
+
+
+### Local AI Assistant with Hermes Agent (Self-hosted LLMs)
+
+To keep personal data under my own control, I run a Hermes agent on locally hosted Qwen models as my personal assistant. It organizes my mails, takes down notes and keeps track of todos. Integrations are provided through various MCP servers, for example for Gmail, iCloud and intervals.icu, which I use for performance tracking and training plans. The project is a playground to explore how far local models can be pushed for agentic everyday tasks, and the learnings feed directly back into my professional work with LLM agents.
+
+
+### Karoo Aerobic Decoupling Extension (Kotlin)
+
+An extension for the Hammerhead Karoo 2 and Karoo 3 bike computers that displays live aerobic decoupling (Pa:Hr drift) while riding. It samples power and heart rate once per second of moving time, compares the efficiency factor of the first and second half of the ride and shows the running drift percentage as a training and pacing signal. Additional data fields visualize the decoupling trend of the last 60 minutes as a graph and show W′ balance to track remaining anaerobic capacity. To save battery, release builds throttle redraws while the calculation still uses every sample. The math and stream coordination are covered by JVM unit tests, so most bugs are caught without a device.
+
+[GitHub Repository](https://github.com/schaefer-dev/karoo-decoupling)
+
+
+### Cycling Heatmap & Ride Archive (JavaScript)
+
+A personal archive for my road, gravel and MTB rides to inform future route planning. Rides are imported from Garmin GPX files, either individually or in bulk, and visualized on an interactive heatmap per bike type. Sections of a route can be rated on a five-level scale and tagged with surface conditions, so I can look up later whether a trail is worth riding again. Clicking any location on the map lists all rides that passed it. The frontend is built with React, Vite, Tailwind and Leaflet, the backend with Node.js, Express and SQLite.
+
+[GitHub Repository](https://github.com/schaefer-dev/cycling_heatmap_app)
+
+
+### Obsidian PDF Mirror (Python)
+
+Obsidian is great for writing notes but less great for reading them on an e-ink tablet. This tool mirrors my entire Obsidian vault into a separate folder tree of nicely typeset PDFs that syncs to my tablet via Dropbox. Obsidian-specific syntax is preprocessed and converted through pandoc with a custom Lua filter into Typst, which produces the PDFs. Runs are incremental and only re-render notes whose content or embedded files changed, so an idle run takes about 0.1 seconds. Deterministic output ensures unchanged notes are never rewritten and re-uploaded, renames and deletions are followed, and a safeguard refuses to delete more than 30 percent of the mirror in one run. The tool runs unobtrusively in the background via launchd.
+
+[GitHub Repository](https://github.com/schaefer-dev/obsidian_pdf_mirror)
+
+
+### Lightroom GPS Gap Repair (Python)
+
+My Sony camera takes its location from a paired phone, but whenever the camera is switched on or the connection drops, a handful of frames end up without GPS data. This command-line tool fills these gaps in a Lightroom Classic library by copying the coordinates of the temporally nearest geotagged photo. Since it operates on an irreplaceable photo library, the design is safety-first: RAW files are never modified, only XMP sidecars without any GPS data are written, every affected file is backed up and SHA-256 verified before a single change, and every run can be restored. Larger time gaps are flagged for manual review or skipped, and unsynced Lightroom sidecars are detected and abort the run before they could overwrite catalog metadata.
+
+[GitHub Repository](https://github.com/schaefer-dev/lightroom-gps-gap-extrapolation)
+
+
+### Photography Portfolio (JavaScript)
+
+The [photography section](photos) of this website is designed to deliver high-resolution images quickly without bloating the repository. All images are hosted on Cloudinary and resized on demand: 800 pixel thumbnails for the gallery grid and up to 4K for the lightbox, with automatic WebP/JPEG format selection, progressive loading and lazy loading. A custom lightbox preloads neighbouring images for instant previous/next navigation, supports touch panning on mobile devices and shows a loading bar for large images. A persistent data saver mode lets visitors on slower connections switch the lightbox from 4K to 2.4K images. The galleries are generated automatically from simple per-year photo lists, which keeps adding new photos a one-line change.
+
 # University Projects
 
 Lists of my projects at university in reverse chronological order, starting with my most-recent projects.
