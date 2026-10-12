@@ -13,6 +13,17 @@ body:has(.photo-gallery) .container {
     width: 100%;
 }
 
+/* Intro text spans the full gallery width as two columns,
+   so lines stay readable on wide screens */
+.content .photo-intro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 48px;
+}
+.content .photo-intro p {
+    max-width: none;
+}
+
 /* Data Saver Toggle */
 
 .data-saver-container {
@@ -379,6 +390,10 @@ body:has(.photo-gallery) .container {
 }
 
 @media (max-width: 650px) {
+    .content .photo-intro {
+        grid-template-columns: 1fr;
+    }
+
     .photo-gallery {
         grid-template-columns: 1fr;
         gap: 15px;

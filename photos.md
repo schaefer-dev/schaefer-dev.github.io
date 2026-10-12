@@ -7,9 +7,10 @@ show_copyright: true
 
 # Photography
 
-A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.
-
-Images load in 4k resolution once you click on them for fullscreen viewing, unless you enable *Data Saver Mode* below. Loading of the high quality version may take a second or two depending on your connection speed. You can expect 1-3mb per 4k image depending on your browsers image format support. For 2.4k images you can expect around 0.4-1.5mb.
+<div class="photo-intro">
+  <p>A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.</p>
+  <p>Images load in 4k resolution once you click on them for fullscreen viewing, unless you enable <em>Data Saver Mode</em> below. Loading of the high quality version may take a second or two depending on your connection speed. You can expect 1-3mb per 4k image depending on your browsers image format support. For 2.4k images you can expect around 0.4-1.5mb.</p>
+</div>
 
 <div class="data-saver-container">
   <label class="data-saver-toggle">
