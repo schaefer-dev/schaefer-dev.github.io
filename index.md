@@ -24,15 +24,13 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
   <dt>Focus</dt>
   <dd>LLM agents and genAI assistant architecture under in-vehicle constraints</dd>
   <dt>Leadership</dt>
-  <dd>One of two Software Architecture &amp; Engineering teams, member of the AR&amp;D steering committee</dd>
+  <dd>Head of Software Architecture &amp; Engineering, Member of the AR&amp;D Steering Committee</dd>
   <dt>Programming</dt>
-  <dd>Python and Java at work. Swift, Kotlin, Rust and C in side and university projects</dd>
+  <dd>Python and Java at work. Swift, Kotlin and Rust and C in side projects.</dd>
   <dt>Education</dt>
   <dd>M.Sc. Computer Science, Saarland University, 2020, grade 1.5</dd>
   <dt>Certification</dt>
   <dd><a href="https://www.certible.com/badge/af8eef7f-af23-42b6-9dbb-fe9661f872f0/">iSAQB Certified Professional for Software Architecture</a></dd>
-  <dt>Languages</dt>
-  <dd>German (native), English (C2), French (advanced)</dd>
 </dl>
 </div>
 
