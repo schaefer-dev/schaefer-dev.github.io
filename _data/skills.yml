@@ -46,7 +46,7 @@ groups:
 # Strengths, each backed by something concrete from the site (markdown allowed)
 strengths:
   - name: "Analytical thinking"
-    evidence: "Found and fixed performance, memory and stability issues in the Volkswagen Group project, and reverse engineered reliable rarity detection for [Bird Radar](/projects#bird-radar)."
+    evidence: "Found and fixed performance, memory and stability issues in the Volkswagen Group project, and reverse engineered the proprietary Supernote file formats so that [Supernote Viewer](/projects#supernote-viewer) renders `.note` and `.pdf.mark` files natively on the Mac."
   - name: "Fast learner"
     evidence: "Went from Java test automation in 2020 to Lead Software Architect for geni:OS genAI in 2025, and taught myself Rust, Swift and Kotlin for [side projects](/projects#personal)."
   - name: "Self-reliant"
@@ -54,6 +54,6 @@ strengths:
   - name: "Solution-focused"
     evidence: "Built an [LLM demonstrator](/projects#llm-demonstrator) within a couple of months that led directly to customer acquisition."
   - name: "Team-oriented"
-    evidence: "Lead one of two sister teams and keep technical standards and staffing aligned with the other team lead."
+    evidence: "Mentor the engineers in my team and share current market trends and promising new tools with them, especially in the fast-moving world of AI tooling."
   - name: "Structured work"
     evidence: "Organize my work with Getting Things Done since 2018 and maintain architecture documentation and decision records for geni:OS genAI."
