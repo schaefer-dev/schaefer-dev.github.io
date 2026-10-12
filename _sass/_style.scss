@@ -95,13 +95,9 @@ hr {
 /* Divs */
 
 .container {
-    max-width: $max-width;
-    margin: auto;
-}
-/* Pages with `wide: true` front matter (card grids) */
-.container.wide {
     width: 90%;
     max-width: $wide-width;
+    margin: auto;
 }
 .wrapper {
     min-height: 100%;
@@ -118,17 +114,7 @@ hr {
 
 /* Mobile */
 
-@media (max-width: 800px) {
-    .container {
-        max-width: $med-width;
-        transition: 0.3s ease all;
-    }
-}
-
 @media (max-width: 650px) {
-    .container {
-        max-width: 83%;
-    }
     .navbar-ul {
         margin-top: 5px;
     }

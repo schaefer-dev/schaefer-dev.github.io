@@ -1,90 +1,42 @@
 ---
 layout: default
 title: "Daniel Schäfer | Certifications & Skills"
-description: "Overview of my certifications, programming languages of choice, tools that keep me productive and language expertise."
+description: "Certifications, technical skills, programming languages and strengths of Daniel Schäfer, Head of Software Architecture & Engineering."
 ---
 
+<h1>Certifications &amp; Skills</h1>
 
-# Certifications
-
-<div class="skill-paragraph">
-    <div class="skill">
-        <h3 style="padding-top: 0px;">Architecture</h3>
-        <div class="skill-list">
-            ●  <a href="https://www.certible.com/badge/af8eef7f-af23-42b6-9dbb-fe9661f872f0/">iSAQB Certified Professional for Software Architecture - Foundation</a>
-            ●
-        </div>
-    </div>
+<section>
+<h2 id="certifications">Certifications</h2>
+<div class="cert-list">
+{% for c in site.data.skills.certifications %}
+<div class="entry">
+  <h3>{{ c.title }}</h3>
+  <span class="meta">{{ c.meta }}</span>
+  <p class="project-links">{% for l in c.links %}<a href="{% if l.url contains '://' %}{{ l.url }}{% else %}{{ l.url | relative_url }}{% endif %}">{{ l.text }}</a>{% endfor %}</p>
 </div>
-
----
-
-# Skills
-
-<div class="skill-paragraph">
-    <div class="skill">
-        <h3 style="padding-top: 0px;">Languages</h3>
-        <div class="skill-list">
-            ●  fluent English (C2 EF SET)
-            ●  native German
-            ●  advanced french
-            ●
-        </div>
-    </div>
+{% endfor %}
 </div>
+</section>
 
----
-
-<div class="skill-paragraph">
-    <div class="skill">
-        <h3 style="padding-top: 0px;">Programming Languages of choice</h3>
-        <div class="skill-list">
-            ●  Java
-            ●  Python
-            ●  C
-            ●  Rust
-            ●  ZSH/Bash
-            ●  Swift
-            ●  SML
-            ●
-        </div>
-    </div>
+<section>
+<h2 id="skills">Skills</h2>
+<div class="skill-grid">
+{% for g in site.data.skills.groups %}
+<div class="skill-group">
+  <h3>{{ g.name }}</h3>
+  <ul class="tags">{% for i in g.items %}<li>{{ i }}</li>{% endfor %}</ul>
 </div>
-
----
-
-<div class="skill-paragraph">
-    <div class="skill">
-        <h3 style="padding-top: 0px;">Personal Strengths</h3>
-        <div class="skill-list">
-            ●  Analytical thinking
-            ●  Fast learner
-            ●  Self-reliant
-            ●  Solution-focused
-            ●  Team-oriented
-            ●  Structured work
-            ●
-        </div>
-    </div>
+{% endfor %}
 </div>
+</section>
 
----
-
-<div class="skill-paragraph">
-    <div class="skill">
-        <h3 style="padding-top: 0px;">Tools and Frameworks of choice</h3>
-        <div class="skill-list">
-            ●  UNIX
-            ●  Git
-            ●  VSCode
-            ●  Eclipse
-            ●  VIM
-            ●  Maven
-            ●  LaTeX
-            ●  Unity3D
-            ●
-        </div>
-    </div>
-</div>
-
----
+<section>
+<h2 id="strengths">Strengths</h2>
+<dl class="doc-list">
+{% for s in site.data.skills.strengths %}
+  <dt>{{ s.name }}</dt>
+  <dd>{{ s.evidence | markdownify | remove: '<p>' | remove: '</p>' | strip }}</dd>
+{% endfor %}
+</dl>
+</section>

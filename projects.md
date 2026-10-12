@@ -2,7 +2,6 @@
 layout: default
 title: "Daniel Schäfer | Projects"
 description: "Work projects at semvox, personal side projects and university projects by Daniel Schäfer, from genAI architecture for the Volkswagen Group to Swift, Kotlin and Python tools."
-wide: true
 ---
 
 <h1>Projects</h1>

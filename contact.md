@@ -1,16 +1,23 @@
 ---
 layout: default
 title: "Daniel Schäfer | Contact"
-description: "Contact information to reach out. Includes my LinkedIn and GitHub which may be of interrest to dig deeper."
+description: "How to reach Daniel Schäfer: email, LinkedIn, GitHub and Xing."
 is_contact: true
 ---
 
-# Contact Me
+<h1>Contact</h1>
 
-* Personal Email: schaefer.dev at gmail.com
+<p>The quickest way to reach me is email or LinkedIn.</p>
 
-* GitHub: [schaefer-dev](https://github.com/schaefer-dev)
+<dl class="doc-list">
+  <dt>Email</dt>
+  <dd>schaefer.dev at gmail.com</dd>
+  <dt>LinkedIn</dt>
+  <dd><a href="https://www.linkedin.com/in/schaefer-dev/">schaefer-dev</a></dd>
+  <dt>GitHub</dt>
+  <dd><a href="https://github.com/schaefer-dev">schaefer-dev</a></dd>
+  <dt>Xing</dt>
+  <dd><a href="https://www.xing.com/profile/Daniel_Schaefer229">Daniel Schaefer</a></dd>
+</dl>
 
-* LinkedIn: [schaefer-dev](https://www.linkedin.com/in/schaefer-dev/)
-
-* Xing: [Daniel Schaefer](https://www.xing.com/profile/Daniel_Schaefer229)
+<p><a class="button" href="cv_10_2026.pdf">Download CV (PDF)</a></p>

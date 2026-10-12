@@ -4,6 +4,7 @@ title: "Daniel Schäfer | Head of Software Architecture & Engineering"
 description: "Daniel Schäfer, Head of Software Architecture & Engineering and Lead Software Architect for geni:OS genAI at semvox (CARIAD, Volkswagen Group). Career, selected projects and education."
 ---
 
+<div class="intro-row">
 <div class="intro">
   <img class="intro-photo" src="me.jpg" alt="Portrait of Daniel Schäfer" width="120" height="120">
   <div>
@@ -33,6 +34,7 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
   <dt>Languages</dt>
   <dd>German (native), English (C2), French (advanced)</dd>
 </dl>
+</div>
 
 <div class="career">
 <h2 id="career">Career at semvox</h2>
@@ -40,6 +42,7 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
 {% for role in site.data.career %}
   <li{% if role.current %} class="current"{% endif %}>
     <span class="role-period">{{ role.period }}</span>
+    <div class="role-body">
     <h3 class="role-title">{{ role.title }}</h3>
     <p class="role-subtitle">{{ role.subtitle }}</p>
     {% if role.tags %}<ul class="tags">{% for t in role.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
@@ -52,6 +55,7 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
       <summary>Full description</summary>
       {{ role.details | markdownify }}
     </details>
+    </div>
   </li>
 {% endfor %}
 </ol>
@@ -69,6 +73,7 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
 <p><a href="projects#personal">All side projects</a></p>
 </div>
 
+<div class="two-col">
 <div class="education">
 <h2 id="education">Education</h2>
 <div class="entry">
@@ -97,4 +102,5 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
   <p>In 2021 lockdown I found a new passion: cycling and striving for improvements in the sport. During holidays I love traveling to new countries and discovering new places in nature I haven't been at before and <a href="photos">capturing my experiences with my camera</a>.</p>
   <p>In my free time, I like to keep myself in shape by exercising regularly at home - particularly my back is very thankful for those breaks after hours of sitting in a chair. I would consider myself very passionate about a wide variety of music and audio gear, which also helps me relax after a long day of working if I'm not reading a book on my Kindle. One of my favorite things to do after university is to optimize my workflow, for the tasks I am currently facing. This mainly ends up in me fine-tuning my zsh, tmux, vim or vscode configurations to solve some annoyance I encountered that day.</p>
 </details>
+</div>
 </div>

@@ -1,0 +1,59 @@
+# Skills page content. Items marked "# kept" were on the original skills page.
+
+certifications:
+  - title: "iSAQB Certified Professional for Software Architecture"
+    meta: "Foundation Level (CPSA-F)"
+    links:
+      - { text: "Verify badge", url: "https://www.certible.com/badge/af8eef7f-af23-42b6-9dbb-fe9661f872f0/" }
+      - { text: "Certificate (PDF)", url: "/iSAQB_Architecture_Certificate.pdf" }
+  - title: "EF SET English Certificate"
+    meta: "C2 Proficient"
+    links:
+      - { text: "Certificate (PDF)", url: "/EF_SET_Certificate.pdf" }
+
+groups:
+  - name: "Architecture & leadership"
+    items:
+      - "Software architecture"
+      - "Architecture documentation & decision records"
+      - "Requirements engineering"
+      - "Technical leadership in a matrix organization"
+      - "Stakeholder alignment"
+  - name: "AI & LLM engineering"
+    items:
+      - "LLM agents"
+      - "Prompt & tool design"
+      - "Automated testing & regression analysis for LLM agents"
+      - "MCP servers"
+      - "AI-assisted software delivery"
+      - "Self-hosted LLMs"
+  - name: "Quality & security"
+    items:
+      - "End-to-end test automation"
+      - "ISO 21434"
+      - "Threat analysis & risk assessment (TARA)"
+      - "CVE triage & mitigation"
+      - "Performance & memory analysis"
+  - name: "Programming languages"
+    items: [Java, Python, Swift, Kotlin, C, Rust, TypeScript, JavaScript, "C#", ZSH/Bash, SML]
+  - name: "Frameworks & platforms"
+    items: [FastAPI, SQLAlchemy, pytest, SwiftUI, SwiftData, CloudKit, Android Automotive, React, Node.js, Unity3D]
+  - name: "Tools"
+    items: [Git, UNIX, VS Code, VIM, tmux, Eclipse, Maven, LaTeX, Typst, pandoc]
+  - name: "Spoken languages"
+    items: ["German (native)", "English (C2, EF SET)", "French (advanced)"]
+
+# Strengths, each backed by something concrete from the site (markdown allowed)
+strengths:
+  - name: "Analytical thinking"
+    evidence: "Found and fixed performance, memory and stability issues in the Volkswagen Group project, and reverse engineered reliable rarity detection for [Bird Radar](/projects#bird-radar)."
+  - name: "Fast learner"
+    evidence: "Went from Java test automation in 2020 to Lead Software Architect for geni:OS genAI in 2025, and taught myself Rust, Swift and Kotlin for [side projects](/projects#personal)."
+  - name: "Self-reliant"
+    evidence: "Sole developer of the [automated testing framework](/projects#test-framework), from first design to hand-over to a dedicated QA team."
+  - name: "Solution-focused"
+    evidence: "Built an [LLM demonstrator](/projects#llm-demonstrator) within a couple of months that led directly to customer acquisition."
+  - name: "Team-oriented"
+    evidence: "Lead one of two sister teams and keep technical standards and staffing aligned with the other team lead."
+  - name: "Structured work"
+    evidence: "Organize my work with Getting Things Done since 2018 and maintain architecture documentation and decision records for geni:OS genAI."

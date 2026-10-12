@@ -59,7 +59,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="navbar container{% if page.wide %} wide{% endif %}">
+        <div class="navbar container">
             {% if site.ins_logo %}
                 <img id="ins-logo" src="{{ site.ins_logo }}" />
             {% endif %}
@@ -83,7 +83,7 @@
         {% if page.is_contact == true %}
             <div class="container content contact">
         {% else %}
-            <div class="container content{% if page.wide %} wide{% endif %}">
+            <div class="container content">
         {% endif %}
                 {{ content }}
                 {% if page.show_copyright == true %}

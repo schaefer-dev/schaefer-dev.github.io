@@ -42,6 +42,7 @@
 }
 .button {
     display: inline-block;
+    font-family: $font-mono;
     padding: 9px 16px;
     border: 1.5px solid var(--accent);
     border-radius: 4px;
@@ -53,23 +54,37 @@
     text-decoration: none;
 }
 
-/* Facts: a definition list, label column in mono */
+/* Intro row: intro left, facts as a sidebar on wide screens */
+
+.intro-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+    margin: 8px 0 12px 0;
+}
+.intro-row .intro {
+    margin: 0;
+}
+
+/* Facts: a definition list, label in mono above each value */
 
 .facts {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 6px 24px;
-    margin: 0 0 12px 0;
-    padding: 18px 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+    margin: 0;
+    padding: 4px 0 4px 32px;
+    border-left: 1px solid var(--rule);
 }
 .facts dt {
     font-family: $font-mono;
     color: var(--muted);
+    font-size: 0.95rem;
 }
 .facts dd {
-    margin: 0;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.45;
+}
+.facts dd:last-child {
+    margin-bottom: 0;
 }
 
 /* Career timeline: the rail is the page's one strong visual element.
@@ -154,7 +169,97 @@
     margin: 0.3rem 0;
 }
 
+/* Two columns for short sections (education, beyond work) */
+
+.two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 56px;
+    align-items: start;
+}
+
+/* Wide screens: period in its own column, rail in the gap */
+
+@media (min-width: 900px) {
+    .content .timeline {
+        padding-left: 0;
+    }
+    .content .timeline::before {
+        left: 191px;
+    }
+    .content .timeline > li {
+        display: grid;
+        grid-template-columns: 170px minmax(0, 1fr);
+        column-gap: 46px;
+    }
+    .content .timeline > li::before {
+        left: 184px;
+    }
+    .timeline .role-period {
+        text-align: right;
+        padding-top: 2px;
+    }
+    .timeline .role-title {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 899px) {
+    .intro-row,
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .facts {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 6px 24px;
+        padding: 18px 0;
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+    }
+    .facts dd {
+        margin: 0;
+    }
+}
+
+/* Shared label/value list: skills strengths, CV documents, contact */
+
+.doc-list {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 40px;
+    margin: 1rem 0 2rem 0;
+}
+.doc-list dt,
+.doc-list dd {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+}
+.doc-list dt {
+    font-family: $font-mono;
+    color: var(--muted);
+}
+.doc-list dd {
+    margin: 0;
+    max-width: 68ch;
+}
+.doc-list .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 28px;
+}
+
 @media (max-width: 560px) {
+    .doc-list {
+        grid-template-columns: 1fr;
+    }
+    .doc-list dd {
+        border-top: 0;
+        padding-top: 0;
+    }
+
     .intro {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -173,4 +278,27 @@
     .facts dd {
         margin-bottom: 10px;
     }
+}
+
+/* CV page: current CV block */
+
+.cv-current {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 32px;
+    max-width: 760px;
+    padding: 22px 26px;
+    margin: 0 0 1.5rem 0;
+    background-color: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+}
+.cv-current h2 {
+    margin: 0;
+}
+.cv-current .meta {
+    font-family: $font-mono;
+    color: var(--muted);
 }
