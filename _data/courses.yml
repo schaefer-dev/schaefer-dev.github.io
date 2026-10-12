@@ -1,0 +1,40 @@
+# University courses at Saarland University (B.Sc. and M.Sc.).
+# group: cs = computer science, other = minors and electives
+
+- { year: 2013, term: Winter, name: "Maths for Computer Science I", group: cs }
+- { year: 2014, term: Summer, name: "Maths for Computer Science II", group: cs }
+- { year: 2014, term: Winter, name: "Maths for Computer Science III", group: cs }
+- { year: 2013, term: Winter, name: "Programming I (functional Programming in ML)", group: cs }
+- { year: 2014, term: Summer, name: "Programming II (MIPS, C, Java)", group: cs }
+- { year: 2014, term: Summer, name: "System Architecture", group: cs }
+- { year: 2014, term: Winter, name: "Theoretical Computer Science", group: cs }
+- { year: 2014, term: Winter, name: "Algorithms and Data Structures", group: cs }
+- { year: 2014, term: Winter, name: "Software Project (Design Practicum)", group: cs }
+- { year: 2015, term: Summer, name: "Concurrent Programming", group: cs }
+- { year: 2015, term: Summer, name: "Information Systems (Databases)", group: cs }
+- { year: 2013, term: Winter, name: "Perspectives of Computer Science", group: cs }
+- { year: 2015, term: Summer, name: "Hacking Seminar", group: cs }
+- { year: 2015, term: Summer, name: "Artificial Intelligence", group: cs }
+- { year: 2015, term: Winter, name: "Introduction to media computer science", group: cs }
+- { year: 2016, term: Summer, name: "Security", group: cs }
+- { year: 2016, term: Summer, name: "Software Development in HCI", group: cs }
+- { year: 2016, term: Summer, name: "High-Level Computer Vision (Convolutional Neural Networks)", group: cs }
+- { year: 2016, term: Winter, name: "Speech Technology - Pattern and Speech Recognition", group: cs }
+- { year: 2016, term: Winter, name: "Law of Cybersecurity", group: cs }
+- { year: 2017, term: Summer, name: "Programming for engineers", group: cs }
+- { year: 2017, term: Summer, name: "Human Computer Interactions", group: cs }
+- { year: 2017, term: Summer, name: "Software Engineering", group: cs }
+- { year: 2017, term: Summer, name: "Ethics for Nerds", group: cs }
+- { year: 2017, term: Winter, name: "Operating Systems", group: cs }
+- { year: 2017, term: Winter, name: "Automatic Planning", group: cs }
+- { year: 2018, term: Summer, name: "Cryptography", group: cs }
+- { year: 2018, term: Summer, name: "Embedded Systems", group: cs }
+- { year: 2018, term: Summer, name: "Web Security", group: cs }
+- { year: 2018, term: Winter, name: "Automata, Games, Verification", group: cs }
+- { year: 2018, term: Winter, name: "Selected Topics in Formal Methods for Security", group: cs }
+- { year: 2019, term: Summer, name: "Hands on Networking", group: cs }
+- { year: 2013, term: Winter, name: "Introduction to Computational linguistics", group: other }
+- { year: 2014, term: Winter, name: "Introduction to Semantics", group: other }
+- { year: 2015, term: Winter, name: "Investing", group: other }
+- { year: 2015, term: Winter, name: "Game Theory", group: other }
+- { year: 2016, term: Winter, name: "Business Finance", group: other }

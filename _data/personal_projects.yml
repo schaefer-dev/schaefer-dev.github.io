@@ -1,0 +1,113 @@
+# Personal projects, shown as cards on the projects page.
+# image:     path under /assets/projects (or a full URL); omit for a text cover
+# cover:     lines shown on the text cover when there is no image
+# image_fit: "contain" for images that should not be cropped to 2:1
+# featured:  shown as a teaser card on the home page
+
+- id: wearwise
+  title: "WearWise"
+  lang: Swift
+  image: /assets/projects/wearwise.jpg
+  image_alt: "WearWise on iPhone and Mac: the What to Wear screen next to a logged hike with its outfit and weather"
+  featured: true
+  summary: >-
+    Native iPhone and Mac app that suggests what to wear outdoors, based on what
+    kept me comfortable in similar weather before.
+  description: |
+    Weather forecasts tell you the temperature, but not that you personally run cold below 8 °C in the wind. WearWise is a native iPhone and Mac app built with SwiftUI and SwiftData that logs what I wore on a hike, run or ride together with the weather conditions and how comfortable I was, rated separately per body zone on a thermal scale. Before heading out, "What to Wear" ranks past outings by how similar the conditions were and how comfortable I felt, and suggests the outfit that worked. Outings can be started from Apple Health workouts, wardrobe and history sync across devices via CloudKit, and everything can be exported to a portable JSON file. The app is planned to be published soon.
+
+- id: supernote-viewer
+  title: "Supernote Viewer"
+  lang: Swift
+  image: /assets/projects/supernote-viewer.jpg
+  image_alt: "Supernote Viewer: a handwritten Supernote notebook opened in a native macOS window"
+  repo: https://github.com/schaefer-dev/supernote-viewer
+  featured: true
+  summary: >-
+    macOS apps and a Quick Look extension that open, preview and search
+    handwritten Supernote notebooks like any other PDF.
+  description: |
+    My Supernote e-ink tablet syncs `.note` notebooks and `.pdf.mark` annotations to my Mac, but macOS cannot open them. Supernote Viewer consists of two small macOS apps plus a Quick Look extension that make these files feel native: notebooks open with a double-click, preview with Space and can be searched like any other PDF. Under the hood a Swift package parses the proprietary file format, decodes the layer bitmaps and renders handwriting as crisp vector strokes from the notebook's own pen data. Apple's on-device Vision text recognition adds an invisible text layer, so handwriting becomes searchable and copyable. The viewer additionally supports live reload while writing on the device and a calibrated measuring tool for floor plans. Releases are shipped as signed and notarized DMGs, and everything runs fully offline.
+
+- id: bird-radar
+  title: "Bird Radar"
+  lang: Python
+  cover: [FastAPI, SQLAlchemy, MCP server, pytest, Raspberry Pi]
+  summary: >-
+    Local-first sighting tracker that consolidates public bird observations,
+    flags species I haven't seen yet and plans my field days.
+  description: |
+    Interesting bird sightings are scattered across several public observation platforms, each with its own coverage, data format and rate limits. Bird Radar normalizes bird and mammal observations from these sources into a single local-first database. Aggressive caching and per-source throttling keep the load on these community services minimal. Sightings are matched against my personal life list and wishlist to surface species I have not yet observed, combined with a reviewed rarity catalog. Getting rarity detection right required careful reverse engineering, for example reading the per-observation rarity colour instead of misleading atlas category icons. A mobile-friendly FastAPI web UI with a daily field plan, map views with marker clustering and a coverage view for planning historical backfills runs on a Raspberry Pi reachable via Tailscale. An MCP server additionally gives Claude read-only access to the data, so I can plan birding trips in natural language. The project is backed by SQLAlchemy and an extensive pytest suite.
+
+- id: local-ai-assistant
+  title: "Local AI Assistant with Hermes Agent"
+  lang: Self-hosted LLMs
+  cover: [Hermes agent, local Qwen models, MCP servers, intervals.icu]
+  summary: >-
+    A personal assistant on locally hosted Qwen models that organizes mail,
+    notes and todos, with all data under my own control.
+  description: |
+    To keep personal data under my own control, I run a Hermes agent on locally hosted Qwen models as my personal assistant. It organizes my mails, takes down notes and keeps track of todos. Integrations are provided through various MCP servers, for example for Gmail, iCloud and intervals.icu, which I use for performance tracking and training plans. The project is a playground to explore how far local models can be pushed for agentic everyday tasks, and the learnings feed directly back into my professional work with LLM agents.
+
+- id: karoo-decoupling
+  title: "Karoo Aerobic Decoupling Extension"
+  lang: Kotlin
+  image: /assets/projects/karoo-decoupling.jpg
+  image_alt: "Karoo Decoupling: live aerobic decoupling and W' balance data fields on a Hammerhead Karoo"
+  repo: https://github.com/schaefer-dev/karoo-decoupling
+  featured: true
+  summary: >-
+    Bike computer extension that shows live aerobic decoupling and W′ balance
+    while riding.
+  description: |
+    An extension for the Hammerhead Karoo 2 and Karoo 3 bike computers that displays live aerobic decoupling (Pa:Hr drift) while riding. It samples power and heart rate once per second of moving time, compares the efficiency factor of the first and second half of the ride and shows the running drift percentage as a training and pacing signal. Additional data fields visualize the decoupling trend of the last 60 minutes as a graph and show W′ balance to track remaining anaerobic capacity. To save battery, release builds throttle redraws while the calculation still uses every sample. The math and stream coordination are covered by JVM unit tests, so most bugs are caught without a device.
+
+- id: cycling-heatmap
+  title: "Cycling Heatmap & Ride Archive"
+  lang: JavaScript
+  image: /assets/projects/cycling-heatmap.jpg
+  image_alt: "Heatmap of road, gravel and MTB rides on an interactive map"
+  repo: https://github.com/schaefer-dev/cycling_heatmap_app
+  summary: >-
+    Heatmap and archive of my road, gravel and MTB rides with rated route
+    sections for future planning.
+  description: |
+    A personal archive for my road, gravel and MTB rides to inform future route planning. Rides are imported from Garmin GPX files, either individually or in bulk, and visualized on an interactive heatmap per bike type. Sections of a route can be rated on a five-level scale and tagged with surface conditions, so I can look up later whether a trail is worth riding again. Clicking any location on the map lists all rides that passed it. The frontend is built with React, Vite, Tailwind and Leaflet, the backend with Node.js, Express and SQLite.
+
+- id: obsidian-pdf-mirror
+  title: "Obsidian PDF Mirror"
+  lang: Python
+  image: /assets/projects/obsidian-pdf-mirror.png
+  image_alt: "Obsidian PDF Mirror: an Obsidian vault converted via pandoc and Typst into PDFs on an e-ink tablet"
+  repo: https://github.com/schaefer-dev/obsidian_pdf_mirror
+  summary: >-
+    Mirrors an Obsidian vault into typeset PDFs for reading on an e-ink tablet,
+    incrementally and in the background.
+  description: |
+    Obsidian is great for writing notes but less great for reading them on an e-ink tablet. This tool mirrors my entire Obsidian vault into a separate folder tree of nicely typeset PDFs that syncs to my tablet via Dropbox. Obsidian-specific syntax is preprocessed and converted through pandoc with a custom Lua filter into Typst, which produces the PDFs. Runs are incremental and only re-render notes whose content or embedded files changed, so an idle run takes about 0.1 seconds. Deterministic output ensures unchanged notes are never rewritten and re-uploaded, renames and deletions are followed, and a safeguard refuses to delete more than 30 percent of the mirror in one run. The tool runs unobtrusively in the background via launchd.
+
+- id: lightroom-gps
+  title: "Lightroom GPS Gap Repair"
+  lang: Python
+  image: /assets/projects/lightroom-gps.svg
+  image_fit: contain
+  image_alt: "Lightroom GPS Gap Repair: photos without GPS get coordinates from the nearest geotagged photo in time"
+  repo: https://github.com/schaefer-dev/lightroom-gps-gap-extrapolation
+  summary: >-
+    Safety-first command-line tool that fills missing GPS data in a Lightroom
+    library from the nearest geotagged photo.
+  description: |
+    My Sony camera takes its location from a paired phone, but whenever the camera is switched on or the connection drops, a handful of frames end up without GPS data. This command-line tool fills these gaps in a Lightroom Classic library by copying the coordinates of the temporally nearest geotagged photo. Since it operates on an irreplaceable photo library, the design is safety-first: RAW files are never modified, only XMP sidecars without any GPS data are written, every affected file is backed up and SHA-256 verified before a single change, and every run can be restored. Larger time gaps are flagged for manual review or skipped, and unsynced Lightroom sidecars are detected and abort the run before they could overwrite catalog metadata.
+
+- id: photography-portfolio
+  title: "Photography Portfolio"
+  lang: JavaScript
+  image: https://res.cloudinary.com/dhateve93/image/upload/w_1000,h_500,c_fill,g_auto,q_80,f_auto/20260722-A1_01770_aqpgvf
+  image_alt: "Kingfisher in Dillingen, Germany, from the photography portfolio"
+  link: /photos
+  link_text: "View the photos"
+  summary: >-
+    The photo section of this site: 4K images delivered fast through Cloudinary,
+    with a custom lightbox and data saver mode.
+  description: |
+    The [photography section](/photos) of this website is designed to deliver high-resolution images quickly without bloating the repository. All images are hosted on Cloudinary and resized on demand: 800 pixel thumbnails for the gallery grid and up to 4K for the lightbox, with automatic WebP/JPEG format selection, progressive loading and lazy loading. A custom lightbox preloads neighbouring images for instant previous/next navigation, supports touch panning on mobile devices and shows a loading bar for large images. A persistent data saver mode lets visitors on slower connections switch the lightbox from 4K to 2.4K images. The galleries are generated automatically from simple per-year photo lists, which keeps adding new photos a one-line change.

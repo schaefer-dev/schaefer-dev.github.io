@@ -1,0 +1,17 @@
+{% comment %}
+  One work or university project. Params:
+    item: entry from _data/work_projects.yml or _data/university_projects.yml
+{% endcomment %}
+{% assign e = include.item %}
+<article class="work-entry" id="{{ e.id }}">
+  <h3>{{ e.title }}</h3>
+  {% if e.tags %}<ul class="tags">{% for t in e.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+  <p class="lede">{{ e.lede }}</p>
+  <details class="more">
+    <summary>Full description</summary>
+    {{ e.details | markdownify }}
+  </details>
+  {% if e.links %}
+  <p class="project-links">{% for l in e.links %}<a href="{% if l.url contains '://' %}{{ l.url }}{% else %}{{ l.url | relative_url }}{% endif %}">{{ l.text }}</a>{% endfor %}</p>
+  {% endif %}
+</article>

@@ -21,7 +21,9 @@
         {% assign url = site.url | append: site.baseurl | append: page.url %}
     {% endif %}
     <meta name="description" content="{{ desc }}">
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
     {% if site.favicon %}
@@ -38,6 +40,8 @@
     <meta name="og:type" content="article">
     {% if site.og_image %}
         <meta name="og:image" content="{{ site.og_image }}">
+    {% else %}
+        <meta name="og:image" content="{{ site.url }}/me.jpg">
     {% endif %}
     {% if site.facebook_id %}
         <meta name="fb:admins" content="{{ site.facebook_id }}">
@@ -55,7 +59,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="navbar container">
+        <div class="navbar container{% if page.wide %} wide{% endif %}">
             {% if site.ins_logo %}
                 <img id="ins-logo" src="{{ site.ins_logo }}" />
             {% endif %}
@@ -79,18 +83,18 @@
         {% if page.is_contact == true %}
             <div class="container content contact">
         {% else %}
-            <div class="container content">
+            <div class="container content{% if page.wide %} wide{% endif %}">
         {% endif %}
                 {{ content }}
                 {% if page.show_copyright == true %}
                     <hr />
-                    <p style="text-align: center; margin-bottom: 10px; color: #DAD7D2;">
+                    <p style="text-align: center; margin: 0 auto 10px auto; color: #DAD7D2;">
                     <small>© {{ 'now' | date: "%Y" }} Daniel Schäfer. All rights reserved. All photographs are protected by copyright.</small>
                     </p>
                 {% endif %}
                 {% if site.footer == true %}
                     <hr />
-                    <p style="text-align: center; margin-bottom: 10px">
+                    <p style="text-align: center; margin: 0 auto 10px auto">
                     <a href="{{ site.footer_url }}" style="color: #DAD7D2"><small>{{ site.footer_text }}</small></a>
                     </p>
                 {% endif %}

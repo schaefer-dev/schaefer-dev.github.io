@@ -1,0 +1,206 @@
+@import "vars";
+
+/*
+ * Projects page: jump bar, entries, card grid
+ */
+
+html {
+    scroll-padding-top: 64px;
+}
+
+.jumpbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    margin: 0 0 8px 0;
+}
+.content .jumpbar ul {
+    display: flex;
+    gap: 6px 26px;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-family: $font-mono;
+    font-size: 1.05rem;
+}
+.content .jumpbar li {
+    margin: 0;
+}
+
+.section-intro {
+    color: var(--muted);
+    margin-top: 0;
+}
+
+/* Tags: technologies, shown in mono */
+
+.content .tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+.content .tags li {
+    margin: 0;
+    padding: 2px 8px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    color: var(--muted);
+}
+
+/* Collapsible full descriptions */
+
+details.more {
+    margin: 0.5rem 0 0 0;
+}
+details.more > summary {
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+    font-family: $font-mono;
+    color: var(--accent);
+}
+details.more > summary::-webkit-details-marker {
+    display: none;
+}
+details.more > summary::before {
+    content: "+ ";
+}
+details.more[open] > summary::before {
+    content: "\2212  ";
+}
+details.more > summary:hover {
+    text-decoration: underline;
+}
+details.more[open] > summary {
+    margin-bottom: 0.4rem;
+}
+
+/* Work / university entries: single column, readable width */
+
+.work-entry {
+    max-width: 720px;
+    padding: 0 0 26px 0;
+    margin: 0 0 26px 0;
+    border-bottom: 1px solid var(--rule);
+}
+.work-entry:last-child {
+    border-bottom: 0;
+}
+.work-entry h3 {
+    margin: 0 0 0.5rem 0;
+}
+.work-entry .lede {
+    font-weight: 600;
+    margin: 0.6rem 0 0.2rem 0;
+}
+
+/* Personal project cards */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 28px;
+    align-items: start;
+    margin: 24px 0 12px 0;
+}
+.project-card {
+    background-color: var(--surface);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.content .project-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    background-color: #0d1117;
+}
+.content .project-cover.contain {
+    object-fit: contain;
+}
+/* Cover for projects without an image: the stack, typeset */
+.project-cover.text-cover {
+    aspect-ratio: 2 / 1;
+    background-color: var(--surface-raised);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 22px 24px;
+    box-sizing: border-box;
+    font-family: $font-mono;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    color: var(--muted);
+}
+.text-cover span:first-child {
+    color: var(--text);
+}
+.project-body {
+    padding: 18px 22px 22px 22px;
+}
+.project-body h3 {
+    margin: 0 0 0.5rem 0;
+}
+.project-body > p {
+    margin: 0.7rem 0 0.4rem 0;
+}
+.project-links {
+    font-family: $font-mono;
+    margin: 0.5rem 0 0 0;
+}
+.project-links a + a {
+    margin-left: 1.2em;
+}
+
+/* Compact teaser variant on the home page */
+
+.project-grid.teaser {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+.teaser .project-body {
+    padding: 12px 14px 16px 14px;
+}
+.teaser .project-body h3 {
+    font-size: 1.05rem;
+    margin: 0 0 0.3rem 0;
+}
+.teaser .project-body > p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0;
+}
+.teaser a.project-card {
+    display: block;
+    color: inherit;
+}
+.content .teaser a.project-card:hover {
+    text-decoration: none;
+}
+.teaser a.project-card:hover h3 {
+    color: var(--accent);
+}
+
+/* Courses table inside a details block */
+
+.courses table {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+    .project-grid,
+    .project-grid.teaser {
+        grid-template-columns: 1fr;
+    }
+}

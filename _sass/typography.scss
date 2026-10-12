@@ -29,6 +29,9 @@
         position: absolute;
         left: -30px;
     }
+    p, li {
+        max-width: 68ch;
+    }
     blockquote {
         //border: 1px solid black;
         border-left: 5px solid #333333;

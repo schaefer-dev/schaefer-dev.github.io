@@ -1,0 +1,42 @@
+{% comment %}
+  One personal project card. Params:
+    project: entry from _data/personal_projects.yml
+    teaser:  true renders the compact home page variant that links to /projects
+{% endcomment %}
+{% assign p = include.project %}
+{% capture cover %}
+  {% if p.image %}
+    {% if p.image contains "://" %}{% assign src = p.image %}{% else %}{% assign src = p.image | relative_url %}{% endif %}
+    <img class="project-cover{% if p.image_fit == 'contain' %} contain{% endif %}" src="{{ src }}" alt="{{ p.image_alt }}" loading="lazy" width="1200" height="600">
+  {% else %}
+    <div class="project-cover text-cover" aria-hidden="true">{% for line in p.cover %}<span>{{ line }}</span>{% endfor %}</div>
+  {% endif %}
+{% endcapture %}
+{% if include.teaser %}
+<a class="project-card" href="{{ '/projects' | relative_url }}#{{ p.id }}">
+  {{ cover }}
+  <div class="project-body">
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.summary }}</p>
+  </div>
+</a>
+{% else %}
+<article class="project-card" id="{{ p.id }}">
+  {{ cover }}
+  <div class="project-body">
+    <h3>{{ p.title }}</h3>
+    <ul class="tags"><li>{{ p.lang }}</li></ul>
+    <p>{{ p.summary }}</p>
+    <details class="more">
+      <summary>Full description</summary>
+      {{ p.description | markdownify }}
+    </details>
+    {% if p.repo or p.link %}
+    <p class="project-links">
+      {% if p.repo %}<a href="{{ p.repo }}">GitHub repository</a>{% endif %}
+      {% if p.link %}<a href="{{ p.link | relative_url }}">{{ p.link_text }}</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
+</article>
+{% endif %}

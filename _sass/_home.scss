@@ -1,0 +1,176 @@
+@import "vars";
+
+/*
+ * Home page: intro, facts, career timeline
+ */
+
+.intro {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    align-items: start;
+    margin: 8px 0 36px 0;
+}
+.content .intro-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+.intro h1 {
+    font-size: 2.4rem;
+    margin: 0 0 0.4rem 0;
+}
+.intro-role {
+    font-family: $font-mono;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+}
+.intro-role span {
+    display: block;
+    color: var(--muted);
+}
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 22px;
+    margin-top: 1.2rem;
+    font-family: $font-mono;
+}
+.button {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    font-weight: 700;
+}
+.content .button:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+}
+
+/* Facts: a definition list, label column in mono */
+
+.facts {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 24px;
+    margin: 0 0 12px 0;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+}
+.facts dt {
+    font-family: $font-mono;
+    color: var(--muted);
+}
+.facts dd {
+    margin: 0;
+}
+
+/* Career timeline: the rail is the page's one strong visual element.
+   The current role gets the filled accent marker, past roles hollow ones. */
+
+.content .timeline {
+    list-style: none;
+    padding: 0 0 0 34px;
+    margin: 24px 0 0 0;
+    position: relative;
+}
+.content .timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent) 0, var(--accent) 120px, var(--rule) 260px);
+}
+.content .timeline > li {
+    position: relative;
+    margin: 0 0 40px 0;
+    max-width: none;
+}
+.content .timeline > li::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--muted);
+    background-color: var(--bg);
+}
+.content .timeline > li.current::before {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    box-shadow: 0 0 0 5px rgba(255, 63, 51, 0.18);
+}
+.role-period {
+    font-family: $font-mono;
+    color: var(--muted);
+    font-size: 0.95rem;
+    display: block;
+}
+.timeline .current .role-period {
+    color: var(--accent);
+}
+.role-title {
+    margin: 0.15rem 0 0.1rem 0;
+    font-size: 1.3rem;
+}
+.role-subtitle {
+    font-family: $font-mono;
+    color: var(--muted);
+    margin: 0 0 0.6rem 0;
+}
+.role-summary {
+    margin: 0.4rem 0 0.4rem 0;
+}
+.content ul.highlights {
+    padding-left: 20px;
+    margin: 0.4rem 0 0.6rem 0;
+}
+
+/* Small entries: education, selected projects */
+
+.entry {
+    margin: 0 0 22px 0;
+}
+.entry h3 {
+    margin: 0 0 0.2rem 0;
+}
+.entry .meta {
+    font-family: $font-mono;
+    color: var(--muted);
+    display: block;
+}
+.entry p {
+    margin: 0.3rem 0;
+}
+
+@media (max-width: 560px) {
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .content .intro-photo {
+        width: 96px;
+        height: 96px;
+    }
+    .intro h1 {
+        font-size: 2rem;
+    }
+    .facts {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .facts dd {
+        margin-bottom: 10px;
+    }
+}

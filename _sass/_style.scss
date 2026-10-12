@@ -4,6 +4,16 @@
  * Basic
  */
 
+:root {
+    --bg: #1A1D1F;
+    --surface: #23272A;
+    --surface-raised: #2B3034;
+    --rule: #34393D;
+    --text: #DAD7D2;
+    --muted: #9C978F;
+    --accent: #{$accent};
+}
+
 html {
     height: 100%;
     margin: 0;
@@ -11,8 +21,25 @@ html {
 }
 body {
     margin: 0;
-    font-family: "Inconsolata";
+    font-family: $font-body;
+    font-size: 18px;
+    line-height: 1.65;
+    background-color: var(--bg);
+    color: var(--text);
     height: 100%;
+}
+h1, h2, h3, h4 {
+    font-family: $font-mono;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+}
+h1 { font-size: 2.1rem; margin: 2.2rem 0 1rem 0; }
+h2 { font-size: 1.55rem; margin: 2rem 0 0.8rem 0; }
+h3 { font-size: 1.2rem; margin: 1.6rem 0 0.5rem 0; }
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 a {
     text-decoration: none;
@@ -39,6 +66,9 @@ hr {
 }
 .navbar {
     padding: 50px 0 50px 0;
+    font-family: $font-mono;
+    font-size: 17px;
+    line-height: 1.4;
 }
 .navbar-ul {
     display: inline-block;
@@ -67,6 +97,11 @@ hr {
 .container {
     max-width: $max-width;
     margin: auto;
+}
+/* Pages with `wide: true` front matter (card grids) */
+.container.wide {
+    width: 90%;
+    max-width: $wide-width;
 }
 .wrapper {
     min-height: 100%;

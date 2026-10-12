@@ -1,0 +1,96 @@
+# University projects at Saarland University, newest first.
+
+- id: master-thesis
+  title: "Master Thesis Project"
+  tags: [Swift, Program synthesis, Formal methods]
+  lede: >-
+    Knowledge-aware specifications (KLTL) translated to LTL, so that existing
+    synthesis tools build correct implementations, with less than 10% runtime overhead.
+  links:
+    - { text: "KBoSy on GitHub", url: "https://github.com/schaefer-dev/k-bosy" }
+    - { text: "Benchmarks", url: "https://github.com/schaefer-dev/master_thesis_benchmarks" }
+  details: |
+    My master thesis was written in the field of program synthesis which is a concept used to construct a program that solves a given formal specification automatically. My thesis aims to enhance existing approaches by allowing the use of higher-level semantics to be used as part of these specifications. This decreases not only the risk of human-error in providing the intended formal specification but also simplifies the process overall. My proposed algorithm is implemented entirely in object oriented Swift code. More technically speaking: the core idea is to write requirements in a knowledge-aware logic (KLTL) and translate them into standard temporal logic (LTL) such that established synthesis tools in the field can build the implementation of said specification automatically. Implemented an open source prototype in Swift (KBoSy) and showed on realistic problems that this translation adds only a small overhead compared to the following LTL synthesis itself - about 9.82 percent of runtime and 18.39 percent of memory on average, making my proposed approach usable in practice. The thesis outlines when exact translations are possible and when safe under-approximations are needed. In short, the project demonstrates how to keep system specifications readable and still produce reliable implementations automatically.
+
+- id: research-assistant
+  title: "Research Assistant Project"
+  tags: [Rust, Robotics, Lidar]
+  lede: >-
+    Rust library that drives a Lidar-equipped four-wheeled robot through an
+    Arduino over USB.
+  details: |
+    Implementation of a Rust Library that communicates over a USB interface with a Arduino board which is mounted on a fairly large 4-wheeled robot. The implemented Rust library is running on a Intel NUC that is built on top of the robot chassis. Additionally the NUC is connected to a Lidar which is used to scan and reconstruct the room surrounding the robot, which allows for safe navigation and avoiding of obstacles.
+
+- id: multimedia-codec
+  title: "Hands on Networking: Multimedia Codec"
+  tags: [Python, Error correction]
+  lede: >-
+    Error-correcting codec for a noisy channel that fixed 100% of errors,
+    including bursts, at a third of the allowed redundancy.
+  details: |
+    In this small project I implemented encoding and decoding functions suited to send multimedia files over a noisy channel in an efficient way. The goal of this codec is to be able to correct errors that are introduced by the communication channel in a sufficiently fast way which also does not require too much redundancy overhead. The channel introduced randomized bit flips, which could also occur in bursts. To solve this problem I essentially implemented a Hamming Code with interleaving to be able to handle the error correction for burst of errors better. My implementation was able to correct 100% of all errors (including bursts) on all provided grading-networks, with a redundancy of only 100% (passing criterion was 300%).
+
+- id: lldp-agent
+  title: "Hands on Networking: LLDP Agent"
+  tags: [Python, Networking]
+  lede: >-
+    Link-layer agent that announces itself via LLDP and parses its neighbours'
+    announcements, with robustness tests.
+  details: |
+    In this small project I implemented a LLDPA agent which is able to announce itself by sending LLDP messages to the network on the Link Layer. Additionally the agent parses all LLDP messages that are sent to one of the LLDP multicast addresses of the network. I also implemented a set of tests to verify the agents behaviour and robustness against e.g. invalid TLVs. Wireshark can be used to listen to network traffic and observe the correct behaviour of the agent.
+
+- id: embedded-systems
+  title: "Embedded Systems Project"
+  tags: [C/C++, AVR, RF communication]
+  lede: >-
+    Two cooperating competition robots on ATmega328 controllers with tight
+    memory budgets. Our team won the semester competition.
+  details: |
+    In this project groups of 3 students each developed a strategy for two different kinds of robots every group had access to. To solve problems that were important to win the competition that would take place in the end of the semester, it was essential to write very efficient and low-memory footprint code, as computational resources on both robots were only very limited. The robots used an ATMEGA328 AVR controller and could communicate using a nRF24L01+ RF module. Efficient communication including acknowledgements were essential to balance the work between both robots, as one of them was loaded with sensors, while its bigger brother was basically 'blind'. In early stages of development, a Simulink Model we built, that implemented a simplified version of our tactic already indicated a very big problem: keeping track of our position on the map was significantly harder than we expected, as Drift was very large on such lightweight robots. Additionally we had to make sure that we reliably recognize and predict collisions with other robots, which was another scenario which could significantly impact our concrete position in the arena.
+
+    While it was quite challenging to implement these Embedded Systems from scratch, we learned a lot about reading Datasheets, Communication Protocols and Sensor usage (particularly handling high noise).
+
+    Our team ended up winning the competition between all student-teams at the end of the semester.
+
+- id: pintos
+  title: "PINTOS Operating System"
+  tags: [C, x86, Operating systems]
+  lede: >-
+    Kernel threads, user programs, scheduling, virtual memory and a file system
+    for the x86 Pintos operating system.
+  details: |
+    Implementation of the Pintos Operating System for the x86 architecture. We implemented: Kernel threads, loading and running of user-specified programs with scheduling of these programs and Virtual Memory. Last iteration of the project included a filesystem implementation, including writing Swapfiles with intelligent paging to avoid Disk access as much as possible.
+
+- id: plagiarism-detection
+  title: "Plagiarism Detection Tool"
+  tags: [Python, JavaScript, PHP]
+  lede: >-
+    Built on request for a professor and used in teaching: checks up to 4000
+    submissions pairwise and resists renaming and reordering tricks.
+  links:
+    - { text: "Project video", url: "https://youtu.be/Lcn0QEfDHL4" }
+  details: |
+    Developed per request for professor at Saarland University. The tool is now successfully used to detect plagiarism cases among students and supports up to 4000 submissions with up to 1000 lines each and checks every submission pair for possible plagiarism cases. Obvious plagiarism cases are highlighted and the professor is automatically notified with a human readable overview of why the set of submissions are obvious plagiarism cases including a colored mapping of copied parts of the code. The tool is completely robust against many options to easily bypass most ordinary plagiarism detection tools for both python and C code (variable renaming, moving of code blocks etc.).
+
+- id: bachelor-thesis
+  title: "Bachelor Thesis"
+  tags: [C#, Unity3D, Usable security]
+  lede: >-
+    A novel graphical authentication scheme for mobile VR that outperformed PIN
+    and Android Pattern on user experience and security in a user study.
+  links:
+    - { text: "Read the thesis (PDF)", url: "/thesis.pdf" }
+  details: |
+    My thesis [Development and Evaluation of Authentication Schemes for Mobile Virtual Reality](/thesis.pdf) was about developing a novel approach to authenticate in a VR environment. This new authentication scheme was implemented in C# in Unity3D for GoogleVR (can be used e.g. on Daydream)
+
+    **Abstract of my Thesis:**
+    In recent years Virtual Reality has grown very quickly and found more and more use-cases. With new commercial releases of affordable mobile HMDs such as Google Daydream, Samsung Gear VR combined with the rising potential of mobile AR glasses, the unsolved security problem for these devices grows continuously. Existing knowledge-based and biometric authentication schemes all come with critical disadvantages especially because they are usually not designed with Virtual Reality usage in mind. I implemented a novel graphical authentication scheme called "Personal Environment Authentication" specifically aimed at Virtual Reality. In this new scheme the user will authenticate herself using an ordered selection of objects in a (personal) virtual environment in form of a 360-degree image. It offers significantly improved memorability of passwords compared to knowledge-based systems making use of the Pictorial Superiority Effect. In a study I was able to additionally confirm significantly improved user-experience and security of this scheme compared to the prominent solutions "PIN" and "Android Pattern" authentication.
+
+- id: software-praktikum
+  title: "Software Praktikum"
+  tags: [Java, Game development]
+  lede: >-
+    A full turn-based game with GUI. Won the prize for best additional feature:
+    playable maps generated from real topographic maps.
+  details: |
+    Implementation of a fully fledged turn-based game including GUI in Java. Won prize for best additional feature with a fully automatic map-generation that used image processing on topographic maps fetched from Google Maps, that allowed to play your game on a realistic map of e.g. Hawaii or Greenland.

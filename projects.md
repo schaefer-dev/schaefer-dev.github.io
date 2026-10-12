@@ -1,226 +1,80 @@
 ---
 layout: default
-title: "Daniel Schäfer | Projects and Courses"
-description: "Descriptions for various projects I have worked at in my freetime, at work and during university."
+title: "Daniel Schäfer | Projects"
+description: "Work projects at semvox, personal side projects and university projects by Daniel Schäfer, from genAI architecture for the Volkswagen Group to Swift, Kotlin and Python tools."
+wide: true
 ---
 
-# Work projects
-
-List of standout achievements and projects for my time at semvox in reverse chronological order, starting with my most-recent projects.
-
-
-### Head of Software Architecture & Engineering (Leadership)
-
-Since April 2026 I lead one of two Software Architecture & Engineering teams in semvox AR&D. In a matrix organization where engineers work day to day in cross-functional workstreams, I own their development and feedback as well as the long-term growth of the team's capabilities. That ranges from architecture and requirements engineering to testing and end-to-end development in Java and Python. Beyond people leadership I sit on the department's steering committee, represent the capability field toward internal stakeholders and align closely with the other team lead to avoid diverging standards. I hold this role together with my position as Lead Software Architect for geni:OS genAI. That lets me connect people development directly with the technical direction of our most strategic product and keeps leadership decisions grounded in hands-on engineering experience.
-
-
-### AI-Assisted Software Delivery & genAI Tooling (Python/TypeScript)
-
-GenAI assistant development touches many connected artifacts at once: framework code, agents, prompts, tool definitions, test cases, logs and evaluation results. To make changes across them faster and more reliable, I drive the adoption of AI-assisted workflows in our development process: AI coding agents guided by repository-specific instructions, AI-supported drafting of test cases and regression candidates, and AI-assisted review and debugging. Alongside that, I develop internal tooling for the genAI stack, such as a VS Code based log evaluator for analyzing assistant logs, traces and latency, and our automated test framework for LLM-based assistants. Developers stay accountable for every change. AI output is treated as a draft that is reviewed and validated.
-
-
-### geni:OS genAI (Python)
-
-As Lead Software Architect for the next generation assistant system for the Volkswagen Group, I own the technical vision and the key architectural decisions of the genAI solution. The role spans system design across loud boundaries, hands-on development of core LLM agents and capabilities, and the definition of technical solutions for safety, privacy, latency, and reliability under in-vehicle constraints. I maintain architecture documentation and decision records to keep cross-functional teams aligned and to make trade-offs transparent. I act as the primary technical counterpart for internal stakeholders and external partners and I routinely explore new concepts to determine which novel concepts are worth integrating already, versus which should remain in research/exploration phase. The focus is on building a sustainable AI-driven platform rather than a collection of demos, which means actively balancing experimentation and predictable delivery and setting clear deprecation and migration paths as the technology evolves.
-
-
-### Automotive LLM Demonstrator (Python)
-
-Over the span of a couple of months I developed a demonstrator project that showcased what a deep LLM integration can contribute to the in-car assistant experience for all VW brands. The demonstrator ran on production hardware and was integrated into the existing vehicle architecture. Beyond building the full AI-driven featureset, I established automated testing methodology and regression analysis for llm-agent behavior to catch regressions in prompts, tools, and retrieval logic early. The PoC already significantly exceeded expectations of internal and external stakeholders in very early development stages. Following the integration of additional features - showcasing further advantages of this new assistant architecture, the PoC directly led to successful customer acquisition. Semvox is now fully committed to this new product generation, now called geni:OS genAI, that builds on top of the findings in this PoC.
-
-
-### Automated Testing Framework (Java)
-
-I designed and implemented an end to end test framework for automotive hardware prototypes from the ground up. The system automates the complete loop from injecting generated audio to simulate driver utterances to validating the speech output of the assistant, while hiding the complexity of fragile lab setups and prototype hardware. Over time the framework replaced over 30 percent of manual QA with automated testruns and it covered key integration scenarios that previously required significant coordination effort and human involvement. Beyond raw automation, the framework significantly improved repeatability and reduced the risk of hardware mishandling during tests. After stabilizing the platform and implementing all key features, I handed it over to a dedicated QA team. I still supported roadmap and design decisions for another year to ensure a clean transition. The main challenge throughout was to keep the framework reliable across frequent hardware and software changes.
-
-
-### Cybersecurity Certification (ISO 21434)
-
-I contributed to and helped establish the topic of cybersecurity throughout our internal product development lifecycle with the explicit goal of achieving an eventual ISO 21434 certification. My technical responsibilities included Threat Analysis and Risk Assessment for our software framework, triage and mitigation planning for CVE findings, and the definition of development and release practices that make security considerations routine rather than an exception. The work resulted in a successful ISO 21434 certification of our product and it established a path for continuous security maintenance. The pragmatic trade-off was to design processes that the teams would actually follow under real-world project pressure and to keep documentation precise and concise so it supports engineering teams instead of slowing it down.
-
-### KITT Prototype (Java)
-
-When I started at semvox, I quickly became one of the main contributers to our company internal prototype project in which we explored features of our gen:OS framework early on. It was mostly used as a means to discover gaps and usability improvements in our tooling and software stack. We also use it at various fares to showcase advanced features that our geni:OS framework enables.
-I developed the first Android Version of the KITT prototype, also supporting the Android Automotive VoiceInteractionSession feature to use KITT as a fully functional voice assistant in android automotive systems.
-The KITT Prototype was also used as a project showcasing the best practices when working with geni:OS. This KITT project still is a pillar of our internal documentation and onboarding processes to work with geni:OS as a framework to build your own assistant.
-
-# Personal Projects
-
-Projects I build in my free time, mostly to solve problems from my own hobbies (birding, cycling, photography, note-taking). Most of them are open source on GitHub.
-
-
-### Bird Radar - Multi-Source Sighting Tracker (Python)
-
-Interesting bird sightings are scattered across many platforms, each with its own coverage, data format and rate limits. Bird Radar aggregates bird and mammal observations from ornitho.de, eBird, iNaturalist, observation.org, faune-grandest.org and several sources delivered through GBIF into a local-first database. Aggressive caching and per-platform throttling keep the load on these community services minimal. Sightings are matched against my personal life list and wishlist to surface species I have not yet observed, combined with a reviewed rarity catalog. Getting rarity detection right required careful reverse engineering, for example reading ornitho's per-observation rarity colour instead of the misleading atlas category icons. A mobile-friendly FastAPI web UI with a daily field plan, map views with marker clustering and a coverage view for planning historical backfills runs on a Raspberry Pi reachable via Tailscale. An MCP server additionally gives Claude read-only access to the data, so I can plan birding trips in natural language. The project is backed by SQLAlchemy and an extensive pytest suite.
-
-
-### WearWise - Outdoor Clothing Log (Swift)
-
-Weather forecasts tell you the temperature, but not that you personally run cold below 8 °C in the wind. WearWise is a native iPhone and Mac app built with SwiftUI and SwiftData that logs what I wore on a hike, run or ride together with the weather conditions and how comfortable I was, rated separately per body zone on a thermal scale. Before heading out, "What to Wear" ranks past outings by how similar the conditions were and how comfortable I felt, and suggests the outfit that worked. Outings can be started from Apple Health workouts, wardrobe and history sync across devices via CloudKit, and everything can be exported to a portable JSON file. The app is planned to be published soon.
-
-
-### Supernote Viewer (Swift)
-
-My Supernote e-ink tablet syncs `.note` notebooks and `.pdf.mark` annotations to my Mac, but macOS cannot open them. Supernote Viewer consists of two small macOS apps plus a Quick Look extension that make these files feel native: notebooks open with a double-click, preview with Space and can be searched like any other PDF. Under the hood a Swift package parses the proprietary file format, decodes the layer bitmaps and renders handwriting as crisp vector strokes from the notebook's own pen data. Apple's on-device Vision text recognition adds an invisible text layer, so handwriting becomes searchable and copyable. The viewer additionally supports live reload while writing on the device and a calibrated measuring tool for floor plans. Releases are shipped as signed and notarized DMGs, and everything runs fully offline.
-
-[GitHub Repository](https://github.com/schaefer-dev/supernote-viewer)
-
-
-### Local AI Assistant with Hermes Agent (Self-hosted LLMs)
-
-To keep personal data under my own control, I run a Hermes agent on locally hosted Qwen models as my personal assistant. It organizes my mails, takes down notes and keeps track of todos. Integrations are provided through various MCP servers, for example for Gmail, iCloud and intervals.icu, which I use for performance tracking and training plans. The project is a playground to explore how far local models can be pushed for agentic everyday tasks, and the learnings feed directly back into my professional work with LLM agents.
-
-
-### Karoo Aerobic Decoupling Extension (Kotlin)
-
-An extension for the Hammerhead Karoo 2 and Karoo 3 bike computers that displays live aerobic decoupling (Pa:Hr drift) while riding. It samples power and heart rate once per second of moving time, compares the efficiency factor of the first and second half of the ride and shows the running drift percentage as a training and pacing signal. Additional data fields visualize the decoupling trend of the last 60 minutes as a graph and show W′ balance to track remaining anaerobic capacity. To save battery, release builds throttle redraws while the calculation still uses every sample. The math and stream coordination are covered by JVM unit tests, so most bugs are caught without a device.
-
-[GitHub Repository](https://github.com/schaefer-dev/karoo-decoupling)
-
-
-### Cycling Heatmap & Ride Archive (JavaScript)
-
-A personal archive for my road, gravel and MTB rides to inform future route planning. Rides are imported from Garmin GPX files, either individually or in bulk, and visualized on an interactive heatmap per bike type. Sections of a route can be rated on a five-level scale and tagged with surface conditions, so I can look up later whether a trail is worth riding again. Clicking any location on the map lists all rides that passed it. The frontend is built with React, Vite, Tailwind and Leaflet, the backend with Node.js, Express and SQLite.
-
-[GitHub Repository](https://github.com/schaefer-dev/cycling_heatmap_app)
-
-
-### Obsidian PDF Mirror (Python)
-
-Obsidian is great for writing notes but less great for reading them on an e-ink tablet. This tool mirrors my entire Obsidian vault into a separate folder tree of nicely typeset PDFs that syncs to my tablet via Dropbox. Obsidian-specific syntax is preprocessed and converted through pandoc with a custom Lua filter into Typst, which produces the PDFs. Runs are incremental and only re-render notes whose content or embedded files changed, so an idle run takes about 0.1 seconds. Deterministic output ensures unchanged notes are never rewritten and re-uploaded, renames and deletions are followed, and a safeguard refuses to delete more than 30 percent of the mirror in one run. The tool runs unobtrusively in the background via launchd.
-
-[GitHub Repository](https://github.com/schaefer-dev/obsidian_pdf_mirror)
-
-
-### Lightroom GPS Gap Repair (Python)
-
-My Sony camera takes its location from a paired phone, but whenever the camera is switched on or the connection drops, a handful of frames end up without GPS data. This command-line tool fills these gaps in a Lightroom Classic library by copying the coordinates of the temporally nearest geotagged photo. Since it operates on an irreplaceable photo library, the design is safety-first: RAW files are never modified, only XMP sidecars without any GPS data are written, every affected file is backed up and SHA-256 verified before a single change, and every run can be restored. Larger time gaps are flagged for manual review or skipped, and unsynced Lightroom sidecars are detected and abort the run before they could overwrite catalog metadata.
-
-[GitHub Repository](https://github.com/schaefer-dev/lightroom-gps-gap-extrapolation)
-
-
-### Photography Portfolio (JavaScript)
-
-The [photography section](photos) of this website is designed to deliver high-resolution images quickly without bloating the repository. All images are hosted on Cloudinary and resized on demand: 800 pixel thumbnails for the gallery grid and up to 4K for the lightbox, with automatic WebP/JPEG format selection, progressive loading and lazy loading. A custom lightbox preloads neighbouring images for instant previous/next navigation, supports touch panning on mobile devices and shows a loading bar for large images. A persistent data saver mode lets visitors on slower connections switch the lightbox from 4K to 2.4K images. The galleries are generated automatically from simple per-year photo lists, which keeps adding new photos a one-line change.
-
-# University Projects
-
-Lists of my projects at university in reverse chronological order, starting with my most-recent projects.
-
-
-### Master Thesis Project (Swift)
-
-My master thesis was written in the field of program synthesis which is a concept used to construct a program that solves a given formal specification automatically. My thesis aims to enhance existing approaches by allowing the use of higher-level semantics to be used as part of these specifications. This decreases not only the risk of human-error in providing the intended formal specification but also simplifies the process overall. My proposed algorithm is implemented entirely in object oriented Swift code. More technically speaking: the core idea is to write requirements in a knowledge-aware logic (KLTL) and translate them into standard temporal logic (LTL) such that established synthesis tools in the field can build the implementation of said specification automatically. Implemented an open source prototype in Swift (KBoSy) and showed on realistic problems that this translation adds only a small overhead compared to the following LTL synthesis itself - about 9.82 percent of runtime and 18.39 percent of memory on average, making my proposed approach usable in practice. The thesis outlines when exact translations are possible and when safe under-approximations are needed. In short, the project demonstrates how to keep system specifications readable and still produce reliable implementations automatically. 
-
-### Research Assistant Project (Rust)
-
-Implementation of a Rust Library that communicates over a USB interface with a Arduino board which is mounted on a fairly large 4-wheeled robot. The implemented Rust library is running on a Intel NUC that is built on top of the robot chassis. Additionally the NUC is connected to a Lidar which is used to scan and reconstruct the room surrounding the robot, which allows for safe navigation and avoiding of obstacles.
-
-
-### Hands on Networking Project Multimedia Codec (Python)
-
-In this small project I implemented encoding and decoding functions suited to send multimedia files over a noisy channel in an efficient way. The goal of this codec is to be able to correct errors that are introduced by the communication channel in a sufficiently fast way which also does not require too much redudancy overhead. The channel introduced randomized bit flips, which could also occur in bursts. To solve this problem I essentially implemented a Hamming Code with interleaving to be able to handle the error correction for burst of errors better. My implementation was able to correct 100% of all errors (including bursts) on all provided grading-networks, with a redundancy of only 100% (passing criterion was 300%).
-
-
-### Hands on Networking Project LLDPA Agent (Python)
-
-In this small project I implemented a LLDPA agent which is able to announce itself by sending LLDP messages to the network on the Link Layer. Additionally the agent parses all LLDP messages that are sent to one of the LLDP multicast addresses of the network. I also implemented a set of tests to verify the agents behaviour and robustness against e.g. invalid TLVs. Wireshark can be used to listen to network traffic and observe the correct behaviour of the agent.
-
-
-### Embedded Systems Project (C/C++)
-
-In this project groups of 3 students each developed a strategy for two different kinds of robots every group had access to. To solve problems that were important to win the competition that would take place in the end of the semester, it was essential to write very efficient and low-memory footprint code, as computational resources on both robots very only very limited. The robots used an ATMEGA328 AVR controller and could communicate using a nRF24L01+ RF module. Efficient communication including acknowledgements were essential to balance the work between both robots, as one of them was loaded with sensors, while its bigger brother was basically 'blind'. In early stages of development, a Simulink Model we built, that implemented a simplified version of out tactic already indicated a very big problem: keeping track of out position on the map was significantly harder than we expected, as Drift was very large on such lightweight robots. Additionally we had to make sure that we reliably recognize and predict collisions with other robots, which was another scenario which could significantly impact out concrete position in the arena.
-
-At a later date, I might add a detailed description of our implemented tactic and important implementation details here.
-
-While it was quite challenging to implement these Embedded Systems from scratch, we learned a lot about reading Datasheets, Communication Protocols and Sensor usage (particularly handling high noise).
-
-Our team ended up winning the competition between all student-teams at the end of the semester.
-
-
-### PINTOS Operating System (C)
-
-Implementation of the Pintos Operating System for the x86 architecture. We implemented: Kernel threads, loading and running of user-specified programs with scheduling of these programs and Virtual Memory. Last iteration of the project included a filesystem implementation, including writing Swapfiles with intelligent paging to avoid Disk access as much as possible.
-
-
-### Plagiarism detection tool (Python/JavaScript/PHP/HTML)
-
-Developed per request for professor at Saarland University. The tool is now successfully used to detect plagiarism cases among students and supports up to 4000 submissions with up to 1000 lines each and checks every submission pair for possible plagiarism cases. Obvious plagiarism cases are highlighted and the professor is automatically notified with a human readable overview of why the set of submissions are obvious plagiarism cases including a colored mapping of copied parts of the code. The tool is completely robust against many options to easily bypass most ordinary plagiarism detection tools for both python and C code (variable renaming, moving of code blocks etc.).
-
-[Project Video](https://youtu.be/Lcn0QEfDHL4)
-
-
-### Bachelor Thesis (C#)
-My thesis [Development and Evaluation of Authentication Schemes for Mobile Virtual Reality](https://schaefer-dev.de/thesis.pdf) was about developing a novel approach to authenticate in a VR environment. This new authentication scheme was implemented in C# in Unity3D for GoogleVR (can be used e.g. on Daydream)
-
-**Abstract of my Thesis:**
-In recent years Virtual Reality has grown very quickly and found more and more use- cases. With new commercial releases of affordable mobile HMDs such as Google Day- dream, Samsung Gear VR combined with the rising potential of mobile AR glasses, the unsolved security problem for these devices grows continuously. Existing knowledge-based and biometric authentication schemes all come with critical disadvantages especially because they are usually not designed with Virtual Reality usage in mind. I implemented a novel graphical authentication scheme called "Personal Environment Authentication" specifically aimed at Virtual Reality. In this new scheme the user will authenticate herself using an ordered selection of objects in a (personal) virtual environment in form of of a 360-degree image. It offers significantly improved memorability of passwords compared to knowledge-based systems making use of the Pictorial Superiority Effect. In a study I was able to additionally confirm significantly improved user-experience and security of this scheme compared to the prominent solutions "PIN" and "Android Pattern" authentication.
-
-
-### Software Praktikum (Java)
-
-Implementation of a fully fledged turn-based game including GUI in Java. Won price for best additional feature with a fully automatic map-generation that used image processing on topographic maps fetched from Google Maps, that allowed to play your game on a realistic map of e.g. Hawaii or Greenland.
-
-
-
-# University Courses
-
-A list of lectures I visited at during my time at Saarland University. Includes B.Sc. and M.Sc. lectures.
-
-Year | Term | Course Description
------|-------|--------
-2013 | Winter | Maths for Computer Science I
-2014 | Summer | Maths for Computer Science II
-2014 | Winter | Maths for Computer Science III
-2013 | Winter | Programming I (functional Programming in ML)
-2014 | Summer | Programming II (MIPS, C, Java)
-2014 | Summer | System Architecture
-2014 | Winter | Theoretical Computer Science
-2014 | Winter | Algorithms and Data Structures
-2014 | Winter | Software Project (Design Practicum)
-2015 | Summer | Concurrent Programming
-2015 | Summer | Information Systems (Databases)
-2013 | Winter | Perspectives of Computer Science
-2015 | Summer | Hacking Seminar
-2015 | Summer | Artificial Intelligence
-2015 | Winter | Introduction to media computer science
-2016 | Summer | Security
-2016 | Summer | Software Development in HCI
-2016 | Summer | High-Level Computer Vision (Convolutional Neural Networks)
-2016 | Winter | Speech Technology - Pattern and Speech Recognition
-2016 | Winter | Law of Cybersecurity
-2017 | Summer | Programming for engineers
-2017 | Summer | Human Computer Interactions
-2017 | Summer | Software Engineering
-2017 | Summer | Ethics for Nerds
-2017 | Winter | Operating Systems
-2017 | Winter | Automatic Planning
-2018 | Summer | Cryptography
-2018 | Summer | Embedded Systems
-2018 | Summer | Web Security
-2018 | Winter  | Automata, Games, Verification
-2018 | Winter | Selected Topics in Formal Methods for Security
-2019 | Summer | Hands on Networking
- | |
-2013 | Winter | Introduction to Computational linguistics
-2014 | Winter | Introduction to Semantics
-2015 | Winter | Investing
-2015 | Winter | Game Theory
-2016 | Winter | Business Finance
-
-
-
-# Freetime Projects
-
-- Teaching myself Python
-- Teaching myself Rust
-- Teaching myself Swift
-- Custom ATMega32U4 Controller installed in Keyboard to support [QMK Firmware](https://github.com/schaefer-dev/qmk_firmware) setup to implement fancy features like mouse-control, tap-modifiers and more :)
-- Home Network Setup implementing QoS with Traffic Analysis and DPI
-- Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)
-- Home-server running backup and file servers to manage family documents and keep family photo library up to date
-- Running my own Hackintosh for 4+ years
-- Managing my [dotfiles](https://github.com/schaefer-dev/dotfiles) and improving workflows
-- Geeksforgeeks.org and leetcode challenges
-- Project Euler
-- This website :)
+<h1>Projects</h1>
+
+<nav class="jumpbar" aria-label="Sections on this page">
+<ul>
+  <li><a href="#work">Work</a></li>
+  <li><a href="#personal">Side projects</a></li>
+  <li><a href="#university">University</a></li>
+  <li><a href="#courses">Courses</a></li>
+  <li><a href="#other">Other</a></li>
+</ul>
+</nav>
+
+<section class="projects-section">
+<h2 id="work">Work at semvox</h2>
+<p class="section-intro">Standout projects from my time at semvox, newest first.</p>
+{% for item in site.data.work_projects %}
+{% include entry.html item=item %}
+{% endfor %}
+</section>
+
+<section class="projects-section">
+<h2 id="personal">Side projects</h2>
+<p class="section-intro">Projects I build in my free time, mostly to solve problems from my own hobbies (birding, cycling, photography, note-taking). Most of them are open source on GitHub.</p>
+<div class="project-grid">
+{% for p in site.data.personal_projects %}
+{% include project-card.html project=p %}
+{% endfor %}
+</div>
+</section>
+
+<section class="projects-section">
+<h2 id="university">University projects</h2>
+<p class="section-intro">Projects from my B.Sc. and M.Sc. in Computer Science at Saarland University, newest first.</p>
+{% for item in site.data.university_projects %}
+{% include entry.html item=item %}
+{% endfor %}
+</section>
+
+<section class="projects-section courses">
+<h2 id="courses">University courses</h2>
+<p class="section-intro">Lectures I attended at Saarland University, B.Sc. and M.Sc.</p>
+<details class="more">
+<summary>Show all {{ site.data.courses | size }} courses</summary>
+<table>
+  <thead><tr><th>Year</th><th>Term</th><th>Course</th></tr></thead>
+  <tbody>
+  {% for c in site.data.courses %}{% if c.group == "cs" %}<tr><td>{{ c.year }}</td><td>{{ c.term }}</td><td>{{ c.name }}</td></tr>
+  {% endif %}{% endfor %}
+  <tr><th colspan="3">Electives outside computer science</th></tr>
+  {% for c in site.data.courses %}{% if c.group == "other" %}<tr><td>{{ c.year }}</td><td>{{ c.term }}</td><td>{{ c.name }}</td></tr>
+  {% endif %}{% endfor %}
+  </tbody>
+</table>
+</details>
+</section>
+
+<section class="projects-section">
+<h2 id="other">Other projects</h2>
+<ul>
+  <li>Teaching myself Python</li>
+  <li>Teaching myself Rust</li>
+  <li>Teaching myself Swift</li>
+  <li>Custom ATMega32U4 Controller installed in Keyboard to support <a href="https://github.com/schaefer-dev/qmk_firmware">QMK Firmware</a> setup to implement fancy features like mouse-control, tap-modifiers and more :)</li>
+  <li>Home Network Setup implementing QoS with Traffic Analysis and DPI</li>
+  <li>Home-server running DNS server and VPN-tunnel (to get safe and ad-free browsing everywhere in the world)</li>
+  <li>Home-server running backup and file servers to manage family documents and keep family photo library up to date</li>
+  <li>Running my own Hackintosh for 4+ years</li>
+  <li>Managing my <a href="https://github.com/schaefer-dev/dotfiles">dotfiles</a> and improving workflows</li>
+  <li>Geeksforgeeks.org and leetcode challenges</li>
+  <li>Project Euler</li>
+  <li>This website :)</li>
+</ul>
+</section>

@@ -1,21 +1,10 @@
 ---
 ---
 @import "style";
+@import "home";
+@import "projects";
 
-h1 {
-  background-color: #1A1D1F;
-  color:#DAD7D2;
-}
-
-div {
-  background-color: #1A1D1F;
-  color:#DAD7D2;
-}
-
-p {
-  background-color: #1A1D1F;
-  color:#DAD7D2;
-}
+/* Page background and text color are set on body in _style.scss */
 
 .skill-paragraph {
     text-align: center;

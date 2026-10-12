@@ -1,0 +1,68 @@
+# Work projects at semvox, newest first.
+# `lede` is the one-sentence summary that is always visible,
+# `details` the full description (markdown) behind "Full description".
+
+- id: head-of-architecture
+  title: "Head of Software Architecture & Engineering"
+  tags: [Leadership, Java, Python]
+  lede: >-
+    Leading one of two Software Architecture & Engineering teams in semvox AR&D
+    while remaining Lead Software Architect for geni:OS genAI.
+  details: |
+    Since April 2026 I lead one of two Software Architecture & Engineering teams in semvox AR&D. In a matrix organization where engineers work day to day in cross-functional workstreams, I own their development and feedback as well as the long-term growth of the team's capabilities. That ranges from architecture and requirements engineering to testing and end-to-end development in Java and Python. Beyond people leadership I sit on the department's steering committee, represent the capability field toward internal stakeholders and align closely with the other team lead to avoid diverging standards. I hold this role together with my position as Lead Software Architect for geni:OS genAI. That lets me connect people development directly with the technical direction of our most strategic product and keeps leadership decisions grounded in hands-on engineering experience.
+
+- id: ai-assisted-delivery
+  title: "AI-Assisted Software Delivery & genAI Tooling"
+  tags: [Python, TypeScript, AI coding agents]
+  lede: >-
+    Bringing AI coding agents, AI-supported test creation and custom genAI
+    tooling into everyday development, with developers accountable for every change.
+  details: |
+    GenAI assistant development touches many connected artifacts at once: framework code, agents, prompts, tool definitions, test cases, logs and evaluation results. To make changes across them faster and more reliable, I drive the adoption of AI-assisted workflows in our development process: AI coding agents guided by repository-specific instructions, AI-supported drafting of test cases and regression candidates, and AI-assisted review and debugging. Alongside that, I develop internal tooling for the genAI stack, such as a VS Code based log evaluator for analyzing assistant logs, traces and latency, and our automated test framework for LLM-based assistants. Developers stay accountable for every change. AI output is treated as a draft that is reviewed and validated.
+
+- id: genai
+  title: "geni:OS genAI"
+  tags: [Python, Software architecture, LLM agents]
+  lede: >-
+    Technical vision and key architecture decisions for the Volkswagen Group's
+    next-generation in-car assistant.
+  details: |
+    As Lead Software Architect for the next generation assistant system for the Volkswagen Group, I own the technical vision and the key architectural decisions of the genAI solution. The role spans system design across cloud boundaries, hands-on development of core LLM agents and capabilities, and the definition of technical solutions for safety, privacy, latency, and reliability under in-vehicle constraints. I maintain architecture documentation and decision records to keep cross-functional teams aligned and to make trade-offs transparent. I act as the primary technical counterpart for internal stakeholders and external partners and I routinely explore new concepts to determine which novel concepts are worth integrating already, versus which should remain in research/exploration phase. The focus is on building a sustainable AI-driven platform rather than a collection of demos, which means actively balancing experimentation and predictable delivery and setting clear deprecation and migration paths as the technology evolves.
+
+- id: llm-demonstrator
+  title: "Automotive LLM Demonstrator"
+  tags: [Python, LLM agents, Test automation]
+  lede: >-
+    An LLM-powered in-car assistant on production hardware that led directly to
+    customer acquisition and became the foundation of geni:OS genAI.
+  details: |
+    Over the span of a couple of months I developed a demonstrator project that showcased what a deep LLM integration can contribute to the in-car assistant experience for all VW brands. The demonstrator ran on production hardware and was integrated into the existing vehicle architecture. Beyond building the full AI-driven featureset, I established automated testing methodology and regression analysis for llm-agent behavior to catch regressions in prompts, tools, and retrieval logic early. The PoC already significantly exceeded expectations of internal and external stakeholders in very early development stages. Following the integration of additional features - showcasing further advantages of this new assistant architecture, the PoC directly led to successful customer acquisition. Semvox is now fully committed to this new product generation, now called geni:OS genAI, that builds on top of the findings in this PoC.
+
+- id: test-framework
+  title: "Automated Testing Framework"
+  tags: [Java, Test automation, Automotive hardware]
+  lede: >-
+    End-to-end test automation for automotive hardware prototypes, from injected
+    driver utterances to validated speech output.
+  details: |
+    I designed and implemented an end to end test framework for automotive hardware prototypes from the ground up. The system automates the complete loop from injecting generated audio to simulate driver utterances to validating the speech output of the assistant, while hiding the complexity of fragile lab setups and prototype hardware. Over time the framework replaced over 30 percent of manual QA with automated testruns and it covered key integration scenarios that previously required significant coordination effort and human involvement. Beyond raw automation, the framework significantly improved repeatability and reduced the risk of hardware mishandling during tests. After stabilizing the platform and implementing all key features, I handed it over to a dedicated QA team. I still supported roadmap and design decisions for another year to ensure a clean transition. The main challenge throughout was to keep the framework reliable across frequent hardware and software changes.
+
+- id: iso-21434
+  title: "Cybersecurity Certification (ISO 21434)"
+  tags: [Cybersecurity, TARA, CVE management]
+  lede: >-
+    Helped establish cybersecurity across the product lifecycle, resulting in a
+    successful ISO 21434 certification.
+  details: |
+    I contributed to and helped establish the topic of cybersecurity throughout our internal product development lifecycle with the explicit goal of achieving an eventual ISO 21434 certification. My technical responsibilities included Threat Analysis and Risk Assessment for our software framework, triage and mitigation planning for CVE findings, and the definition of development and release practices that make security considerations routine rather than an exception. The work resulted in a successful ISO 21434 certification of our product and it established a path for continuous security maintenance. The pragmatic trade-off was to design processes that the teams would actually follow under real-world project pressure and to keep documentation precise and concise so it supports engineering teams instead of slowing it down.
+
+- id: kitt
+  title: "KITT Prototype"
+  tags: [Java, Android Automotive]
+  lede: >-
+    Main contributor to semvox's internal prototype, including its first Android
+    version that runs as a full voice assistant on Android Automotive.
+  details: |
+    When I started at semvox, I quickly became one of the main contributors to our company internal prototype project in which we explored features of our geni:OS framework early on. It was mostly used as a means to discover gaps and usability improvements in our tooling and software stack. We also use it at various fairs to showcase advanced features that our geni:OS framework enables.
+    I developed the first Android Version of the KITT prototype, also supporting the Android Automotive VoiceInteractionSession feature to use KITT as a fully functional voice assistant in android automotive systems.
+    The KITT Prototype was also used as a project showcasing the best practices when working with geni:OS. This KITT project still is a pillar of our internal documentation and onboarding processes to work with geni:OS as a framework to build your own assistant.
