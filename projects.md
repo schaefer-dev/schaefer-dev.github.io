@@ -9,6 +9,16 @@ description: "Descriptions for various projects I have worked at in my freetime,
 List of standout achievements and projects for my time at semvox in reverse chronological order, starting with my most-recent projects.
 
 
+### Head of Software Architecture & Engineering (Leadership)
+
+Since April 2026 I lead one of two Software Architecture & Engineering teams in semvox AR&D. In a matrix organization where engineers work day to day in cross-functional workstreams, I own their development and feedback as well as the long-term growth of the team's capabilities. That ranges from architecture and requirements engineering to testing and end-to-end development in Java and Python. Beyond people leadership I sit on the department's steering committee, represent the capability field toward internal stakeholders and align closely with the other team lead to avoid diverging standards. I hold this role together with my position as Lead Software Architect for geni:OS genAI. That lets me connect people development directly with the technical direction of our most strategic product and keeps leadership decisions grounded in hands-on engineering experience.
+
+
+### AI-Assisted Software Delivery & genAI Tooling (Python/TypeScript)
+
+GenAI assistant development touches many connected artifacts at once: framework code, agents, prompts, tool definitions, test cases, logs and evaluation results. To make changes across them faster and more reliable, I drive the adoption of AI-assisted workflows in our development process: AI coding agents guided by repository-specific instructions, AI-supported drafting of test cases and regression candidates, and AI-assisted review and debugging. Alongside that, I develop internal tooling for the genAI stack, such as a VS Code based log evaluator for analyzing assistant logs, traces and latency, and our automated test framework for LLM-based assistants. Developers stay accountable for every change. AI output is treated as a draft that is reviewed and validated.
+
+
 ### geni:OS genAI (Python)
 
 As Lead Software Architect for the next generation assistant system for the Volkswagen Group, I own the technical vision and the key architectural decisions of the genAI solution. The role spans system design across loud boundaries, hands-on development of core LLM agents and capabilities, and the definition of technical solutions for safety, privacy, latency, and reliability under in-vehicle constraints. I maintain architecture documentation and decision records to keep cross-functional teams aligned and to make trade-offs transparent. I act as the primary technical counterpart for internal stakeholders and external partners and I routinely explore new concepts to determine which novel concepts are worth integrating already, versus which should remain in research/exploration phase. The focus is on building a sustainable AI-driven platform rather than a collection of demos, which means actively balancing experimentation and predictable delivery and setting clear deprecation and migration paths as the technology evolves.

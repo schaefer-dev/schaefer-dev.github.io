@@ -8,9 +8,9 @@ description: "A portfolio targeted at people who want to find out what I've been
 
 <img class="profile-picture" src="me.jpg">
 
-Hi! My name is Daniel and I am a senior product Engineer at [semvox](https://www.semvox.de/), a 100% subsidiary of CARIAD SE as of May 2023. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.5. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
+Hi! My name is Daniel and I am Head of Software Architecture & Engineering at [semvox](https://www.semvox.de/), a 100% subsidiary of CARIAD SE as of May 2023. I finished my masters in Computer Science at University of Saarland, Saarbruecken in Oktober of 2020 with an average grade of 1.5. My thesis was about synthesis of KLTL specifications and supported by the [Reactive Systems Group](https://www.react.uni-saarland.de).
 
-Currently I work as a Software Architect at semvox.
+Currently I lead one of the two Software Architecture & Engineering teams in semvox's Applied Research & Development department, while continuing to act as Lead Software Architect for our genAI product generation, geni:OS genAI.
 
 I used to be a quite unorganized and spontaneous person, but in late 2018 I read about the principle of "Getting Things Done" by David Allen. Nowadays there is no way I leave the house without a way of putting down my thoughts (usually ends up being phone or laptop) which helps me to organize and plan my week properly. This step forward had a significant impact not only on my overall enjoyment of working but also resulted in me being way more productive in the same amount of time.
 
@@ -38,7 +38,7 @@ Another focus of mine has been the analysis of performance bottlenecks in in our
 During this timeframe at work I write almost exclusively Java code.
 
 
-## 2024-today
+## 2024-2025
 
 In early 2024, I took on the role of workstream lead for Embedded LLM Development at semvox, focusing on exploring efficient large language model solutions tailored to the hardware constraints within the Volkswagen Group. Following an internal reprioritization, driven by specific customer requirements and timelines, my responsibilities shifted to leading the PNP workstream. I was responsible for the technical development and evaluation of 14 specialized LLM agents, covering diverse domains such as current and historical weather data, financial market information, and news integration, specifically tailored for integration in Volkswagen projects.
 
@@ -51,6 +51,17 @@ My responsibilities further include establishing and documenting the technical v
 Throughout this period I have significantly contributed to the growth and establishment of the semvox genAI solution. From initial in-vehicle demonstrations to its current prominence as a vital project for semvox.
 
 From early 2024 onwards, most development happened in python. However, integration into the existing embedded + cloud stack of our largest projects happened mostly in Java. 
+
+
+## 2026-today
+
+In April 2026, alongside the restructuring of semvox into a new Applied Research & Development (AR&D) department, I took on the role of **Head of Software Architecture & Engineering**. I lead one of two sister teams in this capability field and combine people leadership with technical capability ownership in a matrix organization: my team members work day to day in cross-functional workstreams and projects, while I am responsible for their development, feedback and the systematic growth of our expertise in software architecture, requirements engineering, testing, documentation and end-to-end software development. As a member of the department's steering committee, I bring feedback from my team and the workstreams into tactical and strategic decisions. I work closely with the other team lead to keep technical standards and staffing consistent across both teams.
+
+A big part of this role is making technical responsibility and decision ownership clearer across teams. I align with project and workstream leads, represent architecture and engineering expertise toward internal stakeholders, and help the organization scale technical quality without slowing down delivery.
+
+In parallel, I remain Lead Software Architect for geni:OS genAI. I own the big picture of the genAI stack: the genAI framework, our automated test framework for AI-driven assistants, and the surrounding developer tooling. I stay close to the integration work in customer projects so that I can derive future features and developer-experience improvements from it.
+
+Another focus of mine is modernizing how we build software. I push AI-assisted software delivery within our genAI development: AI coding agents with repository-specific instructions, AI-supported test case creation and AI-assisted log and trace analysis. Developers stay in control of every decision. The aim is to reduce the coordination effort that comes from changes spanning code, prompts, tool definitions, tests and evaluations.
 
 In the future I might update this website with more content related to my work. However, right now the remaining sections on this page will remain mainly focused on stuff I have worked on during my studies.
 
