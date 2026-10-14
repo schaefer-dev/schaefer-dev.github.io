@@ -62,7 +62,7 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
 
 <div class="selected-projects">
 <h2 id="side-projects">Side projects</h2>
-<p>I build tools for my own hobbies, mostly birding, cycling, photography and note-taking. A few of them:</p>
+<p>I build tools for my own development workflows and hobbies, mostly birding, cycling, photography and note-taking. A few of them:</p>
 <div class="project-grid teaser">
 {% for p in site.data.personal_projects %}{% if p.featured %}
 {% include project-card.html project=p teaser=true %}

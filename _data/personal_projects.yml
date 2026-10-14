@@ -4,6 +4,20 @@
 # image_fit: "contain" for images that should not be cropped to 2:1
 # featured:  shown as a teaser card on the home page
 
+- id: branchboard
+  title: "Branchboard"
+  lang: Rust / TypeScript
+  image: /assets/projects/branchboard.png
+  image_fit: contain
+  image_alt: "Branchboard: repositories, agent states, branches and a Git diff beside a herdr terminal"
+  repo: https://github.com/schaefer-dev/branchboard
+  featured: true
+  summary: >-
+    Desktop app for reviewing what coding agents build across multiple repositories,
+    with Git diffs, branch comparisons and an embedded herdr terminal.
+  description: |
+    Working with coding agents across several repositories means keeping track of which agents need input and reviewing the changes they leave behind. Branchboard brings that workflow into one desktop window on macOS and Windows. Repositories can be grouped and pinned, while agent states from herdr show who is working, blocked or done. An embedded herdr terminal sits beside syntax-highlighted Git diffs, so I can move between an agent and its changes without switching apps. Files can be staged or unstaged, branches compared against a configurable mainline and commits inspected before switching branches. Built with Tauri 2, Rust, Svelte 5 and TypeScript, Branchboard uses the installed Git CLI and also works as a multi-repository Git GUI without herdr. The app is in active development, with installers available through GitHub Releases.
+
 - id: wearwise
   title: "WearWise"
   lang: Swift

@@ -26,7 +26,7 @@ description: "Work projects at semvox, personal side projects and university pro
 
 <section class="projects-section">
 <h2 id="personal">Side projects</h2>
-<p class="section-intro">Projects I build in my free time, mostly to solve problems from my own hobbies (birding, cycling, photography, note-taking). Most of them are open source on GitHub.</p>
+<p class="section-intro">Projects I build in my free time to improve my development workflows and solve problems from my own hobbies (birding, cycling, photography, note-taking). Most of them are open source on GitHub.</p>
 <div class="project-grid">
 {% for p in site.data.personal_projects %}
 {% include project-card.html project=p %}
