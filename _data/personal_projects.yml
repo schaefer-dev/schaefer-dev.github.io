@@ -76,17 +76,17 @@
   description: |
     An extension for the Hammerhead Karoo 2 and Karoo 3 bike computers that displays live aerobic decoupling (Pa:Hr drift) while riding. It samples power and heart rate once per second of moving time, compares the efficiency factor of the first and second half of the ride and shows the running drift percentage as a training and pacing signal. Additional data fields visualize the decoupling trend of the last 60 minutes as a graph and show W′ balance to track remaining anaerobic capacity. To save battery, release builds throttle redraws while the calculation still uses every sample. The math and stream coordination are covered by JVM unit tests, so most bugs are caught without a device.
 
-- id: cycling-heatmap
-  title: "Cycling Heatmap & Ride Archive"
-  lang: JavaScript
-  image: /assets/projects/cycling-heatmap.jpg
-  image_alt: "Heatmap of road, gravel and MTB rides on an interactive map"
-  repo: https://github.com/schaefer-dev/cycling_heatmap_app
+- id: ridestack
+  title: "Ride Stack"
+  lang: TypeScript
+  image: /assets/projects/ridestack.webp
+  image_alt: "Ride Stack: Every ride. One map. Self-hosted cycling archive with Garmin and Hammerhead sync, route grouping and a personal heatmap"
+  repo: https://github.com/schaefer-dev/ridestack
   summary: >-
-    Heatmap and archive of my road, gravel and MTB rides with rated route
-    sections for future planning.
+    Self-hosted cycling archive with Garmin and Karoo sync, automatic route
+    grouping and a personal heatmap.
   description: |
-    A personal archive for my road, gravel and MTB rides to inform future route planning. Rides are imported from Garmin GPX files, either individually or in bulk, and visualized on an interactive heatmap per bike type. Sections of a route can be rated on a five-level scale and tagged with surface conditions, so I can look up later whether a trail is worth riding again. Clicking any location on the map lists all rides that passed it. The frontend is built with React, Vite, Tailwind and Leaflet, the backend with Node.js, Express and SQLite.
+    Ride Stack brings my road, gravel and MTB rides into one self-hosted archive. It syncs rides from Garmin Connect and Hammerhead Karoo or imports GPX and FIT files, linking duplicate recordings from different sources to the same ride. Rides that follow the same path are grouped into routes automatically, so I can see how often I ride a loop and compare my times. An interactive heatmap can be filtered by bike type, and clicking any location lists every ride that passed it. Road and trail sections can be rated and tagged with surface conditions to help plan future rides. Built with TypeScript, React, Leaflet, Node.js, Express and SQLite, it keeps the database and original files on my own machine and is light enough to run on a Raspberry Pi.
 
 - id: obsidian-pdf-mirror
   title: "Obsidian PDF Mirror"
