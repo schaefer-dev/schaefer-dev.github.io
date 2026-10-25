@@ -1,28 +1,20 @@
 ---
 layout: default
 title: "Daniel Schäfer | Projects"
-description: "Work projects at semvox, personal side projects and university projects by Daniel Schäfer, from genAI architecture for the Volkswagen Group to Swift, Kotlin and Python tools."
+description: "Personal side projects, work projects at semvox and university projects by Daniel Schäfer, from Swift, Kotlin and Python tools to genAI architecture for the Volkswagen Group."
 ---
 
 <h1>Projects</h1>
 
 <nav class="jumpbar" aria-label="Sections on this page">
 <ul>
-  <li><a href="#work">Work</a></li>
   <li><a href="#personal">Side projects</a></li>
+  <li><a href="#work">Work</a></li>
   <li><a href="#university">University</a></li>
   <li><a href="#courses">Courses</a></li>
   <li><a href="#other">Other</a></li>
 </ul>
 </nav>
-
-<section class="projects-section">
-<h2 id="work">Work at semvox</h2>
-<p class="section-intro">Standout projects from my time at semvox, newest first.</p>
-{% for item in site.data.work_projects %}
-{% include entry.html item=item %}
-{% endfor %}
-</section>
 
 <section class="projects-section">
 <h2 id="personal">Side projects</h2>
@@ -32,6 +24,14 @@ description: "Work projects at semvox, personal side projects and university pro
 {% include project-card.html project=p %}
 {% endfor %}
 </div>
+</section>
+
+<section class="projects-section">
+<h2 id="work">Work at semvox</h2>
+<p class="section-intro">Standout projects from my time at semvox, newest first.</p>
+{% for item in site.data.work_projects %}
+{% include entry.html item=item %}
+{% endfor %}
 </section>
 
 <section class="projects-section">
