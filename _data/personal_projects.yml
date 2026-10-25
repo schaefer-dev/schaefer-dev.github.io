@@ -34,7 +34,7 @@
   title: "Supernote Viewer"
   lang: Swift
   image: /assets/projects/supernote-viewer.jpg
-  image_alt: "Supernote Viewer: a handwritten Supernote notebook opened in a native macOS window"
+  image_alt: "Supernote Viewer: updated app icon beside a handwritten notebook, with Quick Look, handwriting search, measuring and live reload features"
   repo: https://github.com/schaefer-dev/supernote-viewer
   featured: true
   summary: >-
@@ -46,7 +46,8 @@
 - id: bird-radar
   title: "Bird Radar"
   lang: Python
-  cover: [FastAPI, SQLAlchemy, MCP server, pytest, Raspberry Pi]
+  image: /assets/projects/bird-radar.webp
+  image_alt: "Bird Radar: a teal radar sweep over glowing sighting markers and contour lines, with the tagline Discover what you haven't seen yet"
   summary: >-
     Local-first sighting tracker that consolidates public bird observations,
     flags species I haven't seen yet and plans my field days.
