@@ -25,7 +25,7 @@
   {{ cover }}
   <div class="project-body">
     <h3>{{ p.title }}</h3>
-    <ul class="tags"><li>{{ p.lang }}</li></ul>
+    {% if p.tags %}<ul class="tags">{% for tag in p.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
     <p>{{ p.summary }}</p>
     <details class="more">
       <summary>Full description</summary>

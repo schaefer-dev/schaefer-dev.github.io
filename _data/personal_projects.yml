@@ -1,4 +1,5 @@
 # Personal projects, shown as cards on the projects page.
+# tags:      up to four concise labels for the main technologies
 # image:     path under /assets/projects (or a full URL); omit for a text cover
 # cover:     lines shown on the text cover when there is no image
 # image_fit: "contain" for images that should not be cropped to 2:1
@@ -6,7 +7,7 @@
 
 - id: branchboard
   title: "Branchboard"
-  lang: Rust / TypeScript
+  tags: [Rust, TypeScript, Tauri, Svelte]
   image: /assets/projects/branchboard.png
   image_fit: contain
   image_alt: "Branchboard: repositories, agent states, branches and a Git diff beside a herdr terminal"
@@ -20,7 +21,7 @@
 
 - id: wearwise
   title: "WearWise"
-  lang: Swift
+  tags: [Swift, SwiftUI, SwiftData, CloudKit]
   image: /assets/projects/wearwise.jpg
   image_alt: "WearWise on iPhone and Mac: the What to Wear screen next to a logged hike with its outfit and weather"
   featured: true
@@ -32,7 +33,7 @@
 
 - id: supernote-viewer
   title: "Supernote Viewer"
-  lang: Swift
+  tags: [Swift, AppKit, PDFKit, Vision]
   image: /assets/projects/supernote-viewer.jpg
   image_alt: "Supernote Viewer: updated app icon beside a handwritten notebook, with Quick Look, handwriting search, measuring and live reload features"
   repo: https://github.com/schaefer-dev/supernote-viewer
@@ -45,7 +46,7 @@
 
 - id: bird-radar
   title: "Bird Radar"
-  lang: Python
+  tags: [Python, FastAPI, SQLAlchemy, MCP]
   image: /assets/projects/bird-radar.webp
   image_alt: "Bird Radar: a teal radar sweep over glowing sighting markers and contour lines, with the tagline Discover what you haven't seen yet"
   summary: >-
@@ -56,7 +57,7 @@
 
 - id: local-ai-assistant
   title: "Local AI Assistant with Hermes Agent"
-  lang: Self-hosted LLMs
+  tags: [Hermes Agent, Qwen, MCP, Local LLMs]
   image: /assets/projects/local-ai-assistant.webp
   image_alt: "Local AI Assistant with Hermes Agent: a flat teal chat symbol connected to mail, notes, tasks and cycling icons on a dark background"
   summary: >-
@@ -67,7 +68,7 @@
 
 - id: karoo-decoupling
   title: "Karoo Aerobic Decoupling Extension"
-  lang: Kotlin
+  tags: [Kotlin, Android, Compose, Karoo SDK]
   image: /assets/projects/karoo-decoupling.jpg
   image_alt: "Karoo Decoupling: live aerobic decoupling and W' balance data fields on a Hammerhead Karoo"
   repo: https://github.com/schaefer-dev/karoo-decoupling
@@ -80,7 +81,7 @@
 
 - id: ridestack
   title: "Ride Stack"
-  lang: TypeScript
+  tags: [TypeScript, React, SQLite, Leaflet]
   image: /assets/projects/ridestack.webp
   image_alt: "Ride Stack: Every ride. One map. Self-hosted cycling archive with Garmin and Hammerhead sync, route grouping and a personal heatmap"
   repo: https://github.com/schaefer-dev/ridestack
@@ -92,7 +93,7 @@
 
 - id: obsidian-pdf-mirror
   title: "Obsidian PDF Mirror"
-  lang: Python
+  tags: [Python, pandoc, Typst, Lua]
   image: /assets/projects/obsidian-pdf-mirror.png
   image_alt: "Obsidian PDF Mirror: an Obsidian vault converted via pandoc and Typst into PDFs on an e-ink tablet"
   repo: https://github.com/schaefer-dev/obsidian_pdf_mirror
@@ -104,7 +105,7 @@
 
 - id: lightroom-gps
   title: "Lightroom GPS Gap Repair"
-  lang: Python
+  tags: [Python, ExifTool, XMP, CLI]
   image: /assets/projects/lightroom-gps.svg
   image_fit: contain
   image_alt: "Lightroom GPS Gap Repair: photos without GPS get coordinates from the nearest geotagged photo in time"
@@ -117,7 +118,7 @@
 
 - id: photography-portfolio
   title: "Photography Portfolio"
-  lang: JavaScript
+  tags: [JavaScript, Jekyll, Cloudinary, CSS]
   image: https://res.cloudinary.com/dhateve93/image/upload/w_1000,h_500,c_fill,g_auto,q_80,f_auto/20260722-A1_01770_aqpgvf
   image_alt: "Kingfisher in Dillingen, Germany, from the photography portfolio"
   link: /photos
