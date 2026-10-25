@@ -57,7 +57,8 @@
 - id: local-ai-assistant
   title: "Local AI Assistant with Hermes Agent"
   lang: Self-hosted LLMs
-  cover: [Hermes agent, local Qwen models, MCP servers, intervals.icu]
+  image: /assets/projects/local-ai-assistant.webp
+  image_alt: "Local AI Assistant with Hermes Agent: a flat teal chat symbol connected to mail, notes, tasks and cycling icons on a dark background"
   summary: >-
     A personal assistant on locally hosted Qwen models that organizes mail,
     notes and todos, with all data under my own control.
