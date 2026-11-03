@@ -1,0 +1,62 @@
+/*
+ * Sumi for Supernote pages (/sumi/)
+ */
+
+.sumi-hero {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+}
+.sumi-hero h1 { margin: 0 0 0.4rem 0; }
+.content .sumi-icon {
+    width: 128px;
+    height: 128px;
+    flex-shrink: 0;
+    border-radius: 28px;
+}
+.sumi-tagline { margin: 0; max-width: 60ch; }
+.sumi-availability {
+    margin: 0.8rem 0 0 0;
+    font-family: $font-mono;
+    color: var(--muted);
+}
+.sumi-shots {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 24px;
+    align-items: end;
+    margin: 0 0 1.5rem 0;
+}
+.sumi-shots img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+.sumi-links { padding-left: 1.2em; }
+.sumi-breadcrumb {
+    font-family: $font-mono;
+    margin: 0;
+}
+.sumi-fineprint {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+.sumi-faq details {
+    border-top: 1px solid var(--rule);
+    padding: 0.7rem 0;
+}
+.sumi-faq details:last-child { border-bottom: 1px solid var(--rule); }
+.sumi-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+.sumi-faq details p { margin: 0.6rem 0 0 0; }
+
+@media (max-width: 650px) {
+    .sumi-hero { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .content .sumi-icon { width: 96px; height: 96px; border-radius: 21px; }
+    .sumi-shots { grid-template-columns: 1fr; }
+}
