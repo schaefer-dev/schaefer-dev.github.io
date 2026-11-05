@@ -31,18 +31,33 @@
   description: |
     Weather forecasts tell you the temperature, but not that you personally run cold below 8 °C in the wind. WearWise is a native iPhone and Mac app built with SwiftUI and SwiftData that logs what I wore on a hike, run or ride together with the weather conditions and how comfortable I was, rated separately per body zone on a thermal scale. Before heading out, "What to Wear" ranks past outings by how similar the conditions were and how comfortable I felt, and suggests the outfit that worked. Outings can be started from Apple Health workouts, wardrobe and history sync across devices via CloudKit, and everything can be exported to a portable JSON file. The app is planned to be published soon.
 
+- id: morrow
+  title: "Morrow"
+  tags: [Swift, AppKit, UIKit, CloudKit]
+  image: /assets/projects/morrow.jpg
+  image_alt: "Morrow: the calm, native to-do app for Mac and iPhone, built with AppKit, UIKit and iCloud sync"
+  summary: >-
+    A calm, native to-do app for Mac and iPhone with private, end-to-end
+    encrypted iCloud sync.
+  description: |
+    Morrow is my personal task manager, built to feel quiet, fast and truly native: pure AppKit on the Mac and UIKit on iPhone, with no web views or cross-platform layers, on top of a shared Swift 6 core. Data lives locally in SQLite via GRDB, every change can be undone, and dates can be typed the way you say them ("next fri", "in 3 days"). Mac and iPhone sync through a custom, platform-independent sync engine with field-level merging on top of CloudKit's `CKSyncEngine`, verified by deterministic convergence simulations on every change. Things 3 import and an opt-in Obsidian integration round it off, and an App Store release for Mac and iPhone is planned.
+
 - id: supernote-viewer
-  title: "Supernote Viewer"
-  tags: [Swift, AppKit, PDFKit, Vision]
-  image: /assets/projects/supernote-viewer.jpg
-  image_alt: "Supernote Viewer: updated app icon beside a handwritten notebook, with Quick Look, handwriting search, measuring and live reload features"
+  title: "Sumi for Supernote"
+  tags: [Swift, SwiftUI, AppKit, Vision]
+  image: /assets/projects/sumi.jpg
+  image_alt: "Sumi for Supernote: a handwritten notebook on Mac and a marked-up PDF on iPhone, with Quick Look, searchable handwriting, Dropbox library and live reload"
   repo: https://github.com/schaefer-dev/supernote-viewer
+  link: /sumi/
+  link_text: "Sumi on iPhone and iPad"
   featured: true
   summary: >-
-    macOS apps and a Quick Look extension that open, preview and search
-    handwritten Supernote notebooks like any other PDF.
+    Native Mac, iPhone and iPad apps that open, preview and search handwritten
+    Supernote notebooks like any other PDF.
   description: |
-    My Supernote e-ink tablet syncs `.note` notebooks and `.pdf.mark` annotations to my Mac, but macOS cannot open them. Supernote Viewer consists of two small macOS apps plus a Quick Look extension that make these files feel native: notebooks open with a double-click, preview with Space and can be searched like any other PDF. Under the hood a Swift package parses the proprietary file format, decodes the layer bitmaps and renders handwriting as crisp vector strokes from the notebook's own pen data. Apple's on-device Vision text recognition adds an invisible text layer, so handwriting becomes searchable and copyable. The viewer additionally supports live reload while writing on the device and a calibrated measuring tool for floor plans. Releases are shipped as signed and notarized DMGs, and everything runs fully offline.
+    My Supernote e-ink tablet syncs `.note` notebooks and `.pdf.mark` annotations, but neither macOS nor iOS can open them. Sumi for Supernote makes these files feel native on all my Apple devices. Under the hood a shared Swift package parses the proprietary file format, decodes the layer bitmaps and renders handwriting as crisp vector strokes from the notebook's own pen data. Apple's on-device Vision text recognition adds an invisible text layer, so handwriting becomes searchable and copyable, and titles marked on the device become a table of contents.
+
+    On the Mac, notebooks open with a double-click, either in Sumi's own window or as generated PDFs in Apple's Preview, and preview with Space through a Quick Look extension. Sumi's window additionally supports live reload while writing on the device and a calibrated measuring tool for floor plans. On iPhone and iPad, a SwiftUI app reads the Supernote library from Dropbox with read-only access, keeps it available offline, and adds handwriting search, page titles, bookmarks, favorites and PDF export. There are no accounts and no tracking, everything is rendered on the device, Mac releases are shipped as signed and notarized DMGs, and the iOS app is [heading to the App Store](/sumi/).
 
 - id: bird-radar
   title: "Bird Radar"
@@ -79,6 +94,30 @@
   description: |
     An extension for the Hammerhead Karoo 2 and Karoo 3 bike computers that displays live aerobic decoupling (Pa:Hr drift) while riding. It samples power and heart rate once per second of moving time, compares the efficiency factor of the first and second half of the ride and shows the running drift percentage as a training and pacing signal. Additional data fields visualize the decoupling trend of the last 60 minutes as a graph and show W′ balance to track remaining anaerobic capacity. To save battery, release builds throttle redraws while the calculation still uses every sample. The math and stream coordination are covered by JVM unit tests, so most bugs are caught without a device.
 
+- id: karoo-intervals
+  title: "Karoo Intervals"
+  tags: [Kotlin, Android, Karoo SDK, intervals.icu]
+  image: /assets/projects/karoo-intervals.jpg
+  image_alt: "Karoo Intervals: a full-page intervals.icu workout screen on a Hammerhead Karoo in light and dark mode"
+  repo: https://github.com/schaefer-dev/karoo-intervals
+  summary: >-
+    Runs my planned intervals.icu workouts on a full-page Karoo screen
+    designed to be read at a glance mid-interval.
+  description: |
+    I plan my structured training in intervals.icu, but the Karoo had no good way to ride those workouts. This extension syncs FTP, power zones and every planned ride workout of the coming week and shows them on a dedicated full-page workout screen. Live power is colored against the interval target, next to the time left, the lap average, a preview of the next step and the whole workout profile with a position marker. Interval changes are announced with 3-2-1 beeps and an in-ride alert, and an automatic lap is recorded per interval. The workout follows Karoo's ride clock, so auto-pause and manual pause also pause the workout, and the sync was designed around the 100 KB response limit of the Karoo's network proxy. A built-in simulator in debug builds allows testing whole workouts at 5× speed without riding.
+
+- id: karoo-rpe
+  title: "Karoo Ride Rating (RPE)"
+  tags: [Kotlin, Android, Karoo SDK, FIT]
+  image: /assets/projects/karoo-rpe.jpg
+  image_alt: "Ride Rating: an RPE and Feel picker on a Hammerhead Karoo that syncs to intervals.icu"
+  repo: https://github.com/schaefer-dev/karoo-rpe
+  summary: >-
+    Adds the "How hard was that ride?" RPE and Feel rating to the Karoo and
+    puts it on my intervals.icu activity.
+  description: |
+    Garmin head units ask how hard a ride felt and training platforms use that rating for load and fatigue tracking, but the Karoo has no such prompt. This extension adds an in-ride rating field and a prompt on manual pause to pick RPE (1–10) and Feel. The rating is written into the FIT file as developer fields using Garmin's names and scales. While building it I found that current Karoo firmware drops the information needed for platforms to import these fields and [reported it upstream](https://github.com/hammerheadnav/karoo-ext/issues/94). As a workaround, the extension waits for the ride to appear on intervals.icu, matches the activity and sets the rating through the API, retrying with exponential backoff over the Karoo's own connection, so no phone app is needed. The rating and sync logic is kept pure and covered by unit tests.
+
 - id: ridestack
   title: "Ride Stack"
   tags: [TypeScript, React, SQLite, Leaflet]
@@ -90,6 +129,19 @@
     grouping and a personal heatmap.
   description: |
     Ride Stack brings my road, gravel and MTB rides into one self-hosted archive. It syncs rides from Garmin Connect and Hammerhead Karoo or imports GPX and FIT files, linking duplicate recordings from different sources to the same ride. Rides that follow the same path are grouped into routes automatically, so I can see how often I ride a loop and compare my times. An interactive heatmap can be filtered by bike type, and clicking any location lists every ride that passed it. Road and trail sections can be rated and tagged with surface conditions to help plan future rides. Built with TypeScript, React, Leaflet, Node.js, Express and SQLite, it keeps the database and original files on my own machine and is light enough to run on a Raspberry Pi.
+
+- id: training-platform
+  title: "Training Platform"
+  tags: [Swift, SwiftUI, GRDB, FIT]
+  cover:
+    - "Fitness & fatigue"
+    - "Power-duration models"
+    - "Native macOS · local-first"
+  summary: >-
+    Native, local-first macOS app for analysing my cycling training, from
+    fitness and fatigue to power-duration modelling.
+  description: |
+    An early-stage training analysis app for a self-coached endurance athlete, with a calendar, fitness and fatigue charts, power curves, power-duration model fitting and detailed activity analysis. All metrics are computed on the device from raw data streams, imported through a dependency-free FIT decoder or synced from intervals.icu, and every formula is documented. A developer tool generates synthetic multi-year datasets for benchmarks and validates the computed metrics against intervals.icu.
 
 - id: obsidian-pdf-mirror
   title: "Obsidian PDF Mirror"
