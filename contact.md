@@ -18,6 +18,8 @@ is_contact: true
   <dd><a href="https://github.com/schaefer-dev">schaefer-dev</a></dd>
   <dt>Xing</dt>
   <dd><a href="https://www.xing.com/profile/Daniel_Schaefer229">Daniel Schaefer</a></dd>
+  <dt>App support</dt>
+  <dd><a href="mailto:sumi@schaefer-dev.de">sumi@schaefer-dev.de</a> (<a href="/sumi/">Sumi for Supernote</a>)</dd>
 </dl>
 
 <p><a class="button" href="cv_10_2026.pdf">Download CV (PDF)</a></p>

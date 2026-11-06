@@ -9,7 +9,7 @@ permalink: /sumi/privacy/
 
 # Privacy Policy
 
-_Last updated: 3 November 2026_
+_Last updated: 6 November 2026_
 
 Sumi for Supernote on iPhone and iPad (the "app") displays Supernote notebooks (`.note`) and annotated PDFs (`.mark` with their original PDF) on your device. This policy explains what data the app handles. In short: **the developer collects no data at all.**
 
@@ -55,7 +55,7 @@ If you email support, your message and email address are used only to answer you
 
 ## This website
 
-This page is hosted on GitHub Pages. The website (not the app) uses Cloudflare Web Analytics, which counts page views without cookies and without identifying visitors.
+This page is hosted on GitHub Pages. The website (not the app) uses Cloudflare Web Analytics, which counts page views without cookies and without identifying visitors, and serves its fonts itself. Details are in the [website's privacy policy](/privacy/).
 
 ## Children
 

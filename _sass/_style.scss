@@ -150,3 +150,12 @@ hr {
 
 @import "typography";
 @import "tables";
+
+/* Site-wide legal links below every page */
+.site-legal {
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+.site-legal a {
+    color: var(--muted);
+}

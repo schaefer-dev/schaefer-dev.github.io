@@ -21,9 +21,6 @@
         {% assign url = site.url | append: site.baseurl | append: page.url %}
     {% endif %}
     <meta name="description" content="{{ desc }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
     {% if site.favicon %}
@@ -98,6 +95,7 @@
                     <a href="{{ site.footer_url }}" style="color: #DAD7D2"><small>{{ site.footer_text }}</small></a>
                     </p>
                 {% endif %}
+                <p class="site-legal"><small><a href="/privacy/">Privacy</a></small></p>
             </div>
     </div>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "74e4a23bae314cc69ee869a5ad705503"}'></script><!-- End Cloudflare Web Analytics -->
