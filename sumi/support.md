@@ -3,6 +3,7 @@ layout: default
 title: "Sumi for Supernote | Support"
 description: "Help for Sumi for Supernote on iPhone and iPad: connecting Dropbox, syncing, searching handwriting and contacting support."
 permalink: /sumi/support/
+apple_app_id: "6831759227"
 ---
 
 <p class="sumi-breadcrumb"><a href="/sumi/">Sumi for Supernote</a></p>

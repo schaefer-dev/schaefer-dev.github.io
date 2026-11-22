@@ -16,8 +16,14 @@
     border-radius: 28px;
 }
 .sumi-tagline { margin: 0; max-width: 60ch; }
+.sumi-badge { margin: 1rem 0 0 0; line-height: 0; }
+.content .sumi-badge img {
+    height: 40px;
+    width: auto;
+    display: inline-block;
+}
 .sumi-availability {
-    margin: 0.8rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     font-family: $font-mono;
     color: var(--muted);
 }

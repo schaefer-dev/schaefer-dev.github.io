@@ -3,6 +3,7 @@ layout: default
 title: "Sumi for Supernote | Read and search your notebooks on iPhone and iPad"
 description: "Sumi for Supernote opens the notebooks and annotated PDFs your Supernote syncs to Dropbox on iPhone and iPad, with searchable handwriting and offline reading."
 permalink: /sumi/
+apple_app_id: "6831759227"
 ---
 
 <div class="sumi-hero">
@@ -10,8 +11,8 @@ permalink: /sumi/
   <div>
     <h1>Sumi for Supernote</h1>
     <p class="sumi-tagline">Your notes, in ink. Read and search the notebooks your Supernote syncs to Dropbox, on iPhone and iPad.</p>
-    <!-- Replace with the App Store badge and link once the app is live. -->
-    <p class="sumi-availability">Coming soon to the App Store.</p>
+    <p class="sumi-badge"><a href="https://apps.apple.com/app/id6831759227"><img src="/assets/sumi/app-store-badge.svg" alt="Download on the App Store" height="40"></a></p>
+    <p class="sumi-availability">Free · iPhone &amp; iPad · iOS 26+</p>
   </div>
 </div>
 
