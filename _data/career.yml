@@ -15,13 +15,13 @@
     - "Member of the department's steering committee, bringing team and workstream feedback into tactical and strategic decisions."
     - "Drives AI-assisted software delivery: coding agents with repository-specific instructions, AI-supported test creation and AI-assisted log and trace analysis."
   details: |
-    In April 2026, alongside the restructuring of semvox into a new Applied Research & Development (AR&D) department, I took on the role of **Head of Software Architecture & Engineering**. I lead one of two sister teams in this capability field and combine people leadership with technical capability ownership in a matrix organization: my team members work day to day in cross-functional workstreams and projects, while I am responsible for their development, feedback and the systematic growth of our expertise in software architecture, requirements engineering, testing, documentation and end-to-end software development. As a member of the department's steering committee, I bring feedback from my team and the workstreams into tactical and strategic decisions. I work closely with the other team lead to keep technical standards and staffing consistent across both teams.
+    I became **Head of Software Architecture & Engineering** in April 2026, when semvox reorganized into a new Applied Research & Development (AR&D) department. I lead one of two Software Architecture & Engineering teams. In our matrix organization, engineers work day to day in cross-functional workstreams and projects. I give them feedback, support their development and build the team's expertise in software architecture, requirements engineering, testing, documentation and end-to-end development. On the department's steering committee, I bring feedback from my team and the workstreams into tactical and strategic decisions. I work with the other team lead to keep technical standards and staffing consistent across both teams.
 
-    A big part of this role is making technical responsibility and decision ownership clearer across teams. I align with project and workstream leads, represent architecture and engineering expertise toward internal stakeholders, and help the organization scale technical quality without slowing down delivery.
+    I work with project and workstream leads to clarify who owns technical work and decisions across teams. I represent architecture and engineering in discussions with internal stakeholders and help teams maintain technical standards as the organization grows without slowing delivery.
 
-    In parallel, I remain Lead Software Architect for geni:OS genAI. I own the big picture of the genAI stack: the genAI framework, our automated test framework for AI-driven assistants, and the surrounding developer tooling. I stay close to the integration work in customer projects so that I can derive future features and developer-experience improvements from it.
+    I remain Lead Software Architect for geni:OS genAI, responsible for the genAI framework, our automated test framework for AI-driven assistants and the developer tools around them. I follow integration work in customer projects to identify future features and improvements for developers.
 
-    Another focus of mine is modernizing how we build software. I push AI-assisted software delivery within our genAI development: AI coding agents with repository-specific instructions, AI-supported test case creation and AI-assisted log and trace analysis. Developers stay in control of every decision. The aim is to reduce the coordination effort that comes from changes spanning code, prompts, tool definitions, tests and evaluations.
+    I also lead the adoption of AI-assisted development for geni:OS genAI. We use coding agents with repository-specific instructions and AI tools to draft test cases and analyze logs and traces. Developers stay in control of every decision. The aim is to make changes easier to coordinate when they touch code, prompts, tool definitions, tests and evaluations.
 
 - period: "2024 – 2025"
   title: "Lead Software Architect, geni:OS genAI"
@@ -31,21 +31,21 @@
     took full technical responsibility for its architecture.
   highlights:
     - "Led the technical development and evaluation of 14 specialized LLM agents (weather, financial markets, news and more) for Volkswagen projects."
-    - "Built the “GDA Embedded Demo”, which exceeded stakeholder expectations, led to customer acquisition and grew into geni:OS genAI."
+    - "I built the GDA Embedded Demo on production vehicle hardware. It led directly to customer acquisition and became the basis for geni:OS genAI."
     - "Since January 2025 primary technical contact for the genAI solution toward CARIAD, the Solutions department and Volkswagen customer projects."
   tags: [Python, Java, LLM agents]
   details: |
     In early 2024, I took on the role of workstream lead for Embedded LLM Development at semvox, focusing on exploring efficient large language model solutions tailored to the hardware constraints within the Volkswagen Group. Following an internal reprioritization, driven by specific customer requirements and timelines, my responsibilities shifted to leading the PNP workstream. I was responsible for the technical development and evaluation of 14 specialized LLM agents, covering diverse domains such as current and historical weather data, financial market information, and news integration, specifically tailored for integration in Volkswagen projects.
 
-    One of my most notable achievements in 2024 was the development of the "GDA Embedded Demo". This demonstrator significantly exceeded initial expectations of internal and external stakeholders, positioning semvox as a leading-edge integrator of LLM technologies within the VW assistance systems. Additionally, I developed numerous demonstrable features and delivered key insights on agentic concepts and novel automated testing strategies. Over time, this demonstrator has developed into semvox new product generation: geni:OS genAI.
+    In 2024 I built the GDA Embedded Demo on production vehicle hardware. It led directly to customer acquisition and became the basis for geni:OS genAI. I also developed features for demos and shared what I learned about LLM agents and new approaches to automated testing.
 
     Since January 2025, I have the role of Lead Software Architect for this new product generation. I have full technical responsibility for the architectural direction of the genAI solution, including overseeing integration within Volkswagen customer projects. I act as the primary technical contact for solution concepts throughout the genAI ecosystem, ensuring clear communication and effective coordination with external stakeholders and interdisciplinary teams, such as the Solutions department, CARIAD, and other stakeholders.
 
-    My responsibilities further include establishing and documenting the technical vision and making critical architecture decisions. I have created and maintained architecture documentation on Confluence to support development processes and maintain high-quality standards. Additionally, I actively contribute to software development for LLM agents and features within the genAI framework.
+    I set and document the technical vision and make key architecture decisions. I write and maintain the architecture documentation in Confluence to support development and help teams maintain quality standards. I also write code for LLM agents and features in the genAI framework.
 
     Throughout this period I have significantly contributed to the growth and establishment of the semvox genAI solution. From initial in-vehicle demonstrations to its current prominence as a vital project for semvox.
 
-    From early 2024 onwards, most development happened in python. However, integration into the existing embedded + cloud stack of our largest projects happened mostly in Java.
+    From early 2024 onward, we did most development in Python. We used mostly Java to integrate with the existing embedded and cloud systems in our largest projects.
 
 - period: "2020 – 2023"
   title: "Product Engineer"
@@ -59,9 +59,9 @@
     - "Found and fixed crucial performance, memory management and stability issues in the Volkswagen Group project."
   tags: [Java]
   details: |
-    After graduation I started working as product Engineer at semvox. We develop a personalized smart assistant that is used by Volkswagen, Audi, Porsche and Skoda. My responsibilities early on included the development and maintenance of our internal prototype project that is used to analyze and demonstrate new feature-sets before they are being brought into production. At the same time this project is used as our demonstrator, which is used to present the strength of our Software-Framework to new potential customers.
+    I joined semvox as a product engineer after graduation. We develop a personalized voice assistant for Volkswagen, Audi, Porsche and Škoda. I helped develop and maintain our internal prototype. We use it to evaluate and demo features before they go into production and to show prospective customers what the framework can do.
 
-    Additionally, I was the sole developer and maintainer of an internal test framework that is used to automate end to end tests in the Volkswagen-group project for semvox. This testframework mainly automates a variety of processes on automotive hardware prototypes, which are used internally to simulate a real-world car. The goal of this framework is to improve reliability of test results compared to manual testing and reduce the know-how that is required to work on the sensitive prototype hardware. Currently, around 40% of all in-car testing has been replaced with automated tests, performed by the testframework I developed, relieving a lot of pressure from the QA department.
+    I was the sole developer and maintainer of an end-to-end test framework for our Volkswagen Group project. It runs tests on automotive hardware prototypes that simulate a car. The aim was to make test results more reliable and reduce the expertise needed to work with sensitive prototype hardware. The framework has replaced around 40% of all in-car testing with automated tests, reducing the QA team's workload.
 
     I have since handed over this project to a new team inside the QA department that is able to focus all its effort into improving the framework further while I tackle new challenges. For another year I was still involved in design-decisions and roadmap planning.
 
@@ -71,4 +71,4 @@
 
     Another focus of mine has been the analysis of performance bottlenecks in our automotive project with the Volkswagen-group. I was able to discover and implement crucial improvements to performance, memory management and overall system stability in the process.
 
-    During this timeframe at work I write almost exclusively Java code.
+    I wrote almost exclusively Java in this role.

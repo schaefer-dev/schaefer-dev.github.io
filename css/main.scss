@@ -10,7 +10,7 @@
 
 /* Photo Gallery - Full Width Layout Override */
 
-body:has(.photo-gallery) .container {
+body:has(.photo-gallery) main.container {
     max-width: 95%;
     width: 100%;
 }

@@ -19,7 +19,7 @@
     Rust library that drives a Lidar-equipped four-wheeled robot through an
     Arduino over USB.
   details: |
-    Implementation of a Rust Library that communicates over a USB interface with a Arduino board which is mounted on a fairly large 4-wheeled robot. The implemented Rust library is running on a Intel NUC that is built on top of the robot chassis. Additionally the NUC is connected to a Lidar which is used to scan and reconstruct the room surrounding the robot, which allows for safe navigation and avoiding of obstacles.
+    I wrote a Rust library that runs on an Intel NUC mounted on a fairly large four-wheeled robot. It talks to the robot's Arduino board over USB. The NUC also connects to a lidar that scans and reconstructs the room so the robot can navigate safely and avoid obstacles.
 
 - id: multimedia-codec
   title: "Hands on Networking: Multimedia Codec"
@@ -37,7 +37,7 @@
     Link-layer agent that announces itself via LLDP and parses its neighbours'
     announcements, with robustness tests.
   details: |
-    In this small project I implemented a LLDPA agent which is able to announce itself by sending LLDP messages to the network on the Link Layer. Additionally the agent parses all LLDP messages that are sent to one of the LLDP multicast addresses of the network. I also implemented a set of tests to verify the agents behaviour and robustness against e.g. invalid TLVs. Wireshark can be used to listen to network traffic and observe the correct behaviour of the agent.
+    I wrote an agent that announces itself at the link layer via LLDP and parses every LLDP message sent to the network's LLDP multicast addresses. I tested how it handles inputs such as invalid TLVs. You can inspect the network traffic in Wireshark to check the agent's behavior.
 
 - id: embedded-systems
   title: "Embedded Systems Project"
@@ -46,7 +46,7 @@
     Two cooperating competition robots on ATmega328 controllers with tight
     memory budgets. Our team won the semester competition.
   details: |
-    In this project groups of 3 students each developed a strategy for two different kinds of robots every group had access to. To solve problems that were important to win the competition that would take place in the end of the semester, it was essential to write very efficient and low-memory footprint code, as computational resources on both robots were only very limited. The robots used an ATMEGA328 AVR controller and could communicate using a nRF24L01+ RF module. Efficient communication including acknowledgements were essential to balance the work between both robots, as one of them was loaded with sensors, while its bigger brother was basically 'blind'. In early stages of development, a Simulink Model we built, that implemented a simplified version of our tactic already indicated a very big problem: keeping track of our position on the map was significantly harder than we expected, as Drift was very large on such lightweight robots. Additionally we had to make sure that we reliably recognize and predict collisions with other robots, which was another scenario which could significantly impact our concrete position in the arena.
+    In this project groups of 3 students each developed a strategy for two different kinds of robots every group had access to. To solve problems that were important to win the competition that would take place in the end of the semester, it was essential to write very efficient and low-memory footprint code, as computational resources on both robots were only very limited. The robots used an ATMEGA328 AVR controller and could communicate using a nRF24L01+ RF module. Efficient communication including acknowledgements were essential to balance the work between both robots, as one of them was loaded with sensors, while its bigger brother was basically 'blind'. In early stages of development, a Simulink Model we built, that implemented a simplified version of our tactic already indicated a very big problem: keeping track of our position on the map was significantly harder than we expected, as Drift was very large on such lightweight robots. We also had to make sure that we reliably recognize and predict collisions with other robots, which was another scenario which could significantly impact our concrete position in the arena.
 
     While it was quite challenging to implement these Embedded Systems from scratch, we learned a lot about reading Datasheets, Communication Protocols and Sensor usage (particularly handling high noise).
 
@@ -70,7 +70,7 @@
   links:
     - { text: "Project video", url: "https://youtu.be/Lcn0QEfDHL4" }
   details: |
-    Developed per request for professor at Saarland University. The tool is now successfully used to detect plagiarism cases among students and supports up to 4000 submissions with up to 1000 lines each and checks every submission pair for possible plagiarism cases. Obvious plagiarism cases are highlighted and the professor is automatically notified with a human readable overview of why the set of submissions are obvious plagiarism cases including a colored mapping of copied parts of the code. The tool is completely robust against many options to easily bypass most ordinary plagiarism detection tools for both python and C code (variable renaming, moving of code blocks etc.).
+    I built the tool at the request of a Saarland University professor. It is used to detect plagiarism in student submissions. It compares every pair of submissions in a set of up to 4,000, with up to 1,000 lines each. When it finds a clear case, it automatically notifies the professor with a report that highlights the matching code. The tool can detect similarities in Python and C submissions after variables are renamed or code blocks are moved.
 
 - id: bachelor-thesis
   title: "Bachelor Thesis"

@@ -17,6 +17,11 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
       <a href="https://github.com/schaefer-dev">GitHub</a>
       <a href="contact">Contact</a>
     </div>
+    <nav class="home-links" aria-label="Explore the portfolio">
+      <a href="#career">Career</a>
+      <a href="#side-projects">Side projects</a>
+      <a href="{{ '/photos' | relative_url }}">Photography</a>
+    </nav>
   </div>
 </div>
 
@@ -26,7 +31,7 @@ description: "Daniel Schäfer, Head of Software Architecture & Engineering and L
   <dt>Leadership</dt>
   <dd>Head of Software Architecture &amp; Engineering, Member of the AR&amp;D Steering Committee</dd>
   <dt>Programming</dt>
-  <dd>Python and Java at work. Swift, Kotlin and Rust and C in side projects.</dd>
+  <dd>Python and Java at work. Swift, Kotlin, Rust and C in side projects.</dd>
   <dt>Education</dt>
   <dd>M.Sc. Computer Science, Saarland University, 2020, grade 1.5</dd>
   <dt>Certification</dt>

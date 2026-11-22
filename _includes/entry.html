@@ -5,8 +5,8 @@
 {% assign e = include.item %}
 <article class="work-entry" id="{{ e.id }}">
   <h3>{{ e.title }}</h3>
-  {% if e.tags %}<ul class="tags">{% for t in e.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
   <p class="lede">{{ e.lede }}</p>
+  {% if e.tags %}<ul class="tags">{% for t in e.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
   <details class="more">
     <summary>Full description</summary>
     {{ e.details | markdownify }}

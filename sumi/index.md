@@ -23,13 +23,13 @@ apple_app_id: "6831759227"
 
 ## What it does
 
-- **Notebooks as they were written.** Sumi renders `.note` notebooks as crisp vector ink from the pen data, and shows `.mark` annotations on their original PDF.
-- **Search your handwriting.** Apple's on-device text recognition makes every page searchable, with browser-style find and match stepping.
-- **Jump by titles.** The titles you marked on the Supernote become a table of contents, alongside a grid of every page.
-- **Your Dropbox library.** Browse your Supernote sync folder, star favorites or single pages, and reopen documents where you left off.
-- **Offline when you need it.** Sync All saves readable, searchable copies on your device, optionally in the background on Wi-Fi.
-- **Read-only and private.** Sumi asks Dropbox for read-only access and never changes, uploads or deletes your files. There are no accounts, analytics or tracking.
-- **Share as PDF.** Export any document as a searchable PDF.
+- Sumi renders `.note` notebooks as crisp vector strokes from the pen data and shows `.mark` annotations on their original PDF.
+- Search handwriting on any page using Apple's on-device text recognition. Move between matches as you would in a browser.
+- Jump to a title you marked on your Supernote using the table of contents. The page grid shows every page.
+- Browse your Supernote sync folder in Dropbox, star documents or individual pages, and reopen documents where you left off.
+- Tap **Sync All** to save searchable copies for offline reading. You can also sync in the background over Wi-Fi.
+- Sumi asks Dropbox for read-only access and never changes, uploads or deletes your files. There are no accounts, analytics or tracking.
+- Export any document as a searchable PDF.
 
 Sumi requires iOS or iPadOS 26. A Mac version that also adds Quick Look previews is available as a [free download on GitHub](https://github.com/schaefer-dev/supernote-viewer).
 

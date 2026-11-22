@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-
     <meta charset="utf-8">
+    {% assign page_title = page.title | default: site.title %}
+    {% assign desc = page.description | default: site.description %}
+    {% assign url = page.url | absolute_url %}
+    {% assign og_image = site.og_image | default: '/me.jpg' | absolute_url %}
+    {% assign twitter_image = site.twitter_image | default: site.profile_picture | default: og_image | absolute_url %}
+    <title>{{ page_title | escape }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
-    <meta name="author" content="{{ site.author }}">
+    <meta name="author" content="{{ site.author | escape }}">
     {% if page.url == "/404.html" %}
         <meta http-equiv="refresh" content="5; url=/">
     {% endif %}
-    {% if page.description %}
-        {% assign desc = page.description %}
-    {% else %}
-        {% assign desc = site.description %}
-    {% endif %}
-    {% if page.url %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% else %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% endif %}
-    <meta name="description" content="{{ desc }}">
+    <meta name="description" content="{{ desc | escape }}">
     {% if page.apple_app_id %}
         <meta name="apple-itunes-app" content="app-id={{ page.apple_app_id }}">
     {% endif %}
@@ -34,74 +27,55 @@
         <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
     {% endif %}
     <!-- Facebook Open Graph -->
-    <meta name="og:description" content="{{ desc }}">
-    <meta name="og:title" content="{{ site.title }}">
-    <meta name="og:url" content="{{ url }}">
-    <meta name="og:type" content="article">
-    {% if site.og_image %}
-        <meta name="og:image" content="{{ site.og_image }}">
-    {% else %}
-        <meta name="og:image" content="{{ site.url }}/me.jpg">
-    {% endif %}
+    <meta property="og:description" content="{{ desc | escape }}">
+    <meta property="og:title" content="{{ page_title | escape }}">
+    <meta property="og:url" content="{{ url | escape }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{ og_image | escape }}">
     {% if site.facebook_id %}
         <meta name="fb:admins" content="{{ site.facebook_id }}">
     {% endif %}
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:description" content="{{ desc }}">
-    <meta name="twitter:url" content="{{ url }}">
-    {% if site.twitter_image %}
-        <meta name="twitter:image" content="{{ site.twitter_image }}">
-    {% else %}
-        <meta name="twitter:image" content="{{ site.profile_picture }}">
-    {% endif %}
+    <meta name="twitter:title" content="{{ page_title | escape }}">
+    <meta name="twitter:description" content="{{ desc | escape }}">
+    <meta name="twitter:url" content="{{ url | escape }}">
+    <meta name="twitter:image" content="{{ twitter_image | escape }}">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="wrapper">
-        <div class="navbar container">
-            {% if site.ins_logo %}
-                <img id="ins-logo" src="{{ site.ins_logo }}" />
-            {% endif %}
-            <a id="author-name" class="alignable pull-left" href="{{ site.newbaseurl }}">{{ site.title }}</a>
-            <ul id="navlist" class="alignable pull-right navbar-ul">
-                {% for x in site.nav %}
-                    {% if x.name == "Resume" %}
-                        <li class="alignable pull-left nav-list"><a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
-                    {% else %}
-                        <li class="alignable pull-left nav-list"><a href="{{ x.link }}">{{ x.name }}</a>
-                    {% endif %}
-                    {% if forloop.last == false %}
-                        /
-                    {% endif %}
-                        </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div style="clear:both"></div>
-        <hr>
-        {% if page.is_contact == true %}
-            <div class="container content contact">
-        {% else %}
-            <div class="container content">
-        {% endif %}
-                {{ content }}
+        <header class="site-header">
+            <nav class="navbar container" aria-label="Main navigation">
+                {% if site.ins_logo %}
+                    <img class="site-logo" src="{{ site.ins_logo }}" alt="">
+                {% endif %}
+                <a class="site-name" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>{{ site.title | escape }}</a>
+                {% assign current_path = page.url | remove: '.html' %}
+                <ul class="navbar-links">
+                    {% for item in site.nav %}
+                        <li><a href="{{ item.link | relative_url }}"{% if current_path == item.link %} aria-current="page"{% endif %}>{{ item.name | escape }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content" class="container content" tabindex="-1">
+            {{ content }}
+        </main>
+        <footer class="site-footer">
+            <div class="container site-footer-inner">
                 {% if page.show_copyright == true %}
-                    <hr />
-                    <p style="text-align: center; margin: 0 auto 10px auto; color: #DAD7D2;">
-                    <small>© {{ 'now' | date: "%Y" }} Daniel Schäfer. All rights reserved. All photographs are protected by copyright.</small>
-                    </p>
+                    <p class="site-copyright">© {{ 'now' | date: "%Y" }} Daniel Schäfer. All rights reserved. All photographs are protected by copyright.</p>
                 {% endif %}
-                {% if site.footer == true %}
-                    <hr />
-                    <p style="text-align: center; margin: 0 auto 10px auto">
-                    <a href="{{ site.footer_url }}" style="color: #DAD7D2"><small>{{ site.footer_text }}</small></a>
-                    </p>
-                {% endif %}
-                <p class="site-legal"><small><a href="/privacy/">Privacy</a></small></p>
+                <ul class="site-footer-links">
+                    {% if site.footer == true %}
+                        <li><a href="{{ site.footer_url }}">{{ site.footer_text | escape }}</a></li>
+                    {% endif %}
+                    <li><a href="{{ '/privacy/' | relative_url }}"{% if page.url == '/privacy/' %} aria-current="page"{% endif %}>Privacy</a></li>
+                </ul>
             </div>
+        </footer>
     </div>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "74e4a23bae314cc69ee869a5ad705503"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
-<footer>
-</footer>
+</html>

@@ -67,7 +67,7 @@ details.more > summary {
     cursor: pointer;
     list-style: none;
     font-family: $font-mono;
-    color: var(--accent);
+    color: var(--link);
 }
 details.more > summary::-webkit-details-marker {
     display: none;
@@ -156,17 +156,16 @@ details.more[open] > summary {
     margin: 0.7rem 0 0.4rem 0;
 }
 .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 1.2em;
     font-family: $font-mono;
     margin: 0.5rem 0 0 0;
-}
-.project-links a + a {
-    margin-left: 1.2em;
 }
 
 /* Compact teaser variant on the home page */
 
 .project-grid.teaser {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 .teaser .project-body {
@@ -189,7 +188,7 @@ details.more[open] > summary {
     text-decoration: none;
 }
 .teaser a.project-card:hover h3 {
-    color: var(--accent);
+    color: var(--link);
 }
 
 /* Courses table inside a details block */
@@ -199,8 +198,7 @@ details.more[open] > summary {
 }
 
 @media (max-width: 760px) {
-    .project-grid,
-    .project-grid.teaser {
+    .project-grid {
         grid-template-columns: 1fr;
     }
 }

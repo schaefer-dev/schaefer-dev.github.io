@@ -2,7 +2,6 @@
 layout: default
 title: "Daniel Schäfer | Contact"
 description: "How to reach Daniel Schäfer: email, LinkedIn, GitHub and Xing."
-is_contact: true
 ---
 
 <h1>Contact</h1>

@@ -1,14 +1,13 @@
 title: schaefer-dev
 author: "Daniel Schäfer"
 url: "https://schaefer-dev.de"
-newbaseurl: "https://schaefer-dev.de"
 
 markdown: kramdown
 #ins_logo: "./bits-logo.png"
 
 footer: yes
 footer_url: "https://github.com/schaefer-dev"
-footer_text: "Visit my GitHub"
+footer_text: "GitHub"
 
 plugins:
    - jekyll-redirect-from
@@ -22,12 +21,12 @@ sass:
 
 nav:
  - name: "Projects"
-   link: "projects"
+   link: "/projects"
  - name: "Photos"
-   link: "photos"
+   link: "/photos"
  - name: "Certifications & Skills"
-   link: "skills"
+   link: "/skills"
  - name: "CV"
-   link: "cv"
+   link: "/cv"
  - name: "Contact"
-   link: "contact"
+   link: "/contact"

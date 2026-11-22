@@ -8,8 +8,8 @@ show_copyright: true
 # Photography
 
 <div class="photo-intro">
-  <p>A sneak peek into my photography. All images shot on Sony. All photographs show wild animals in their natural habitats, never in captivity, zoos, or staged settings.</p>
-  <p>Images load in 4k resolution once you click on them for fullscreen viewing, unless you enable <em>Data Saver Mode</em> below. Loading of the high quality version may take a second or two depending on your connection speed. You can expect 1-3mb per 4k image depending on your browsers image format support. For 2.4k images you can expect around 0.4-1.5mb.</p>
+  <p>A selection of my wildlife and landscape photos, all shot on Sony. I photograph wildlife in its natural habitat, without captivity or staging.</p>
+  <p>Open a photo to view it in 4K. The full image may take a second or two to load, depending on your connection. A 4K image uses about 1–3 MB, depending on the formats your browser supports. Turn on <em>Data Saver Mode</em> for 2.4K images, which use about 0.4–1.5 MB each.</p>
 </div>
 
 <div class="data-saver-container">

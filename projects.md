@@ -28,7 +28,7 @@ description: "Personal side projects, work projects at semvox and university pro
 
 <section class="projects-section">
 <h2 id="work">Work at semvox</h2>
-<p class="section-intro">Standout projects from my time at semvox, newest first.</p>
+<p class="section-intro">Highlights from my time at semvox, newest first.</p>
 {% for item in site.data.work_projects %}
 {% include entry.html item=item %}
 {% endfor %}

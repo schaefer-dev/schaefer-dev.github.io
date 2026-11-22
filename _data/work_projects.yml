@@ -36,7 +36,9 @@
     An LLM-powered in-car assistant on production hardware that led directly to
     customer acquisition and became the foundation of geni:OS genAI.
   details: |
-    Over the span of a couple of months I developed a demonstrator project that showcased what a deep LLM integration can contribute to the in-car assistant experience for all VW brands. The demonstrator ran on production hardware and was integrated into the existing vehicle architecture. Beyond building the full AI-driven featureset, I established automated testing methodology and regression analysis for llm-agent behavior to catch regressions in prompts, tools, and retrieval logic early. The PoC already significantly exceeded expectations of internal and external stakeholders in very early development stages. Following the integration of additional features - showcasing further advantages of this new assistant architecture, the PoC directly led to successful customer acquisition. Semvox is now fully committed to this new product generation, now called geni:OS genAI, that builds on top of the findings in this PoC.
+    I spent a couple of months building a demonstrator to show what deep LLM integration could bring to the in-car assistant across Volkswagen Group brands. It ran on production hardware within the existing vehicle architecture. I built the full set of AI features and set up automated tests and regression analysis to catch problems in prompts, tools and retrieval logic early.
+
+    The prototype exceeded the expectations of internal and external stakeholders by a wide margin early in development. As more features were added, it demonstrated further advantages of the architecture and led directly to customer acquisition. Semvox is fully committed to the new product generation, geni:OS genAI, which builds on what we learned from the prototype.
 
 - id: test-framework
   title: "Automated Testing Framework"
@@ -45,7 +47,9 @@
     End-to-end test automation for automotive hardware prototypes, from injected
     driver utterances to validated speech output.
   details: |
-    I designed and implemented an end to end test framework for automotive hardware prototypes from the ground up. The system automates the complete loop from injecting generated audio to simulate driver utterances to validating the speech output of the assistant, while hiding the complexity of fragile lab setups and prototype hardware. Over time the framework replaced over 30 percent of manual QA with automated testruns and it covered key integration scenarios that previously required significant coordination effort and human involvement. Beyond raw automation, the framework significantly improved repeatability and reduced the risk of hardware mishandling during tests. After stabilizing the platform and implementing all key features, I handed it over to a dedicated QA team. I still supported roadmap and design decisions for another year to ensure a clean transition. The main challenge throughout was to keep the framework reliable across frequent hardware and software changes.
+    I designed and built an end-to-end test framework for automotive hardware prototypes. It injects generated audio to simulate a driver speaking and checks the assistant's speech output. The framework handles the complexity of fragile lab setups and prototype hardware. Over time the framework replaced over 30 percent of manual QA with automated test runs and covered key integration scenarios that previously took substantial coordination and hands-on work.
+
+    The framework made test runs much easier to repeat and reduced the risk of mishandling the hardware. The main challenge was keeping it reliable through frequent hardware and software changes. Once the framework was stable and the key features were in place, I handed it over to a dedicated QA team and supported roadmap and design decisions for another year to help with the transition.
 
 - id: iso-21434
   title: "Cybersecurity Certification (ISO 21434)"
@@ -63,6 +67,6 @@
     Main contributor to semvox's internal prototype, including its first Android
     version that runs as a full voice assistant on Android Automotive.
   details: |
-    When I started at semvox, I quickly became one of the main contributors to our company internal prototype project in which we explored features of our geni:OS framework early on. It was mostly used as a means to discover gaps and usability improvements in our tooling and software stack. We also use it at various fairs to showcase advanced features that our geni:OS framework enables.
-    I developed the first Android Version of the KITT prototype, also supporting the Android Automotive VoiceInteractionSession feature to use KITT as a fully functional voice assistant in android automotive systems.
-    The KITT Prototype was also used as a project showcasing the best practices when working with geni:OS. This KITT project still is a pillar of our internal documentation and onboarding processes to work with geni:OS as a framework to build your own assistant.
+    Soon after joining semvox I became a main contributor to KITT, our internal prototype for trying out geni:OS features early. We mainly used it to find gaps in our tools and improve usability. We also use it at trade fairs to demonstrate advanced features of the framework.
+
+    I built the first Android version of KITT. It supports Android Automotive's VoiceInteractionSession, so KITT can run as a full voice assistant on Android Automotive. KITT showed engineers how we recommend using geni:OS. It is still a central example in our documentation and onboarding for engineers building their own assistant with the framework.
